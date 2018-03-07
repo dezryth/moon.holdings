@@ -1,0 +1,13 @@
+# Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+
+# Folders
+bower_components/
+node_modules/
+.npm
+
+# Build folder
+moonHoldings
