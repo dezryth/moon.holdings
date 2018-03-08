@@ -1,0 +1,11 @@
+@import 'sass/vendors/normalize'; // Normalize stylesheet
+@import 'sass/vendors/reset';     // Reset stylesheet
+@import 'sass/modules/base';      // Load base files
+@import 'sass/modules/defaults';  // Defaults elements
+@import 'sass/modules/svg';       // Load SVG
+
+// Containers
+@import 'containers/Portfolio/portfolio';
+
+// Media Queries
+@import 'sass/modules/queries';
