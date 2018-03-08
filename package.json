@@ -15,11 +15,11 @@
     "test": "yarn run test-eslint; yarn run test-jest:update",
     "test-eslint": "eslint client",
     "test-eslint:fix": "eslint --fix client",
-    "test-scsslint": "./node_modules/.bin/sass-lint 'app/**/*.scss' -v -q",
+    "test-sasslint": "./node_modules/.bin/sass-lint 'app/**/*.scss' -v -q",
     "test-jest": "jest",
-    "test-jest:watch": "jest --watch",
-    "test-jest:coverage": "jest --coverage",
-    "test-jest:update": "jest --updateSnapshot"
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "test-update": "jest --updateSnapshot"
   },
   "now": {
     "name": "coinhover",

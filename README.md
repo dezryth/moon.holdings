@@ -10,15 +10,15 @@ https://moon.holdings
 `yarn` is preferable over `npm` https://yarnpkg.com/en/docs/install
 `brew install yarn`
 
-`npm start` | `yarn start`
+`yarn start`
 
-`npm run dev` | `yarn run dev`
+`yarn run dev`
 
-`npm run build` | `yarn run build`
+`yarn run build`
 
-`npm t -- --watch` JestJS | `yarn test`
+JestJS | `yarn test`
 
-`npm t -- --u` Jest snapshot update | `yarn test --u`
+Jest snapshot update | `yarn test --u`
 
 #### Public APIs
 https://coinmarketcap.com/api

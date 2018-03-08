@@ -11,7 +11,6 @@ const app = path.resolve(__dirname, 'app');
 const nodeModules = path.resolve(__dirname, 'node_modules');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  // template: `${__dirname}/app/index.html`,
   template: path.join(__dirname, '/app/index.html'),
   inject: 'body'
 });
