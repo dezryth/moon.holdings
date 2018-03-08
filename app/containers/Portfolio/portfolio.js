@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Coins from 'components/Coins/coins';
+
 // Actions
 // import { getCoins } from 'actions/coins';
 
@@ -18,6 +20,7 @@ class Portfolio extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      cached: false,
       search: false
     };
 
@@ -28,13 +31,25 @@ class Portfolio extends React.Component {
   //   this.setState({ search: false });
   // }
 
+  /*
+    TODO
+    Portfolio is the main container, Coins will be the individual crypto assets
+    Search will be the 3rd major component, and EditCoin the 4th...
+   */
   render() {
     return (
-      <div className="app-bg">
-        <section className="portfolio">
-          <h1>MOON.HOLDINGS</h1>
-          <p>{this.state.search}</p>
-        </section>
+      <div className="portfolio">
+        {this.state.cached
+          ? <Coins />
+          :
+          <section>
+            <h4>Welcome to</h4>
+            <h1>MOON.HOLDINGS</h1>
+            <h3>A Futuratum Project</h3>
+            <h2>Click the + button to create your portfolio.</h2>
+            <p>{this.state.search}</p>
+          </section>
+        }
       </div>
     );
   }
@@ -52,4 +67,4 @@ class Portfolio extends React.Component {
 
 export const PortfolioJest = Portfolio;
 
-export default connect([], [])(Portfolio);
+export default connect()(Portfolio);

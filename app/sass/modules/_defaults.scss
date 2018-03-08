@@ -4,8 +4,12 @@ body {
   overflow-x: hidden;
   font-family: 'Abel', sans-serif;
   font-size: em(16);
-  color: #666;
-  background: $body;
+  color: #fff;
+  background: #57385c;
+  background: -moz-linear-gradient(-45deg, #57385c 0%, #8f6894 100%);
+  background: -webkit-linear-gradient(-45deg, #57385c 0%, #8f6894 100%);
+  background: linear-gradient(135deg, #57385c 0%, #8f6894 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57385c', endColorstr='#8f6894',GradientType=1 );
 }
 
 sup, sub { font-size: 75%; line-height: 0; vertical-align: baseline; }
