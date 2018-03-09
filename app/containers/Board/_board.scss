@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-#welcome {
+#welcome-msg {
   flex: 0 1 auto;
   margin: 10px;
   padding: 5px;
@@ -32,4 +32,34 @@
 
 .plus {
   color: $apricot;
+}
+
+.search-btn {
+  @include transition(all, .2s, ease-in-out);
+  // flex: 0 1 auto;
+  // align-self: flex-start;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding-top: 20px;
+  width: 120px;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+
+  .plus {
+    font-size: em(64);
+  }
+
+  &:hover {
+    background: $apricot;
+    h1 { color: $darkPurple; }
+    .plus { color: #fff; }
+  }
+
+  &:active {
+    background: none;
+    h1 { color: #fff; }
+    .plus { color: $apricot; }
+  }
 }

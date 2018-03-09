@@ -42,13 +42,18 @@ class Board extends React.Component {
         {this.state.cached
           ? <Portfolio />
           :
-          <section id="welcome">
-            <h2>Welcome to</h2>
-            <h1>MOON.HOLDINGS</h1>
-            <h4>A Futuratum Project</h4>
-            <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
-            <p>{this.state.search}</p>
-          </section>
+          <div>
+            <section id="welcome-msg">
+              <h1>MOON.HOLDINGS</h1>
+              <h4>A Futuratum Project</h4>
+              <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
+              <p>{this.state.search}</p>
+            </section>
+            <section className="search-btn">
+              <span className="plus">+</span>
+              <h1>MOON.HOLDINGS</h1>
+            </section>
+          </div>
         }
       </div>
     );
