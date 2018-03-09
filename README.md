@@ -41,4 +41,5 @@ https://www.cryptonator.com/api
 #### Social Media
 
 @leongaban
+@paulinhorocha
 @futuratum
