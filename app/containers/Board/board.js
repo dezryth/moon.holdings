@@ -38,15 +38,15 @@ class Board extends React.Component {
    */
   render() {
     return (
-      <div className="board">
+      <div id="board">
         {this.state.cached
           ? <Portfolio />
           :
-          <section className="welcome">
-            <h4>Welcome to</h4>
+          <section id="welcome">
+            <h2>Welcome to</h2>
             <h1>MOON.HOLDINGS</h1>
-            <h3>A Futuratum Project</h3>
-            <h2>Click the + button to create your portfolio.</h2>
+            <h4>A Futuratum Project</h4>
+            <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
             <p>{this.state.search}</p>
           </section>
         }

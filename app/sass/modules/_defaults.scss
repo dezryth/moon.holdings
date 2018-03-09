@@ -1,28 +1,20 @@
-html, body { width: 100%; height: 100%; }
+html,
+body { width: 100%; height: 100%; }
 
 body {
   overflow-x: hidden;
   font-family: 'Abel', sans-serif;
   font-size: em(16);
   color: #fff;
-  background: #57385c;
-  background: -moz-linear-gradient(-45deg, #57385c 0%, #8f6894 100%);
-  background: -webkit-linear-gradient(-45deg, #57385c 0%, #8f6894 100%);
-  background: linear-gradient(135deg, #57385c 0%, #8f6894 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57385c', endColorstr='#8f6894',GradientType=1 );
+  background: #3e1f43;
+  background: -moz-linear-gradient(-45deg, #3e1f43 0%, #8f6894 100%);
+  background: -webkit-linear-gradient(-45deg, #3e1f43 0%, #8f6894 100%);
+  background: linear-gradient(135deg, #3e1f43 0%, #8f6894 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e1f43', endColorstr='#8f6894',GradientType=1 );
 }
 
-sup, sub { font-size: 75%; line-height: 0; vertical-align: baseline; }
-sup { top: -0.5em; left: 0.15em; }
-sub { bottom: -0.25em; }
-strong { font-weight: 600; }
-
-a {
-  text-decoration: none;
-  &:hover { text-decoration: underline; }
+#app {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
-
-canvas { display: block; vertical-align: bottom; }
-
-// removes chrome input highlight
-*:focus { outline: 0; }
