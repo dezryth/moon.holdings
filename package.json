@@ -22,9 +22,9 @@
     "test-update": "jest --updateSnapshot"
   },
   "now": {
-    "name": "coinhover",
+    "name": "moonholdings",
     "engines": {
-      "node": "8.9.x"
+      "node": "9.7.1"
     },
     "alias": "moon.holdings"
   },

@@ -49,9 +49,12 @@ class Board extends React.Component {
               <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
               <p>{this.state.search}</p>
             </section>
-            <section className="search-btn">
+            <section id="big-plus-button">
               <span className="plus">+</span>
               <h1>MOON.HOLDINGS</h1>
+            </section>
+            <section id="astronaut">
+              <img src="static/astronaut.png" alt="astronaut" />
             </section>
           </div>
         }
