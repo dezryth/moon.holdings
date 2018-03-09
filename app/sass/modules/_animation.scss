@@ -1,0 +1,22 @@
+@keyframes cometFlight {
+  0% {
+    top: 0;
+    right: -50%;
+    opacity: 1;
+  }
+
+  100% {
+    top: 95%;
+    right: 60%;
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  width: .3em;
+  height: .3em;
+  animation: cometFlight 5s ease infinite;
+}
