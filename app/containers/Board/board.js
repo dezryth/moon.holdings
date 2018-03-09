@@ -43,7 +43,6 @@ class Board extends React.Component {
           ? <Portfolio />
           :
           <div>
-            <div className="shooting-star" />
             <section id="welcome-msg">
               <h1>MOON.HOLDINGS</h1>
               <h4>A Futuratum Project</h4>
