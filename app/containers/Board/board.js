@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Coins from 'components/Coins/coins';
+import Portfolio from 'components/Portfolio/portfolio';
 
 // Actions
 // import { getCoins } from 'actions/coins';
@@ -16,7 +16,7 @@ import Coins from 'components/Coins/coins';
 //   }
 // };
 
-class Portfolio extends React.Component {
+class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,16 +33,16 @@ class Portfolio extends React.Component {
 
   /*
     TODO
-    Portfolio is the main container, Coins will be the individual crypto assets
-    Search will be the 3rd major component, and EditCoin the 4th...
+    Board is the main container which contains Search, selected Coins will be
+    added to Redux state and then passed down into Portfolio.
    */
   render() {
     return (
-      <div className="portfolio">
+      <div className="board">
         {this.state.cached
-          ? <Coins />
+          ? <Portfolio />
           :
-          <section>
+          <section className="welcome">
             <h4>Welcome to</h4>
             <h1>MOON.HOLDINGS</h1>
             <h3>A Futuratum Project</h3>
@@ -65,6 +65,6 @@ class Portfolio extends React.Component {
 //   portfolio
 // });
 
-export const PortfolioJest = Portfolio;
+export const BoardJest = Board;
 
-export default connect()(Portfolio);
+export default connect()(Board);

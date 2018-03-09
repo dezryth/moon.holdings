@@ -5,7 +5,11 @@
 @import 'sass/modules/svg';       // Load SVG
 
 // Containers
-@import 'containers/Portfolio/portfolio';
+@import 'containers/Board/board';
+
+// Components
+@import 'components/Portfolio/portfolio';
+@import 'components/CoinBox/coinbox';
 
 // Media Queries
 @import 'sass/modules/queries';

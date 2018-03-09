@@ -1,2 +1,2 @@
-export { default as Portfolio } from 'containers/Portfolio/portfolio';
+export { default as Board } from 'containers/Board/board';
 export { default as NoMatch } from 'containers/noMatch';
