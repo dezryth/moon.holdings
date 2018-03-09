@@ -3,6 +3,8 @@
 
 Monitor your cryptocurrency assets portfolio (web app)
 
+![MOON.HOLDINGS](https://raw.githubusercontent.com/leongaban/github_images/master/moon-holdings-square.png)
+
 #### Demo build in progress
 https://moon.holdings
 
