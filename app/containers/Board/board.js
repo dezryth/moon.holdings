@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Portfolio from 'components/Portfolio/portfolio';
+import Search from 'containers/SearchModal/searchModal';
 
 // Actions
 // import { getCoins } from 'actions/coins';
@@ -20,16 +20,25 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cached: false,
+      // cached: false,
       search: false
     };
 
     // this.closeSearch = this.closeSearch.bind(this);
+    this.handleSearchButton = this.handleSearchButton.bind(this);
   }
 
   // closeSearch() {
   //   this.setState({ search: false });
   // }
+
+  handleSearchButton(e, bool = null) {
+    if (bool) {
+      this.setState({ search: false });
+    } else {
+      this.setState({ search: !this.state.search });
+    }
+  }
 
   /*
     TODO
@@ -39,25 +48,32 @@ class Board extends React.Component {
   render() {
     return (
       <div id="board">
-        {this.state.cached
-          ? <Portfolio />
-          :
-          <div>
-            <section id="welcome-msg">
-              <h1>MOON.HOLDINGS</h1>
-              <h4>A Futuratum Project</h4>
-              <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
-              <p>{this.state.search}</p>
-            </section>
-            <section id="big-plus-button">
-              <span className="plus">+</span>
-              <h1>MOON.HOLDINGS</h1>
-            </section>
-            <section id="astronaut">
-              <img src="static/astronaut.png" alt="astronaut" />
-            </section>
-          </div>
-        }
+        <div>
+          <section id="welcome-msg">
+            <h1>MOON.HOLDINGS</h1>
+            <h4>A Futuratum Project</h4>
+            <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
+          </section>
+
+          {
+            this.state.search
+            ? <Search handleClose={this.handleSearchButton} />
+            : null
+          }
+
+          <button
+            id="big-plus-button"
+            tabIndex={0}
+            onClick={this.handleSearchButton}
+          >
+            <span className="plus">+</span>
+            <h1>MOON.HOLDINGS</h1>
+          </button>
+
+          <section id="astronaut">
+            <img src="static/astronaut.png" alt="astronaut" />
+          </section>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,63 @@
+#search-modal {
+  @include rounded(5px);
+  position: absolute;
+  z-index: 3;
+  left: 20px;
+  bottom: 160px;
+  padding: 20px;
+  width: 250px;
+  height: 200px;
+  font-family: Overpass;
+  font-size: em(20);
+  font-weight: 200;
+  border: 1px solid $apricot;
+  background: rgba($darkPurple, .6);
+
+  input {
+    flex-grow: 1;
+    margin: 0 10px 10px 0;
+    width: 206px;
+    font-size: em(18);
+    color: #fff;
+    background: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid $darkPurple;
+
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+  .symbol {
+    margin-left: 2px;
+    color: $brightPurple;
+  }
+
+  li {
+    margin-bottom: 6px;
+    width: 100%;
+    color: $apricot;
+    cursor: pointer;
+
+    &:hover { color: #fff; }
+  }
+}
+
+.search-header { display: flex; }
+
+.close-modal-x {
+  flex-grow: 1;
+  margin: 0 -15px 0 0;
+  background-size: 20px 20px;
+  background-image: url('static/x-orange.png'), none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  &:hover { background-image: url('static/x-white.png'), none; }
+}
