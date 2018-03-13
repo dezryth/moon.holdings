@@ -64,7 +64,7 @@ class SearchModal extends React.Component {
           />
           <button className="close-modal-x" onClick={this.props.handleClose} />
         </header>
-        <ul>
+        <ul className="coins-list">
           {
             coins.map(coin => (
               <li key={coin.id}>
