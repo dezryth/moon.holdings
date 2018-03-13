@@ -1,0 +1,24 @@
+#welcome-msg {
+  flex: 0 1 auto;
+  position: relative;
+  z-index: 2;
+  margin: 10px;
+  padding: 5px;
+  width: 355px;
+  height: 200px;
+
+  h1 {
+    margin: 10px 0 5px;
+    font-size: em(56);
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: em(22);
+  }
+
+  h4 {
+    text-align: right;
+    font-size: em(14);
+  }
+}

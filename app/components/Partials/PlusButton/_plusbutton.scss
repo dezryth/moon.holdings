@@ -1,0 +1,28 @@
+#big-plus-button {
+  @include transition(all, .2s, ease-in-out);
+  @include noselect;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding-top: 20px;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  .plus { font-size: em(64); }
+
+  &:hover {
+    background: $apricot;
+    h1 { color: $darkPurple; }
+    .plus { color: #fff; }
+  }
+
+  &:active {
+    background: none;
+    h1 { color: #fff; }
+    .plus { color: $apricot; }
+  }
+}

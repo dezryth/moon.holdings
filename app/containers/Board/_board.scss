@@ -8,64 +8,15 @@
   padding: 0;
 }
 
-#welcome-msg {
-  flex: 0 1 auto;
-  position: relative;
-  z-index: 2;
-  margin: 10px;
-  padding: 5px;
-  width: 355px;
-  height: 200px;
-
-  h1 {
-    margin: 10px 0 5px;
-    font-size: em(56);
-  }
-
-  h2 {
-    margin-top: 20px;
-    font-size: em(22);
-  }
-
-  h4 {
-    text-align: right;
-    font-size: em(14);
-  }
-}
-
 .plus { color: $apricot; }
 
-#big-plus-button {
-  @include transition(all, .2s, ease-in-out);
-  @include noselect;
+#overlay {
+  animation: fadein .5s;
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  padding-top: 20px;
-  width: 120px;
-  height: 120px;
-  text-align: center;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-
-  .plus { font-size: em(64); }
-
-  &:hover {
-    background: $apricot;
-    h1 { color: $darkPurple; }
-    .plus { color: #fff; }
-  }
-
-  &:active {
-    background: none;
-    h1 { color: #fff; }
-    .plus { color: $apricot; }
-  }
-}
-
-#astronaut {
-  position: fixed;
-  bottom: -5px;
-  right: 40px;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
 }

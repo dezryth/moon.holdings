@@ -1,7 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Containers
 import Search from 'containers/SearchModal/searchModal';
+
+// Components
+import Welcome from 'components/Partials/Welcome/welcome';
+import Astronaut from 'components/Partials/Astronaut/astronaut';
+import PlusButton from 'components/Partials/PlusButton/plusButton';
 
 // Actions
 // import { getCoins } from 'actions/coins';
@@ -48,31 +54,19 @@ class Board extends React.Component {
   render() {
     return (
       <div id="board">
+        {
+          this.state.search
+          ?
+            <div>
+              <Search handleClose={this.handleSearchButton} />
+              <div id="overlay" role="button" onClick={this.handleSearchButton} />
+            </div>
+          : null
+        }
         <div>
-          <section id="welcome-msg">
-            <h1>MOON.HOLDINGS</h1>
-            <h4>A Futuratum Project</h4>
-            <h2>Click the <span className="plus">+</span> button to create your portfolio.</h2>
-          </section>
-
-          {
-            this.state.search
-            ? <Search handleClose={this.handleSearchButton} />
-            : null
-          }
-
-          <button
-            id="big-plus-button"
-            tabIndex={0}
-            onClick={this.handleSearchButton}
-          >
-            <span className="plus">+</span>
-            <h1>MOON.HOLDINGS</h1>
-          </button>
-
-          <section id="astronaut">
-            <img src="static/astronaut.png" alt="astronaut" />
-          </section>
+          <Welcome />
+          <PlusButton toggleSearch={this.handleSearchButton} />
+          <Astronaut />
         </div>
       </div>
     );
