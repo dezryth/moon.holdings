@@ -1,15 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Actions
+import { getCoins, setCoins } from 'actions/coins';
+
+// Services
+import { findCoins } from 'services/coinFactory';
+
 class SearchModal extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      coins: [],
+      saved: []
+      // loading: true
+    };
+
     this.handleChange = this.handleChange.bind(this);
     this.listenForEsc = this.listenForEsc.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.listenForEsc, false);
+    this.props.getCoins();
+  }
+
+  componentWillReceiveProps({ coins }) {
+    this.setState({ coins: coins.all, saved: coins.all });
   }
 
   listenForEsc(e) {
@@ -20,24 +38,27 @@ class SearchModal extends React.Component {
 
   handleChange() {
     const text = document.getElementById('coin-search').value;
-    console.log('text', text);
-    // const search = (txt) => {
-    //   const searchedCoins = findCoins(txt);
-    //   this.props.setSearch(searchedCoins);
-    //   this.setState({ coins: searchedCoins });
-    // };
-    //
-    // const clearSearch = () => {
-    //   this.props.setSearch([]);
-    //   this.setState({ coins: this.state.saved });
-    // };
-    //
-    // const handleUpdate = num => (num > 1 ? search(text) : clearSearch());
-    //
-    // return handleUpdate();
+
+    const search = (txt) => {
+      const coins = this.props.coins.all;
+      const searchedCoins = findCoins(txt, coins);
+      this.props.setCoins(searchedCoins);
+      this.setState({ coins: searchedCoins });
+    };
+
+    const clearSearch = () => {
+      this.props.setCoins([]);
+      this.setState({ coins: this.state.saved });
+    };
+
+    const handleUpdate = num => (num > 1 ? search(text) : clearSearch());
+
+    return handleUpdate(text.length);
   }
 
   render() {
+    const { coins } = this.state;
+    console.log('coins', coins);
     return (
       <section id="search-modal">
         <header className="search-header">
@@ -49,29 +70,29 @@ class SearchModal extends React.Component {
           />
           <button className="close-modal-x" onClick={this.props.handleClose} />
         </header>
-        <ul>
-          <li>Bitcoin <span className="symbol">(BTC)</span></li>
-          <li>Ethereum <span className="symbol">(ETH)</span></li>
-          <li>Ripple <span className="symbol">(XRP)</span></li>
-          <li>Bitcoin Cash <span className="symbol">(BCH)</span></li>
-          <li>Litecoin <span className="symbol">(LTC)</span></li>
-          <li>Cardano <span className="symbol">(ADA)</span></li>
+        <ul className="coins-list">
+          { coins !== 'undefined'
+            ? coins.map(coin => (
+              <li key={coin.id}>
+                {coin.name} <span className="symbol">({coin.symbol})</span>
+              </li>))
+            : null
+          }
         </ul>
       </section>
     );
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   getCoins: (...args) => dispatch(getCoins(...args))
-// });
+const mapDispatchToProps = dispatch => ({
+  getCoins: (...args) => dispatch(getCoins(...args)),
+  setCoins: (...args) => { dispatch(setCoins(...args)); }
+});
 
-// const mapStateToProps = ({ coins, loading, portfolio }) => ({
-//   coins,
-//   loading,
-//   portfolio
-// });
+const mapStateToProps = ({ coins }) => ({
+  coins
+});
 
 export const SearchModalJest = SearchModal;
 
-export default connect()(SearchModal);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchModal);

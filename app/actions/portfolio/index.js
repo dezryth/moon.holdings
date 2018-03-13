@@ -8,7 +8,7 @@ export const ADD_COIN_PORTFOLIO = 'ADD_COIN_PORTFOLIO';
 export const UPDATE_COIN_BALANCE = 'UPDATE_COIN_BALANCE';
 export const REMOVE_COIN_PORTFOLIO = 'REMOVE_COIN_PORTFOLIO';
 
-// action creators /////////////////////////////////////////////////////////////
+// action creators
 export function add(portfolio) {
   // console.log('actions/portfolio/add', portfolio);
   return {
@@ -31,7 +31,7 @@ export function update(coin) {
   };
 }
 
-// actions /////////////////////////////////////////////////////////////////////
+// actions
 export function addCoin(coin) {
   return dispatch =>
     api.getCoin(coin.id)
