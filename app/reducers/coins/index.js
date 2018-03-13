@@ -4,7 +4,7 @@
 import { GET_COINS } from 'actions/coins';
 
 const initialState = {
-  coin: [],
+  all: [],
   loading: true
 };
 
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
     case GET_COINS:
       return {
         ...state,
-        coin: action.payload,
+        all: action.coins,
         loading: false
       };
 
