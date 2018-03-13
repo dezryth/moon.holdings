@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { getCoins } from 'actions/coins';
+import { getCoins, setSearch } from 'actions/coins';
+
+// Services
+import { findCoins } from 'services/coinFactory';
 
 class SearchModal extends React.Component {
   constructor(props) {
@@ -33,22 +36,22 @@ class SearchModal extends React.Component {
   }
 
   handleChange() {
-    // const text = document.getElementById('coin-search').value;
-    console.log(this);
-    // const search = (txt) => {
-    //   const searchedCoins = findCoins(txt);
-    //   this.props.setSearch(searchedCoins);
-    //   this.setState({ coins: searchedCoins });
-    // };
-    //
-    // const clearSearch = () => {
-    //   this.props.setSearch([]);
-    //   this.setState({ coins: this.state.saved });
-    // };
-    //
-    // const handleUpdate = num => (num > 1 ? search(text) : clearSearch());
-    //
-    // return handleUpdate();
+    const text = document.getElementById('coin-search').value;
+
+    const search = (txt) => {
+      const searchedCoins = findCoins(txt);
+      this.props.setSearch(searchedCoins);
+      this.setState({ coins: searchedCoins });
+    };
+
+    const clearSearch = () => {
+      this.props.setSearch([]);
+      this.setState({ coins: this.state.saved });
+    };
+
+    const handleUpdate = num => (num > 1 ? search(text) : clearSearch());
+
+    return handleUpdate();
   }
 
   render() {
@@ -78,7 +81,8 @@ class SearchModal extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getCoins: (...args) => dispatch(getCoins(...args))
+  getCoins: (...args) => dispatch(getCoins(...args)),
+  setSearch: (...args) => { dispatch(setSearch(...args)); }
 });
 
 const mapStateToProps = ({ coins }) => ({
