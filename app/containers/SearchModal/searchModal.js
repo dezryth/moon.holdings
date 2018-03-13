@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { getCoins, setSearch } from 'actions/coins';
+import { getCoins, setCoins } from 'actions/coins';
 
 // Services
 import { findCoins } from 'services/coinFactory';
@@ -12,7 +12,8 @@ class SearchModal extends React.Component {
     super(props);
 
     this.state = {
-      coins: []
+      coins: [],
+      saved: []
       // loading: true
     };
 
@@ -26,7 +27,7 @@ class SearchModal extends React.Component {
   }
 
   componentWillReceiveProps({ coins }) {
-    this.setState({ coins: coins.all });
+    this.setState({ coins: coins.all, saved: coins.all });
   }
 
   listenForEsc(e) {
@@ -39,23 +40,25 @@ class SearchModal extends React.Component {
     const text = document.getElementById('coin-search').value;
 
     const search = (txt) => {
-      const searchedCoins = findCoins(txt);
-      this.props.setSearch(searchedCoins);
+      const coins = this.props.coins.all;
+      const searchedCoins = findCoins(txt, coins);
+      this.props.setCoins(searchedCoins);
       this.setState({ coins: searchedCoins });
     };
 
     const clearSearch = () => {
-      this.props.setSearch([]);
+      this.props.setCoins([]);
       this.setState({ coins: this.state.saved });
     };
 
     const handleUpdate = num => (num > 1 ? search(text) : clearSearch());
 
-    return handleUpdate();
+    return handleUpdate(text.length);
   }
 
   render() {
     const { coins } = this.state;
+    console.log('coins', coins);
     return (
       <section id="search-modal">
         <header className="search-header">
@@ -68,11 +71,12 @@ class SearchModal extends React.Component {
           <button className="close-modal-x" onClick={this.props.handleClose} />
         </header>
         <ul className="coins-list">
-          {
-            coins.map(coin => (
+          { coins !== 'undefined'
+            ? coins.map(coin => (
               <li key={coin.id}>
                 {coin.name} <span className="symbol">({coin.symbol})</span>
               </li>))
+            : null
           }
         </ul>
       </section>
@@ -82,7 +86,7 @@ class SearchModal extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   getCoins: (...args) => dispatch(getCoins(...args)),
-  setSearch: (...args) => { dispatch(setSearch(...args)); }
+  setCoins: (...args) => { dispatch(setCoins(...args)); }
 });
 
 const mapStateToProps = ({ coins }) => ({

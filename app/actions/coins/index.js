@@ -27,5 +27,6 @@ export const getCoins = () => dispatch => getTop100().then((res) => {
 });
 
 export const setCoins = coins => (dispatch) => {
+  console.log('setCoins', coins);
   dispatch(set(coins));
 };
