@@ -1,0 +1,56 @@
+#square-edit-container {
+  position: absolute;
+  z-index: 5;
+
+  .close-modal-x {
+    position: absolute;
+    top: -240px;
+    right: -15px;
+  }
+}
+
+#square-edit {
+  position: relative;
+  z-index: 6;
+  margin-top: -240px;
+  margin-left: -130px;
+  width: 640px;
+  height: 480px;
+  color: #fff;
+  background: $midGray;
+
+  .symbol {
+    font-size: em(72);
+  }
+
+  div, button {
+    margin: 0 40px 20px;
+  }
+}
+
+#coin-search-input,
+#edit-coin-price,
+#edit-total-value,
+#save-button {
+  font-size: em(42);
+}
+
+#coin-search-input {
+  margin: 40px 40px 20px;
+  padding: 0 0 0 10px;
+  width: 540px;
+  height: 80px;
+}
+
+#save-button {
+  @include rounded(10px);
+  width: 555px;
+  height: 80px;
+  color: #fff;
+  border: 4px solid #fff;
+  background: $lightBlue;
+
+  &:hover {
+    background: darken($lightBlue, 10%);
+  }
+}

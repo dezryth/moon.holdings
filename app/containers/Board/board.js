@@ -8,7 +8,7 @@ import Search from 'containers/SearchModal/searchModal';
 import Welcome from 'components/Partials/Welcome/welcome';
 import Astronaut from 'components/Partials/Astronaut/astronaut';
 import PlusButton from 'components/Partials/PlusButton/plusButton';
-import CoinSquareEdit from 'components/CoinSquare/coinSquareEdit';
+import SquareEdit from 'components/Squares/squareEdit';
 
 // Actions
 // import { getCoins } from 'actions/coins';
@@ -27,12 +27,14 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // cached: false,
+      coin: {},
+      edit: false,
       search: false
     };
 
-    // this.closeSearch = this.closeSearch.bind(this);
     this.handleSearchButton = this.handleSearchButton.bind(this);
+    this.openSquareEdit = this.openSquareEdit.bind(this);
+    this.closeSquareEdit = this.closeSquareEdit.bind(this);
   }
 
   // closeSearch() {
@@ -47,21 +49,50 @@ class Board extends React.Component {
     }
   }
 
+  openSquareEdit(coin) {
+    this.setState({
+      coin,
+      edit: true,
+      search: false
+    });
+  }
+
+  closeSquareEdit() {
+    this.setState({
+      coin: {},
+      edit: false,
+      search: false
+    });
+  }
+
   /*
     TODO
     Board is the main container which contains Search, selected Coins will be
     added to Redux state and then passed down into Portfolio.
    */
   render() {
+    const { coin } = this.state;
     return (
       <div id="board">
-        <CoinSquareEdit />
+        {
+          this.state.edit
+          ?
+            <div>
+              <SquareEdit coin={coin} closeEdit={this.closeSquareEdit} />
+              <div id="overlay" onClick={this.closeSquareEdit} />
+            </div>
+          : null
+        }
+
         {
           this.state.search
           ?
             <div>
-              <Search handleClose={this.handleSearchButton} />
-              <div id="overlay" role="button" onClick={this.handleSearchButton} />
+              <Search
+                handleClose={this.closeSquareEdit}
+                openEdit={this.openSquareEdit}
+              />
+              <div id="overlay" onClick={this.handleSearchButton} />
             </div>
           : null
         }

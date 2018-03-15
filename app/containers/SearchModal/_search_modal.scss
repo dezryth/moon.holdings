@@ -15,7 +15,6 @@
   background: rgba($darkPurple, .6);
 
   .symbol {
-    margin-left: 2px;
     color: $brightPurple;
   }
 
@@ -24,16 +23,6 @@
     margin: 0 10px 10px 0;
     width: 206px;
     font-size: em(18);
-    color: #fff;
-    background: transparent;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 1px solid #fff;
-
-    &::placeholder {
-      color: #fff;
-    }
   }
 
   li {
@@ -51,6 +40,10 @@
 .coins-list {
   overflow-y: scroll;
   height: 350px;
+
+  .symbol {
+    margin-left: 4px;
+  }
 
   &::-webkit-scrollbar {
     width: 1em;

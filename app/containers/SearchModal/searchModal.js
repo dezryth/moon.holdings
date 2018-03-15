@@ -19,6 +19,7 @@ class SearchModal extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.listenForEsc = this.listenForEsc.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -56,9 +57,13 @@ class SearchModal extends React.Component {
     return handleUpdate(text.length);
   }
 
+  handleSelect(coin) {
+    this.props.openEdit(coin);
+  }
+
   render() {
     const { coins } = this.state;
-    console.log('coins', coins);
+
     return (
       <section id="search-modal">
         <header className="search-header">
@@ -68,13 +73,16 @@ class SearchModal extends React.Component {
             placeholder="Search"
             onChange={() => this.handleChange()}
           />
-          <button className="close-modal-x" onClick={this.props.handleClose} />
+          <button className="close-modal-x" onClick={this.props.closeSquareEdit} />
         </header>
         <ul className="coins-list">
           { coins !== 'undefined'
             ? coins.map(coin => (
-              <li key={coin.id}>
-                {coin.name} <span className="symbol">({coin.symbol})</span>
+              <li key={coin.id} onClick={() => this.handleSelect(coin)}>
+                {coin.name}
+                <span className="symbol">
+                  ({coin.symbol})
+                </span>
               </li>))
             : null
           }
