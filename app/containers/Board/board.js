@@ -8,6 +8,7 @@ import Search from 'containers/SearchModal/searchModal';
 import Welcome from 'components/Partials/Welcome/welcome';
 import Astronaut from 'components/Partials/Astronaut/astronaut';
 import PlusButton from 'components/Partials/PlusButton/plusButton';
+import CoinSquareEdit from 'components/CoinSquare/coinSquareEdit';
 
 // Actions
 // import { getCoins } from 'actions/coins';
@@ -54,6 +55,7 @@ class Board extends React.Component {
   render() {
     return (
       <div id="board">
+        <CoinSquareEdit />
         {
           this.state.search
           ?

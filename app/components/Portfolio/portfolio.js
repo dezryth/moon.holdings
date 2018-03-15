@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import CoinBox from 'components/CoinBox/coinBox';
+import CoinSquare from 'components/CoinSquare/coinSquare';
 
 /*
   TODO
@@ -9,8 +9,8 @@ import CoinBox from 'components/CoinBox/coinBox';
 */
 const Portfolio = ({ coins }) => (
   <div className="portfolio">
-    <h1>CoinBoxes show up here...</h1>
-    {coins.map(coin => <CoinBox coin={coin} />)}
+    <h1>CoinSquares show up here...</h1>
+    {coins.map(coin => <CoinSquare coin={coin} />)}
   </div>
 );
 
