@@ -34,6 +34,19 @@ export default (state = initialState, action) => {
         portfolio: state.portfolio.filter(c => c !== action.coin)
       };
 
+    // case UPDATE_COIN_BALANCE:
+    //   const values = state.map(coin => coin.value);
+    //   const total = values.reduce((x, y) => x + y);
+    //
+    //   return state.map((coin) => {
+    //     coin.percentage = (coin.value / (total * 100));
+    //     if (coin.id === action.coin.id) {
+    //       coin.value = action.coin.value;
+    //       return coin;
+    //     }
+    //     return coin;
+    //   });
+
     default:
       return state;
   }

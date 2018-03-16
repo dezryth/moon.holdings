@@ -43,6 +43,7 @@ class SquareEdit extends React.Component {
 
   handleSave() {
     this.props.addCoin(this.state.coin);
+    this.props.closeEdit();
   }
 
   render() {
