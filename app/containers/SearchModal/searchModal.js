@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { getCoins, setCoins } from 'actions/coins';
+import { getCoins } from 'actions/coins';
 
 // Services
 import { findCoins } from 'services/coinFactory';
@@ -43,12 +43,10 @@ class SearchModal extends React.Component {
     const search = (txt) => {
       const coins = this.props.coins.all;
       const searchedCoins = findCoins(txt, coins);
-      this.props.setCoins(searchedCoins);
       this.setState({ coins: searchedCoins });
     };
 
     const clearSearch = () => {
-      this.props.setCoins([]);
       this.setState({ coins: this.state.saved });
     };
 
@@ -93,8 +91,7 @@ class SearchModal extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getCoins: (...args) => dispatch(getCoins(...args)),
-  setCoins: (...args) => { dispatch(setCoins(...args)); }
+  getCoins: (...args) => dispatch(getCoins(...args))
 });
 
 const mapStateToProps = ({ coins }) => ({

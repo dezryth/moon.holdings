@@ -1,8 +1,12 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
+import { connect } from 'react-redux';
+
+// Actions
+import { addCoin } from 'actions/coins';
 
 // utils
-import { rounder } from 'utils/math';
+import { round, rounder } from 'utils/math';
 
 class SquareEdit extends React.Component {
   constructor(props) {
@@ -20,6 +24,7 @@ class SquareEdit extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   handleFocus(e) {
@@ -34,6 +39,10 @@ class SquareEdit extends React.Component {
       balance,
       value
     });
+  }
+
+  handleSave() {
+    this.props.addCoin(this.state.coin);
   }
 
   render() {
@@ -56,12 +65,12 @@ class SquareEdit extends React.Component {
             {symbol}
           </div>
           <div id="edit-coin-price">
-            1 @ ${price}
+            1 @ ${round(price)}
           </div>
           <div id="edit-total-value">
             ${value}
           </div>
-          <button id="save-button">
+          <button id="save-button" onClick={this.handleSave}>
             Save
           </button>
         </section>
@@ -70,13 +79,14 @@ class SquareEdit extends React.Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   getCoins: (...args) => dispatch(getCoins(...args)),
-//   setCoins: (...args) => { dispatch(setCoins(...args)); }
-// });
-//
+const mapDispatchToProps = dispatch => ({
+  addCoin: (...args) => dispatch(addCoin(...args))
+});
+
 // const mapStateToProps = ({ coins }) => ({
 //   coins
 // });
 
-export default SquareEdit;
+export const SquareEditJest = SquareEdit;
+
+export default connect(null, mapDispatchToProps)(SquareEdit);

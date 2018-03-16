@@ -3,7 +3,8 @@ import { cleanCoins } from 'services/coinFactory';
 
 // action types
 export const GET_COINS = 'GET_COINS';
-export const SET_COINS = 'SET_COINS';
+export const ADD_COIN = 'ADD_COIN';
+export const REMOVE_COIN = 'REMOVE_COIN';
 
 // action creators
 export function get(coins) {
@@ -13,20 +14,30 @@ export function get(coins) {
   };
 }
 
-export function set(coins) {
+export function add(coin) {
   return {
-    type: SET_COINS,
-    coins
+    type: ADD_COIN,
+    coin
   };
 }
 
-// actions
+export function remove(coin) {
+  return {
+    type: REMOVE_COIN,
+    coin
+  };
+}
+
+// action dispatchers
 export const getCoins = () => dispatch => getTop100().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   dispatch(get(cleanedCoins));
 });
 
-export const setCoins = coins => (dispatch) => {
-  console.log('setCoins', coins);
-  dispatch(set(coins));
+export const addCoin = coin => (dispatch) => {
+  dispatch(add(coin));
+};
+
+export const removeCoin = coin => (dispatch) => {
+  dispatch(remove(coin));
 };

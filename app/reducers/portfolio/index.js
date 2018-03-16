@@ -20,7 +20,8 @@ export default (state = initialState, action) => {
     case ADD_COIN_PORTFOLIO:
       return {
         ...state,
-        portfolio: action.payload
+        // portfolio: action.payload
+        portfolio: state.portfolio.concat(action.coin)
       };
 
     case REMOVE_COIN_PORTFOLIO:
