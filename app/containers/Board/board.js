@@ -47,7 +47,7 @@ class Board extends React.Component {
 
   renderSquareEdit(coin) {
     return (
-      <div>
+      <div id="square-edit-wrapper">
         <SquareEdit coin={coin} closeEdit={() => this.toggleSquareEdit(false)} />
         <div id="overlay" onClick={() => this.toggleSquareEdit(false)} />
       </div>
@@ -78,11 +78,9 @@ class Board extends React.Component {
         {portfolio.length > 0 ? <Portfolio coins={portfolio} /> : null}
         {edit ? this.renderSquareEdit(coin) : null}
         {search ? this.renderSearchModal() : null}
-        <div>
-          { portfolio.length === 0 ? <Welcome /> : null }
-          <PlusButton toggleSearch={this.handleSearchButton} />
-          <Astronaut />
-        </div>
+        { portfolio.length === 0 ? <Welcome /> : null }
+        <PlusButton toggleSearch={this.handleSearchButton} />
+        <Astronaut />
       </div>
     );
   }
