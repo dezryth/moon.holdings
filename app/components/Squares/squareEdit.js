@@ -1,6 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 
+// utils
+import { rounder } from 'utils/math';
+
 class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +28,8 @@ class SquareEdit extends React.Component {
 
   handleChange() {
     const balance = document.getElementById('coin-balance').value;
-    const value = (balance * this.state.price);
+    // const value = (balance * this.state.price);
+    const value = rounder(balance, this.state.price);
 
     this.setState({
       balance,
