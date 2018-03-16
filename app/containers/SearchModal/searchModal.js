@@ -56,7 +56,7 @@ class SearchModal extends React.Component {
   }
 
   handleSelect(coin) {
-    this.props.openEdit(coin);
+    this.props.openEdit(true, coin);
   }
 
   render() {

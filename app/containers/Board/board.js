@@ -9,37 +9,25 @@ import Welcome from 'components/Partials/Welcome/welcome';
 import Astronaut from 'components/Partials/Astronaut/astronaut';
 import PlusButton from 'components/Partials/PlusButton/plusButton';
 import SquareEdit from 'components/Squares/squareEdit';
-
-// Actions
-// import { getCoins } from 'actions/coins';
-
-// Services
-// import { findCoins } from 'services/coinFactory';
-//
-// const fetchCoins = (props) => {
-//   const { coins, getCoins: goGetCoins } = props;
-//   if (coins.collection.length === 0) {
-//     goGetCoins();
-//   }
-// };
+import Portfolio from 'components/Portfolio/portfolio';
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       coin: {},
+      portfolio: [],
       edit: false,
       search: false
     };
 
     this.handleSearchButton = this.handleSearchButton.bind(this);
-    this.openSquareEdit = this.openSquareEdit.bind(this);
-    this.closeSquareEdit = this.closeSquareEdit.bind(this);
+    this.toggleSquareEdit = this.toggleSquareEdit.bind(this);
   }
 
-  // closeSearch() {
-  //   this.setState({ search: false });
-  // }
+  componentWillReceiveProps({ coins }) {
+    this.setState({ portfolio: coins.portfolio });
+  }
 
   handleSearchButton(e, bool = null) {
     if (bool) {
@@ -49,55 +37,53 @@ class Board extends React.Component {
     }
   }
 
-  openSquareEdit(coin) {
+  toggleSquareEdit(open = false, coin = {}) {
+    const edit = open;
     this.setState({
       coin,
-      edit: true,
+      edit,
       search: false
     });
   }
 
-  closeSquareEdit() {
-    this.setState({
-      coin: {},
-      edit: false,
-      search: false
-    });
+  createSquareEdit(coin) {
+    return (
+      <div>
+        <SquareEdit coin={coin} closeEdit={() => this.toggleSquareEdit(false)} />
+        <div id="overlay" onClick={() => this.toggleSquareEdit(false)} />
+      </div>
+    );
   }
 
-  /*
-    TODO
-    Board is the main container which contains Search, selected Coins will be
-    added to Redux state and then passed down into Portfolio.
-   */
+  createSearchModal() {
+    return (
+      <div>
+        <Search
+          handleClose={() => this.toggleSquareEdit(false)}
+          openEdit={this.toggleSquareEdit}
+        />
+        <div id="overlay" onClick={this.handleSearchButton} />
+      </div>
+    );
+  }
+
   render() {
-    const { coin } = this.state;
+    const {
+      coin, edit, search, portfolio
+    } = this.state;
+
+    console.log('portfolio', portfolio);
+
     return (
       <div id="board">
-        {
-          this.state.edit
-          ?
-            <div>
-              <SquareEdit coin={coin} closeEdit={this.closeSquareEdit} />
-              <div id="overlay" onClick={this.closeSquareEdit} />
-            </div>
-          : null
-        }
+        {portfolio.length > 0 ? <Portfolio coins={portfolio} /> : null}
 
-        {
-          this.state.search
-          ?
-            <div>
-              <Search
-                handleClose={this.closeSquareEdit}
-                openEdit={this.openSquareEdit}
-              />
-              <div id="overlay" onClick={this.handleSearchButton} />
-            </div>
-          : null
-        }
+        {edit ? this.createSquareEdit(coin) : null}
+
+        {search ? this.createSearchModal() : null}
+
         <div>
-          <Welcome />
+          { portfolio.length === 0 ? <Welcome /> : null }
           <PlusButton toggleSearch={this.handleSearchButton} />
           <Astronaut />
         </div>
@@ -106,16 +92,10 @@ class Board extends React.Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   getCoins: (...args) => dispatch(getCoins(...args))
-// });
-
-// const mapStateToProps = ({ coins, loading, portfolio }) => ({
-//   coins,
-//   loading,
-//   portfolio
-// });
+const mapStateToProps = ({ coins }) => ({
+  coins
+});
 
 export const BoardJest = Board;
 
-export default connect()(Board);
+export default connect(mapStateToProps, null)(Board);
