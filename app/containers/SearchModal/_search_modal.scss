@@ -14,9 +14,7 @@
   border: 1px solid $apricot;
   background: rgba($darkPurple, .6);
 
-  .symbol {
-    color: $brightPurple;
-  }
+  .symbol { color: $brightPurple; }
 
   input {
     flex-grow: 1;
@@ -41,13 +39,9 @@
   overflow-y: scroll;
   height: 350px;
 
-  .symbol {
-    margin-left: 4px;
-  }
+  .symbol { margin-left: 4px; }
 
-  &::-webkit-scrollbar {
-    width: 1em;
-  }
+  &::-webkit-scrollbar { width: 1em; }
 
   &::-webkit-scrollbar-track {
     background: darken($darkPurple, 10%);

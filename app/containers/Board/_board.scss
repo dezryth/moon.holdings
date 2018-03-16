@@ -8,8 +8,6 @@
   padding: 0;
 }
 
-.plus { color: $apricot; }
-
 #overlay {
   animation: fadein .5s;
   position: fixed;
@@ -20,3 +18,5 @@
   height: 100%;
   background-color: rgba(0, 0, 0, .6);
 }
+
+.plus { color: $apricot; }

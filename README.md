@@ -40,6 +40,6 @@ https://www.cryptonator.com/api
 
 #### Social Media
 
-@leongaban
-@paulinhorocha
-@futuratum
+[@leongaban](https://twitter.com/leongaban)
+[@paulinhorocha](https://twitter.com/paulinhorocha)
+[@futuratum](https://futuratum.com)
