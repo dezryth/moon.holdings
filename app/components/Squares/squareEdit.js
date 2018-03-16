@@ -28,7 +28,6 @@ class SquareEdit extends React.Component {
 
   handleChange() {
     const balance = document.getElementById('coin-balance').value;
-    // const value = (balance * this.state.price);
     const value = rounder(balance, this.state.price);
 
     this.setState({
