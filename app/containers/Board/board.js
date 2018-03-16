@@ -37,8 +37,7 @@ class Board extends React.Component {
     }
   }
 
-  toggleSquareEdit(open = false, coin = {}) {
-    const edit = open;
+  toggleSquareEdit(edit = false, coin = {}) {
     this.setState({
       coin,
       edit,
@@ -46,7 +45,7 @@ class Board extends React.Component {
     });
   }
 
-  createSquareEdit(coin) {
+  renderSquareEdit(coin) {
     return (
       <div>
         <SquareEdit coin={coin} closeEdit={() => this.toggleSquareEdit(false)} />
@@ -55,7 +54,7 @@ class Board extends React.Component {
     );
   }
 
-  createSearchModal() {
+  renderSearchModal() {
     return (
       <div>
         <Search
@@ -77,11 +76,8 @@ class Board extends React.Component {
     return (
       <div id="board">
         {portfolio.length > 0 ? <Portfolio coins={portfolio} /> : null}
-
-        {edit ? this.createSquareEdit(coin) : null}
-
-        {search ? this.createSearchModal() : null}
-
+        {edit ? this.renderSquareEdit(coin) : null}
+        {search ? this.renderSearchModal() : null}
         <div>
           { portfolio.length === 0 ? <Welcome /> : null }
           <PlusButton toggleSearch={this.handleSearchButton} />
