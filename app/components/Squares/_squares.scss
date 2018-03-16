@@ -19,23 +19,19 @@
   color: #fff;
   background: $midGray;
 
-  .symbol {
-    font-size: em(72);
-  }
+  .symbol { font-size: em(72); }
 
-  div, button {
-    margin: 0 40px 20px;
-  }
+  div, button { margin: 0 40px 20px; }
 }
 
-#coin-search-input,
+#coin-balance,
 #edit-coin-price,
 #edit-total-value,
 #save-button {
   font-size: em(42);
 }
 
-#coin-search-input {
+#coin-balance {
   margin: 40px 40px 20px;
   padding: 0 0 0 10px;
   width: 540px;

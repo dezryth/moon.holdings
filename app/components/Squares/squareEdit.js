@@ -1,22 +1,40 @@
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 
 class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
 
+    const { coin } = this.props;
+    const { price_usd: price } = coin;
+
     this.state = {
-      coin: this.props.coin
+      coin,
+      price,
+      balance: 0,
+      value: 0
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+  }
+
+  handleFocus(e) {
+    e.target.select();
   }
 
   handleChange() {
-    console.log(this);
+    const balance = document.getElementById('coin-balance').value;
+    const value = (balance * this.state.price);
+
+    this.setState({
+      balance,
+      value
+    });
   }
 
   render() {
-    const { coin } = this.state;
+    const { coin, value } = this.state;
     const { symbol, price_usd: price } = coin;
 
     return (
@@ -24,9 +42,11 @@ class SquareEdit extends React.Component {
         <button className="close-modal-x" onClick={this.props.closeEdit} />
         <section id="square-edit">
           <input
-            id="coin-search-input"
+            id="coin-balance"
             type="number"
             placeholder="0"
+            value={this.state.balance}
+            onFocus={this.handleFocus}
             onChange={() => this.handleChange()}
           />
           <div className="symbol">
@@ -36,7 +56,7 @@ class SquareEdit extends React.Component {
             1 @ ${price}
           </div>
           <div id="edit-total-value">
-            $0
+            ${value}
           </div>
           <button id="save-button">
             Save
