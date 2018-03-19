@@ -12,19 +12,29 @@ class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
 
-    const { coin } = this.props;
+    const { coin, coins } = this.props;
+    const { portfolio } = coins;
     const { price_usd: price } = coin;
 
     this.state = {
       coin,
       price,
       balance: 0,
-      value: 0
+      value: 0,
+      portfolio,
+      inPortfolio: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleSave = this.handleSave.bind(this);
+  }
+
+  componentWillMount() {
+    const { coin } = this.state;
+    const { portfolio } = this.state;
+    const inPortfolio = portfolio.filter(c => c.id === coin.id);
+    this.setState({ inPortfolio: inPortfolio.length > 0 });
   }
 
   handleFocus(e) {
@@ -46,14 +56,26 @@ class SquareEdit extends React.Component {
     this.props.closeEdit();
   }
 
+  squareHeight() {
+    return this.state.inPortfolio ? 'square-edit-tall' : 'square-edit-short';
+  }
+
+  renderRemoveButton() {
+    return (
+      <button id="save-button" onClick={this.handleSave}>
+        Remove
+      </button>
+    );
+  }
+
   render() {
-    const { coin, value } = this.state;
+    const { coin, value, inPortfolio } = this.state;
     const { symbol, price_usd: price } = coin;
 
     return (
       <div id="square-edit-container">
         <button className="close-modal-x" onClick={this.props.closeEdit} />
-        <section id="square-edit">
+        <section id="square-edit" className={this.squareHeight()}>
           <input
             id="coin-balance"
             type="number"
@@ -74,6 +96,7 @@ class SquareEdit extends React.Component {
           <button id="save-button" onClick={this.handleSave}>
             Save
           </button>
+          { inPortfolio ? this.renderRemoveButton() : null}
         </section>
       </div>
     );
@@ -84,10 +107,10 @@ const mapDispatchToProps = dispatch => ({
   addCoin: (...args) => dispatch(addCoin(...args))
 });
 
-// const mapStateToProps = ({ coins }) => ({
-//   coins
-// });
+const mapStateToProps = ({ coins }) => ({
+  coins
+});
 
 export const SquareEditJest = SquareEdit;
 
-export default connect(null, mapDispatchToProps)(SquareEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(SquareEdit);
