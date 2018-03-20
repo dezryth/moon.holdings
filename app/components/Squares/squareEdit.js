@@ -49,7 +49,6 @@ class SquareEdit extends React.Component {
   }
 
   handleChange(event) {
-    // const balance = document.getElementById('coin-balance').value;
     const balance = event.target.value;
     const value = rounder(balance, this.state.price);
 
@@ -59,10 +58,10 @@ class SquareEdit extends React.Component {
     });
   }
 
-  // @TODO use Object.assign here
   handleSave() {
-    const coinToSave = this.state.coin;
-    coinToSave.balance = this.state.balance;
+    const { balance } = this.state;
+    const coinToSave = Object.assign({ balance }, this.state.coin);
+
     this.props.addCoin(coinToSave);
     this.props.closeEdit();
   }
