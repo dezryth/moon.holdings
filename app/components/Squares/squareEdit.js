@@ -19,8 +19,8 @@ class SquareEdit extends React.Component {
     this.state = {
       coin,
       price,
-      balance: 0,
-      value: 0,
+      balance: '',
+      value: '',
       portfolio,
       inPortfolio: false
     };
@@ -31,18 +31,26 @@ class SquareEdit extends React.Component {
   }
 
   componentWillMount() {
-    const { coin } = this.state;
+    const { coin, balance: stateBalance } = this.state;
     const { portfolio } = this.state;
     const inPortfolio = portfolio.filter(c => c.id === coin.id);
-    this.setState({ inPortfolio: inPortfolio.length > 0 });
+    const portCoin = inPortfolio[0] ? inPortfolio[0] : coin;
+    const balance = portCoin.balance ? portCoin.balance : stateBalance;
+
+    this.setState({
+      coin: portCoin,
+      balance,
+      inPortfolio: inPortfolio.length > 0
+    });
   }
 
   handleFocus(e) {
     e.target.select();
   }
 
-  handleChange() {
-    const balance = document.getElementById('coin-balance').value;
+  handleChange(event) {
+    // const balance = document.getElementById('coin-balance').value;
+    const balance = event.target.value;
     const value = rounder(balance, this.state.price);
 
     this.setState({
@@ -51,8 +59,11 @@ class SquareEdit extends React.Component {
     });
   }
 
+  // @TODO use Object.assign here
   handleSave() {
-    this.props.addCoin(this.state.coin);
+    const coinToSave = this.state.coin;
+    coinToSave.balance = this.state.balance;
+    this.props.addCoin(coinToSave);
     this.props.closeEdit();
   }
 
@@ -82,7 +93,7 @@ class SquareEdit extends React.Component {
             placeholder="0"
             value={this.state.balance}
             onFocus={this.handleFocus}
-            onChange={() => this.handleChange()}
+            onChange={this.handleChange}
           />
           <div className="symbol">
             {symbol}
@@ -96,7 +107,7 @@ class SquareEdit extends React.Component {
           <button id="save-button" onClick={this.handleSave}>
             Save
           </button>
-          { inPortfolio ? this.renderRemoveButton() : null}
+          { inPortfolio ? this.renderRemoveButton() : null }
         </section>
       </div>
     );
