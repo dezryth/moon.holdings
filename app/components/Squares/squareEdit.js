@@ -1,9 +1,11 @@
 /* eslint-disable class-methods-use-this */
+/* eslint-disable no-unused-expressions */
+
 import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { addCoin } from 'actions/coins';
+import { addCoin, updateCoin } from 'actions/coins';
 
 // utils
 import { round, rounder } from 'utils/math';
@@ -58,12 +60,19 @@ class SquareEdit extends React.Component {
     });
   }
 
-  handleSave() {
-    // const { inPortfolio } = this.state;
-    const { balance } = this.state;
-    const coinToSave = Object.assign({ balance }, this.state.coin);
+  addCoin(balance) {
+    this.props.addCoin(Object.assign({ balance }, this.state.coin));
+  }
 
-    this.props.addCoin(coinToSave);
+  updateCoin(coin, balance) {
+    const updatedCoin = Object.assign(coin);
+    updatedCoin.balance = balance;
+    this.props.updateCoin(updatedCoin);
+  }
+
+  handleSave() {
+    const { coin, balance, inPortfolio } = this.state;
+    inPortfolio ? this.updateCoin(coin, balance) : this.addCoin(balance);
     this.props.closeEdit();
   }
 
@@ -115,7 +124,8 @@ class SquareEdit extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addCoin: (...args) => dispatch(addCoin(...args))
+  addCoin: (...args) => dispatch(addCoin(...args)),
+  updateCoin: (...args) => dispatch(updateCoin(...args))
 });
 
 const mapStateToProps = ({ coins }) => ({

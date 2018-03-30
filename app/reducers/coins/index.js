@@ -4,7 +4,8 @@
 import {
   GET_COINS,
   ADD_COIN,
-  REMOVE_COIN
+  REMOVE_COIN,
+  UPDATE_COIN
 } from 'actions/coins';
 
 const initialState = {
@@ -23,6 +24,7 @@ export default (state = initialState, action) => {
       };
 
     case ADD_COIN:
+      console.log('ADD_COIN');
       return {
         ...state,
         portfolio: [...state.portfolio, action.coin]
@@ -32,6 +34,27 @@ export default (state = initialState, action) => {
       return {
         ...state,
         portfolio: state.portfolio.filter(c => c !== action.coin)
+      };
+
+    case UPDATE_COIN:
+      console.log('UPDATE_COIN');
+      const found = state.portfolio.find(c => c.id === action.coin.id);
+      console.log(' found', found);
+
+      const updatedPortfolio = state.portfolio.forEach((c) => {
+        if (c.id === action.coin.id) {
+          c = Object.assign({}, action.coin);
+          return c;
+        }
+
+        return c;
+      });
+
+      console.log(' updatedPortfolio', updatedPortfolio);
+
+      return {
+        ...state,
+        portfolio: updatedPortfolio
       };
 
     // case UPDATE_COIN_BALANCE:
