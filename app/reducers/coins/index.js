@@ -1,6 +1,5 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable no-param-reassign */
-
 import {
   GET_COINS,
   ADD_COIN,
@@ -24,34 +23,27 @@ export default (state = initialState, action) => {
       };
 
     case ADD_COIN:
-      console.log('ADD_COIN');
       return {
         ...state,
         portfolio: [...state.portfolio, action.coin]
       };
 
     case REMOVE_COIN:
-      console.log('REMOVE_COIN');
       return {
         ...state,
         portfolio: state.portfolio.filter(c => c !== action.coin)
       };
 
     case UPDATE_COIN:
-      console.log('UPDATE_COIN');
       const found = state.portfolio.find(c => c.id === action.coin.id);
-      console.log(' found', found);
 
-      const updatedPortfolio = state.portfolio.forEach((c) => {
-        if (c.id === action.coin.id) {
-          c = Object.assign({}, action.coin);
-          return c;
+      const updatedPortfolio = state.portfolio.map((c) => {
+        if (c.id === found.id) {
+          return Object.assign({}, found);
         }
 
         return c;
       });
-
-      console.log(' updatedPortfolio', updatedPortfolio);
 
       return {
         ...state,

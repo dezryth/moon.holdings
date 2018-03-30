@@ -1,6 +1,5 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-unused-expressions */
-
 import React from 'react';
 import { connect } from 'react-redux';
 
