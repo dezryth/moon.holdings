@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { addCoin, updateCoin } from 'actions/coins';
+import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
 // utils
 import { round, rounder } from 'utils/math';
@@ -30,6 +30,7 @@ class SquareEdit extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   componentWillMount() {
@@ -60,8 +61,8 @@ class SquareEdit extends React.Component {
     });
   }
 
-  addCoin(balance) {
-    this.props.addCoin(Object.assign({ balance }, this.state.coin));
+  addCoin(coin, balance) {
+    this.props.addCoin(Object.assign({ balance }, coin));
   }
 
   updateCoin(coin, balance) {
@@ -72,7 +73,13 @@ class SquareEdit extends React.Component {
 
   handleSave() {
     const { coin, balance, inPortfolio } = this.state;
-    inPortfolio ? this.updateCoin(coin, balance) : this.addCoin(balance);
+    inPortfolio ? this.updateCoin(coin, balance) : this.addCoin(coin, balance);
+    this.props.closeEdit();
+  }
+
+  handleRemove() {
+    const { coin } = this.state;
+    this.props.removeCoin(coin);
     this.props.closeEdit();
   }
 
@@ -82,7 +89,7 @@ class SquareEdit extends React.Component {
 
   renderRemoveButton() {
     return (
-      <button id="save-button" onClick={this.handleSave}>
+      <button id="save-button" onClick={this.handleRemove}>
         Remove
       </button>
     );
@@ -125,7 +132,8 @@ class SquareEdit extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   addCoin: (...args) => dispatch(addCoin(...args)),
-  updateCoin: (...args) => dispatch(updateCoin(...args))
+  updateCoin: (...args) => dispatch(updateCoin(...args)),
+  removeCoin: (...args) => dispatch(removeCoin(...args))
 });
 
 const mapStateToProps = ({ coins }) => ({

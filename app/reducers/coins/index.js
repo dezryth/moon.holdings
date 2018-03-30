@@ -31,6 +31,7 @@ export default (state = initialState, action) => {
       };
 
     case REMOVE_COIN:
+      console.log('REMOVE_COIN');
       return {
         ...state,
         portfolio: state.portfolio.filter(c => c !== action.coin)
