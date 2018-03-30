@@ -59,6 +59,7 @@ class SquareEdit extends React.Component {
   }
 
   handleSave() {
+    const { inPortfolio } = this.state;
     const { balance } = this.state;
     const coinToSave = Object.assign({ balance }, this.state.coin);
 
@@ -67,7 +68,7 @@ class SquareEdit extends React.Component {
   }
 
   squareHeight() {
-    return this.state.inPortfolio ? 'square-edit-tall' : 'square-edit-short';
+    return this.state.inPortfolio ? 'edit-tall' : 'edit-short';
   }
 
   renderRemoveButton() {
