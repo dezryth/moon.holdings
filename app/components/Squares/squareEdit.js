@@ -1,9 +1,10 @@
 /* eslint-disable class-methods-use-this */
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { addCoin } from 'actions/coins';
+import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
 // utils
 import { round, rounder } from 'utils/math';
@@ -12,27 +13,45 @@ class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
 
-    const { coin } = this.props;
+    const { coin, coins } = this.props;
+    const { portfolio } = coins;
     const { price_usd: price } = coin;
 
     this.state = {
       coin,
       price,
-      balance: 0,
-      value: 0
+      balance: '',
+      value: '',
+      portfolio,
+      inPortfolio: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  componentWillMount() {
+    const { coin, balance: stateBalance } = this.state;
+    const { portfolio } = this.state;
+    const inPortfolio = portfolio.filter(c => c.id === coin.id);
+    const portCoin = inPortfolio[0] ? inPortfolio[0] : coin;
+    const balance = portCoin.balance ? portCoin.balance : stateBalance;
+
+    this.setState({
+      coin: portCoin,
+      balance,
+      inPortfolio: inPortfolio.length > 0
+    });
   }
 
   handleFocus(e) {
     e.target.select();
   }
 
-  handleChange() {
-    const balance = document.getElementById('coin-balance').value;
+  handleChange(event) {
+    const balance = event.target.value;
     const value = rounder(balance, this.state.price);
 
     this.setState({
@@ -41,26 +60,55 @@ class SquareEdit extends React.Component {
     });
   }
 
+  addCoin(coin, balance) {
+    this.props.addCoin(Object.assign({ balance }, coin));
+  }
+
+  updateCoin(coin, balance) {
+    const updatedCoin = Object.assign(coin);
+    updatedCoin.balance = balance;
+    this.props.updateCoin(updatedCoin);
+  }
+
   handleSave() {
-    this.props.addCoin(this.state.coin);
+    const { coin, balance, inPortfolio } = this.state;
+    inPortfolio ? this.updateCoin(coin, balance) : this.addCoin(coin, balance);
     this.props.closeEdit();
   }
 
+  handleRemove() {
+    const { coin } = this.state;
+    this.props.removeCoin(coin);
+    this.props.closeEdit();
+  }
+
+  squareHeight() {
+    return this.state.inPortfolio ? 'edit-tall' : 'edit-short';
+  }
+
+  renderRemoveButton() {
+    return (
+      <button id="save-button" onClick={this.handleRemove}>
+        Remove
+      </button>
+    );
+  }
+
   render() {
-    const { coin, value } = this.state;
+    const { coin, value, inPortfolio } = this.state;
     const { symbol, price_usd: price } = coin;
 
     return (
       <div id="square-edit-container">
         <button className="close-modal-x" onClick={this.props.closeEdit} />
-        <section id="square-edit">
+        <section id="square-edit" className={this.squareHeight()}>
           <input
             id="coin-balance"
             type="number"
             placeholder="0"
             value={this.state.balance}
             onFocus={this.handleFocus}
-            onChange={() => this.handleChange()}
+            onChange={this.handleChange}
           />
           <div className="symbol">
             {symbol}
@@ -74,6 +122,7 @@ class SquareEdit extends React.Component {
           <button id="save-button" onClick={this.handleSave}>
             Save
           </button>
+          { inPortfolio ? this.renderRemoveButton() : null }
         </section>
       </div>
     );
@@ -81,13 +130,15 @@ class SquareEdit extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addCoin: (...args) => dispatch(addCoin(...args))
+  addCoin: (...args) => dispatch(addCoin(...args)),
+  updateCoin: (...args) => dispatch(updateCoin(...args)),
+  removeCoin: (...args) => dispatch(removeCoin(...args))
 });
 
-// const mapStateToProps = ({ coins }) => ({
-//   coins
-// });
+const mapStateToProps = ({ coins }) => ({
+  coins
+});
 
 export const SquareEditJest = SquareEdit;
 
-export default connect(null, mapDispatchToProps)(SquareEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(SquareEdit);

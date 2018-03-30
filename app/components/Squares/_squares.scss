@@ -21,7 +21,6 @@
   z-index: 6;
   flex: 0 1 auto;
   width: 640px;
-  height: 480px;
   color: #fff;
   background: $midGray;
 
@@ -29,6 +28,14 @@
 
   div,
   button { margin: 0 40px 20px; }
+}
+
+.edit-short {
+  height: 480px;
+}
+
+.edit-tall {
+  height: 580px;
 }
 
 #coin-balance,

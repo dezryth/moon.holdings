@@ -71,8 +71,6 @@ class Board extends React.Component {
       coin, edit, search, portfolio
     } = this.state;
 
-    console.log('portfolio', portfolio);
-
     return (
       <div id="board">
         {portfolio.length > 0 ? <Portfolio coins={portfolio} /> : null}

@@ -59,10 +59,6 @@ class SearchModal extends React.Component {
   }
 
   handleSelect(coin) {
-    // let style;
-    // if (coin.id === 'btc') {
-    //   style === styles.bitcoin;
-    // }
     this.props.openEdit(true, coin);
   }
 

@@ -1,10 +1,10 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable no-param-reassign */
-
 import {
   GET_COINS,
   ADD_COIN,
-  REMOVE_COIN
+  REMOVE_COIN,
+  UPDATE_COIN
 } from 'actions/coins';
 
 const initialState = {
@@ -32,6 +32,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         portfolio: state.portfolio.filter(c => c !== action.coin)
+      };
+
+    case UPDATE_COIN:
+      const found = state.portfolio.find(c => c.id === action.coin.id);
+
+      const updatedPortfolio = state.portfolio.map((c) => {
+        if (c.id === found.id) {
+          return Object.assign({}, found);
+        }
+
+        return c;
+      });
+
+      return {
+        ...state,
+        portfolio: updatedPortfolio
       };
 
     // case UPDATE_COIN_BALANCE:
