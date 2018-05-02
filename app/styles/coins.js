@@ -108,11 +108,6 @@ export const nano = {
   backgroundColor: '#4E92DF'
 };
 
-export const tron = {
-  color: '#fff',
-  backgroundColor: '#032369'
-};
-
 export const bitcoingold = {
   color: '#FBBE2D',
   backgroundColor: '#222423'
@@ -123,7 +118,7 @@ export const zcash = {
   backgroundColor: '#EBB451'
 };
 
-export const digixdao  = {
+export const digixdao = {
   color: '#F0C838',
   backgroundColor: '#212429'
 };
@@ -173,7 +168,7 @@ export const maker = {
   backgroundColor: '#2ABB9C'
 };
 
-export const veritaseum  = {
+export const veritaseum = {
   color: '#fff',
   backgroundColor: '#F49749'
 };
@@ -198,12 +193,12 @@ export const augur = {
   backgroundColor: '#412766'
 };
 
-export const  bytom = {
+export const bytom = {
   color: '#fff',
   backgroundColor: '#5A5A5A'
 };
 
-export const decred  = {
+export const decred = {
   color: '#2F76FB',
   backgroundColor: '#3AD6A3'
 };
@@ -223,7 +218,7 @@ export const zilliqa = {
   backgroundColor: '#46494B'
 };
 
-export const ontology  = {
+export const ontology = {
   color: '#fff',
   backgroundColor: '#39A4BC'
 };
@@ -238,10 +233,11 @@ export const aion = {
   backgroundColor: '#131944'
 };
 
-// export const 0x  = {
-//   color: '#fff',
-//   backgroundColor: '#404040'
-// };
+// @TODO Special case: 0x => zrx
+export const zrx = {
+  color: '#fff',
+  backgroundColor: '#404040'
+};
 
 export const ark = {
   color: '#fff',
@@ -293,7 +289,7 @@ export const nebulas = {
   backgroundColor: '#fff'
 };
 
-export const pivx= {
+export const pivx = {
   color: '#fff',
   backgroundColor: '#7C68A4'
 };
@@ -497,6 +493,3 @@ export const iconomi = {
   color: '#4D6F8B',
   backgroundColor: '#829AAE'
 };
-
-
-
