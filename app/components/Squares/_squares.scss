@@ -55,4 +55,10 @@
   background: $lightBlue;
 
   &:hover { background: darken($lightBlue, 10%); }
+
+  &:disabled {
+    color: $lightGray;
+    border: 4px solid $lightGray;
+    background: $midGray;
+  }
 }

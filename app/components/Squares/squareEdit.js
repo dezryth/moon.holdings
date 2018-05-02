@@ -20,7 +20,7 @@ class SquareEdit extends React.Component {
     this.state = {
       coin,
       price,
-      balance: '',
+      balance: 0,
       value: '',
       portfolio,
       inPortfolio: false
@@ -97,6 +97,7 @@ class SquareEdit extends React.Component {
   render() {
     const { coin, value, inPortfolio } = this.state;
     const { symbol, price_usd: price } = coin;
+    const isDisabled = this.state.balance <= 0;
 
     return (
       <div id="square-edit-container">
@@ -119,7 +120,7 @@ class SquareEdit extends React.Component {
           <div id="edit-total-value">
             ${value}
           </div>
-          <button id="save-button" onClick={this.handleSave}>
+          <button id="save-button" onClick={this.handleSave} disabled={isDisabled}>
             Save
           </button>
           { inPortfolio ? this.renderRemoveButton() : null }
