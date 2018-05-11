@@ -1,0 +1,19 @@
+.portfolio-container {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  margin-left: 20px;
+}
+
+.coin-square {
+  align-self: auto;
+  margin: 20px 20px 0 0;
+  padding: 20px;
+  min-width: 120px;
+  min-height: 120px;
+  line-height: 120px;
+  color: #fff;
+  background: $lightGray;
+}
