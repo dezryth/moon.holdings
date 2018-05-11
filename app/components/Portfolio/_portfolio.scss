@@ -9,11 +9,22 @@
 
 .coin-square {
   align-self: auto;
-  margin: 20px 20px 0 0;
+  margin-top: 20px;
   padding: 20px;
   min-width: 120px;
   min-height: 120px;
-  line-height: 120px;
   color: #fff;
   background: $lightGray;
+
+  p,
+  em { font-family: Overpass; }
+
+  p { font-weight: 200; font-size: em(12); }
+
+  p.f18 { font-size: em(18); }
+
+  p,
+  h1 { margin-bottom: 10px; }
+
+  h1 { font-size: em(24); }
 }
