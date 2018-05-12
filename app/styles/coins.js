@@ -238,7 +238,6 @@ export const aion = {
   backgroundColor: '#131944'
 };
 
-// @TODO Special case: 0x => zrx
 export const zrx = {
   color: '#fff',
   backgroundColor: '#404040'

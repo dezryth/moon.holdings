@@ -18,12 +18,12 @@ export const formatPriceUSD = (coin) => {
   return coin;
 };
 
-export const zeroBalanceValue = (coin) => {
-  coin.balance = 0;
-  coin.value = 0;
-  coin.percentage = 0;
-  return coin;
-};
+export const zeroBalanceValue = coin =>
+  Object.assign({
+    balance: 0,
+    value: 0,
+    percentage: 0
+  }, coin);
 
 export const setStyle = (id, style) => {
   switch (id) {
