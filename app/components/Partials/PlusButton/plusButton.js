@@ -7,6 +7,6 @@ export default ({ toggleSearch }) => (
     onClick={toggleSearch}
   >
     <span className="plus">+</span>
-    <h1>MOON.HOLDINGS</h1>
+    <h1>Add Asset</h1>
   </button>
 );

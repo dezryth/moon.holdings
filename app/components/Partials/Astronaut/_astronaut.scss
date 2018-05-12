@@ -2,4 +2,11 @@
   position: fixed;
   bottom: -5px;
   right: 40px;
+
+  h1 {
+    font-size: em(32);
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+  }
 }
