@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for utils/math.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">utils</a> math.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Internal functions
+const floor = num =&gt; (Math.floor(num * 100) / 100);
+&nbsp;
+// Exported
+export const round = <span class="fstat-no" title="function not covered" >va</span>lue =&gt; <span class="cstat-no" title="statement not covered" >Math.round((value) * 100) / 100;</span>
+&nbsp;
+export const multiply = <span class="fstat-no" title="function not covered" >(n</span>um1, num2) =&gt; <span class="cstat-no" title="statement not covered" >num1 * num2;</span>
+&nbsp;
+export const rounder = <span class="fstat-no" title="function not covered" >(b</span>alance, priceUsd) =&gt; <span class="cstat-no" title="statement not covered" >round(multiply(balance, floor(priceUsd)));</span>
+&nbsp;
+export const numberWithCommas = <span class="fstat-no" title="function not covered" >x </span>=&gt; <span class="cstat-no" title="statement not covered" >x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');</span>
+&nbsp;
+export const calcTotal = <span class="fstat-no" title="function not covered" >(a</span>ssets) =&gt; {
+  const values = <span class="cstat-no" title="statement not covered" >assets.map(<span class="fstat-no" title="function not covered" >as</span>set =&gt; <span class="cstat-no" title="statement not covered" >asset.value)</span>;</span>
+  const total = <span class="cstat-no" title="statement not covered" >values.reduce(<span class="fstat-no" title="function not covered" >(s</span>um, value) =&gt; <span class="cstat-no" title="statement not covered" >sum + value,</span> 0);</span>
+<span class="cstat-no" title="statement not covered" >  return numberWithCommas(floor(total));</span>
+};
+&nbsp;
+export const calculateBalance = coin =&gt; floor(coin.balance * coin.price_usd);
+&nbsp;
+export const portfolioBalance = <span class="fstat-no" title="function not covered" >co</span>ins =&gt;
+<span class="cstat-no" title="statement not covered" >  numberWithCommas(floor(coins.reduce(<span class="fstat-no" title="function not covered" >(v</span>al, coin) =&gt; (<span class="cstat-no" title="statement not covered" >val + +(coin.value))</span>, 0)));</span>
+&nbsp;
+// export const formatPercentage = (percent) =&gt; {
+//   const num = percent || 0;
+//   const currency = num.toFixed(2);
+//   const split = currency.split('.');
+//   const interger = parseInt(split[0]);
+//   const decimals = parseInt(split[1]);
+//
+//   if (decimals === 0) {
+//     interger.toFixed(0);
+//     return interger;
+//   }
+//
+//   return currency;
+// };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat May 12 2018 16:09:30 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

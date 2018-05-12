@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Portfolio /> component when rendering should render a component matching the snapshot 1`] = `
+<div>
+  <section
+    className="portfolio-balance"
+  >
+    $
+    0
+  </section>
+  <ul
+    className="portfolio-container"
+  />
+</div>
+`;
