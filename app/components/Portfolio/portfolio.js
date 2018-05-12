@@ -3,15 +3,13 @@ import React from 'react';
 // Components
 import Square from 'components/Squares/square';
 
-const calculateBalance = (coins) => {
-  console.log('coins', coins);
-  return coins.reduce((bal, coin) => (bal + Number(coin.balance)), 0);
-};
+// Utils
+import { portfolioBalance } from 'utils/math';
 
 const Portfolio = ({ coins }) => (
   <div>
     <section className="portfolio-balance">
-      {calculateBalance(coins)}
+      ${portfolioBalance(coins)}
     </section>
     <ul className="portfolio-container">
       {coins.map(coin => (<Square key={coin.id} {...coin} />))}
