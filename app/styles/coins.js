@@ -13,6 +13,11 @@ export const ripple = {
   backgroundColor: '#1B84E6'
 };
 
+export const bitcoinCash = {
+  color: '#fff',
+  backgroundColor: '#61be42'
+};
+
 export const litecoin = {
   color: '#fff',
   backgroundColor: '#414141'
@@ -233,7 +238,6 @@ export const aion = {
   backgroundColor: '#131944'
 };
 
-// @TODO Special case: 0x => zrx
 export const zrx = {
   color: '#fff',
   backgroundColor: '#404040'
