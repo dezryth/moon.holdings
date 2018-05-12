@@ -13,6 +13,11 @@ export const ripple = {
   backgroundColor: '#1B84E6'
 };
 
+export const bitcoinCash = {
+  color: '#fff',
+  backgroundColor: '#61be42'
+};
+
 export const litecoin = {
   color: '#fff',
   backgroundColor: '#414141'
