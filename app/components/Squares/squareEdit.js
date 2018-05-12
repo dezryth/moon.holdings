@@ -6,8 +6,12 @@ import { connect } from 'react-redux';
 // Actions
 import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
-// utils
+// Utils
 import { round, rounder } from 'utils/math';
+import { setStyle } from 'utils/modifiers';
+
+// Styles
+import * as style from 'styles/coins';
 
 class SquareEdit extends React.Component {
   constructor(props) {
@@ -102,7 +106,11 @@ class SquareEdit extends React.Component {
     return (
       <div id="square-edit-container">
         <button className="close-modal-x" onClick={this.props.closeEdit} />
-        <section id="square-edit" className={this.squareHeight()}>
+        <section
+          id="square-edit"
+          className={this.squareHeight()}
+          style={setStyle(coin.id, style)}
+        >
           <input
             id="coin-balance"
             type="number"
