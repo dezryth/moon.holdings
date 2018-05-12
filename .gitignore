@@ -3,6 +3,7 @@ bower_components/
 moonholdings/
 node_modules/
 .npm
+coverage
 
 # Files
 .DS_Store
