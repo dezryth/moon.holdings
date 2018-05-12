@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
 // Utils
-import { round, rounder } from 'utils/math';
+import { numberWithCommas, round, rounder } from 'utils/math';
 import { setStyle } from 'utils/modifiers';
 
 // Styles
@@ -132,7 +132,7 @@ class SquareEdit extends React.Component {
             1 @ ${round(price)}
           </div>
           <div id="edit-total-value">
-            ${value}
+            ${numberWithCommas(value)}
           </div>
           <button id="save-button" onClick={this.handleSave} disabled={isDisabled}>
             Save
