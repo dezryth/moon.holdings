@@ -3,6 +3,9 @@
 /* eslint-disable func-names */
 /* eslint-disable no-useless-escape */
 
+// Styles
+import * as style from 'styles/coins';
+
 // Converts camelCase to snake-case
 String.prototype.toDash = function () {
   return this.replace(/([A-Z])/g, $1 => `-${$1.toLowerCase()}`);
@@ -25,7 +28,7 @@ export const zeroBalanceValue = coin =>
     percentage: 0
   }, coin);
 
-export const setStyle = (id, style) => {
+export const setStyle = (id) => {
   switch (id) {
     case 'bitcoin-cash': return style[id.toCamel()];
     case '0x': return style.zrx;

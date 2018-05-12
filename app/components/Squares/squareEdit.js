@@ -10,9 +10,6 @@ import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 import { numberWithCommas, round, rounder } from 'utils/math';
 import { setStyle } from 'utils/modifiers';
 
-// Styles
-import * as style from 'styles/coins';
-
 class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -115,7 +112,7 @@ class SquareEdit extends React.Component {
         <section
           id="square-edit"
           className={this.squareHeight()}
-          style={setStyle(coin.id, style)}
+          style={setStyle(coin.id)}
         >
           <input
             id="coin-balance"

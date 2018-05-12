@@ -69,3 +69,33 @@
     background: $midGray;
   }
 }
+
+.coin-square {
+  @include transition(all, .2s, ease-in-out);
+  align-self: auto;
+  margin-top: 20px;
+  padding: 20px;
+  min-width: 120px;
+  min-height: 120px;
+  color: #fff;
+  background: $lightGray;
+  border: 2px solid rgba(255, 0, 0, 0);
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid #fff;
+    opacity: 0.8;
+  }
+
+  p,
+  em { font-family: Overpass; }
+
+  p { font-weight: 200; font-size: em(12); }
+
+  p.f18 { font-size: em(18); }
+
+  p,
+  h1 { margin-bottom: 10px; }
+
+  h1 { font-size: em(24); }
+}
