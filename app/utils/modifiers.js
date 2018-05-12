@@ -10,3 +10,5 @@ export const zeroBalanceValue = (coin) => {
   coin.percentage = 0;
   return coin;
 };
+
+export const setStyle = (id, style) => style[id];
