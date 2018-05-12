@@ -9,13 +9,8 @@ const coin = {
   balance: '0'
 };
 
-const calculateBalance = jest.fn();
-const setStyle = jest.fn();
-
 describe('<Square /> component', () => {
   testCommonComponentAttrs(Square, {
-    coin,
-    setStyle,
-    calculateBalance
+    coin
   });
 });

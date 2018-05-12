@@ -21,7 +21,12 @@ const ExtractTextPluginConfig = new ExtractTextPlugin({
   allChunks: true
 });
 
-const CopyWebpackPluginConfig = new CopyWebpackPlugin([{ from: 'app/static', to: 'static' }]);
+const CopyWebpackPluginConfigOptions = [{
+  from: 'app/static',
+  to: 'static/'
+}];
+
+const CopyWebpackPluginConfig = new CopyWebpackPlugin(CopyWebpackPluginConfigOptions);
 
 const PATHS = {
   app,
@@ -43,6 +48,7 @@ const base = {
   entry: ['babel-polyfill', PATHS.app],
   output: {
     path: PATHS.build,
+    publicPath: '/',
     filename: 'index_bundle.js'
   },
   resolve: {

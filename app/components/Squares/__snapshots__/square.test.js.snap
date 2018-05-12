@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Square /> component when rendering should render a component matching the snapshot 1`] = `
+<li
+  className="coin-square"
+>
+  <section>
+    <h1 />
+    <p>
+      Price: $
+    </p>
+    <p>
+      Holdings: 
+    </p>
+    <p
+      className="f18"
+    >
+       $
+      NaN
+    </p>
+  </section>
+</li>
+`;

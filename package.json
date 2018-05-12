@@ -13,14 +13,18 @@
     "build": "webpack -p",
     "production": "webpack -p",
     "test": "yarn run test-eslint; yarn run test-jest:update",
-    "test-eslint": "eslint client",
-    "test-eslint:fix": "eslint --fix client",
+    "test-eslint": "eslint app",
+    "test-eslint:fix": "eslint --fix app",
     "test-sasslint": "./node_modules/.bin/sass-lint 'app/**/*.scss' -v -q",
     "test-jest": "jest",
     "test-jest:watch": "jest --watch",
     "test-jest:coverage": "jest --coverage",
     "test-jest:update": "jest --updateSnapshot"
   },
+  "setupFiles": [
+    "<rootDir>/config/polyfills.js",
+    "<rootDir>/src/setupTests.js"
+  ],
   "now": {
     "name": "moonholdings",
     "engines": {
@@ -35,7 +39,8 @@
       "jsx"
     ],
     "moduleDirectories": [
-      "node_modules"
+      "node_modules",
+      "app"
     ]
   },
   "dependencies": {
@@ -61,6 +66,7 @@
     "css-loader": "^0.28.10",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
     "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
@@ -86,7 +92,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-sortable-hoc": "^0.6.8",
-    "react-test-renderer": "^16.2.0",
+    "react-test-renderer": "^16.3.2",
     "redux": "^3.7.2",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
