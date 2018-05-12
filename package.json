@@ -17,9 +17,9 @@
     "test-eslint:fix": "eslint --fix client",
     "test-sasslint": "./node_modules/.bin/sass-lint 'app/**/*.scss' -v -q",
     "test-jest": "jest",
-    "test-watch": "jest --watch",
-    "test-coverage": "jest --coverage",
-    "test-update": "jest --updateSnapshot"
+    "test-jest:watch": "jest --watch",
+    "test-jest:coverage": "jest --coverage",
+    "test-jest:update": "jest --updateSnapshot"
   },
   "now": {
     "name": "moonholdings",

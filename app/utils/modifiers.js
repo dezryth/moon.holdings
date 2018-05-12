@@ -6,11 +6,6 @@
 // Styles
 import * as style from 'styles/coins';
 
-// Converts camelCase to snake-case
-String.prototype.toDash = function () {
-  return this.replace(/([A-Z])/g, $1 => `-${$1.toLowerCase()}`);
-};
-
 // Converts snake-case to camelCase
 String.prototype.toCamel = function () {
   return this.replace(/(\-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
