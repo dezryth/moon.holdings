@@ -1,4 +1,4 @@
-import { testCommonComponentAttrs } from '../../utils/tests';
+import { testCommonComponentAttrs } from 'utils/tests';
 
 import Portfolio from './portfolio';
 
