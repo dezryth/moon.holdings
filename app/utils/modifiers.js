@@ -11,17 +11,13 @@ String.prototype.toCamel = function () {
   return this.replace(/(\-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
 };
 
-export const formatPriceUSD = (coin) => {
-  coin.price_usd = Number(coin.price_usd).toFixed(2);
-  return coin;
+export const zeroBalanceValue = (coin) => {
+  const cloned = Object.assign({}, coin);
+  cloned.balance = 0;
+  cloned.value = 0;
+  cloned.percentage = 0;
+  return cloned;
 };
-
-export const zeroBalanceValue = coin =>
-  Object.assign({
-    balance: 0,
-    value: 0,
-    percentage: 0
-  }, coin);
 
 export const setStyle = (id) => {
   switch (id) {
