@@ -16,7 +16,7 @@ export const calcTotal = (assets) => {
   return numberWithCommas(floor(total));
 };
 
-export const calculateBalance = coin => floor(coin.balance * coin.price_usd);
+export const calculateBalance = coin => numberWithCommas(floor(coin.balance * coin.price_usd));
 
 export const portfolioBalance = coins =>
   numberWithCommas(floor(coins.reduce((val, coin) => (val + +(coin.value)), 0)));

@@ -4,6 +4,7 @@ import { shuffle } from 'lodash';
 import { shallow } from 'enzyme';
 import { testCommonComponentAttrs } from '../../utils/tests';
 import { calculateBalance } from '../../utils/math';
+import { testCommonComponentAttrs } from 'utils/tests';
 
 import Portfolio from './portfolio';
 import Square from 'components/Squares/square';
