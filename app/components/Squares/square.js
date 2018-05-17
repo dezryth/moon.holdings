@@ -4,8 +4,14 @@ import React from 'react';
 import { calculateBalance } from 'utils/math';
 import { setStyle } from 'utils/modifiers';
 
-export default coin => (
-  <li className="coin-square" style={setStyle(coin.id)}>
+const clicked = (coin, edit) => edit(true, coin);
+
+export default ({ coin, edit }) => (
+  <li
+    className="coin-square"
+    style={setStyle(coin.id)}
+    onClick={() => clicked(coin, edit)}
+  >
     <section>
       <h1>{coin.symbol}</h1>
       <p>Price: ${coin.price_usd}</p>
