@@ -23,6 +23,7 @@ class Board extends React.Component {
 
     this.handleSearchButton = this.handleSearchButton.bind(this);
     this.toggleSquareEdit = this.toggleSquareEdit.bind(this);
+    this.renderPortfolio = this.renderPortfolio.bind(this);
   }
 
   componentWillReceiveProps({ coins }) {
@@ -62,6 +63,15 @@ class Board extends React.Component {
     );
   }
 
+  renderPortfolio(portfolio) {
+    return (portfolio.length > 0 ?
+      <Portfolio
+        coins={portfolio}
+        edit={this.toggleSquareEdit}
+      />
+      : null);
+  }
+
   render() {
     const {
       coin, edit, search, portfolio
@@ -69,9 +79,9 @@ class Board extends React.Component {
 
     return (
       <div id="board">
-        {portfolio.length > 0 ? <Portfolio coins={portfolio} edit={this.toggleSquareEdit} /> : null}
-        {edit ? this.renderSquareEdit(coin) : null}
-        {search ? this.renderSearchModal() : null}
+        { this.renderPortfolio(portfolio) }
+        { edit ? this.renderSquareEdit(coin) : null }
+        { search ? this.renderSearchModal() : null }
         { portfolio.length === 0 ? <Welcome /> : null }
         <PlusButton toggleSearch={this.handleSearchButton} />
         <Astronaut />
