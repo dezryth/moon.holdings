@@ -9,20 +9,12 @@
     }
   }
 
-  #square-edit {
-    width: 100%;
-    margin: 0 auto;
-  }
+  #square-edit { width: 100%; margin: 0 auto; }
 
-  #coin-balance {
-    width: 80%;
-  }
+  #coin-balance { width: 80%; }
 
   .edit-short,
-  .edit-tall {
-    height: auto;
-    padding-bottom: 20px;
-  }
+  .edit-tall { height: auto; padding-bottom: 20px; }
 
   #save-button {
     margin: 0 10% 20px !important;
@@ -32,13 +24,15 @@
     border: 1px solid #fff;
   }
 
-  .portfolio-container {
-    margin-top: 20px;
-  }
+  .portfolio-container { margin-top: 20px; }
 
   .coin-square {
     margin-top: 1px;
     min-width: 83%;
-    min-height: 100px;
+    min-height: 80px;
   }
+
+  .coin-price { float: left; }
+
+  .coin-holdings { float: right; }
 }

@@ -17,8 +17,8 @@ export default ({ coin, edit }) => (
         <div className="fl">{coin.symbol}</div>
         <div className="fr">{coin.percentage}%</div>
       </h1>
-      <p>Price: ${coin.price_usd}</p>
-      <p>Holdings: {coin.balance}</p>
+      <p className="coin-price">Price: ${coin.price_usd}</p>
+      <p className="coin-holdings">Holdings: {coin.balance}</p>
       <p className="balance"> ${calculateBalance(coin)}</p>
     </section>
   </li>
