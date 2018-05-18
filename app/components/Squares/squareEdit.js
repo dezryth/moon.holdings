@@ -17,12 +17,13 @@ class SquareEdit extends React.Component {
     const { coin, coins } = this.props;
     const { portfolio } = coins;
     const { price_usd: price } = coin;
+    const value = coin.balance !== undefined ? round(coin.balance * price) : '';
 
     this.state = {
       coin,
       price,
       balance: 0,
-      value: '',
+      value,
       portfolio,
       inPortfolio: false
     };
@@ -105,6 +106,8 @@ class SquareEdit extends React.Component {
     const { coin, value, inPortfolio } = this.state;
     const { symbol, price_usd: price } = coin;
     const isDisabled = this.state.balance <= 0;
+
+    console.log('this.state.balance', this.state.balance);
 
     return (
       <div id="square-edit-container">
