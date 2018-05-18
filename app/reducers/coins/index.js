@@ -46,9 +46,12 @@ export default (state = initialState, action) => {
       };
 
     case REMOVE_COIN:
+      const lighterPortfolio = state.portfolio.filter(c => c !== action.coin);
+      localStorage.setItem('moonPortfolio', JSON.stringify(lighterPortfolio));
+
       return {
         ...state,
-        portfolio: state.portfolio.filter(c => c !== action.coin)
+        portfolio: lighterPortfolio
       };
 
     case UPDATE_COIN:
