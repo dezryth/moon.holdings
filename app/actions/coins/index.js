@@ -4,6 +4,7 @@ import { cleanCoins } from 'services/coinFactory';
 // action types
 export const GET_COINS = 'GET_COINS';
 export const ADD_COIN = 'ADD_COIN';
+export const ADD_COINS = 'ADD_COINS';
 export const REMOVE_COIN = 'REMOVE_COIN';
 export const UPDATE_COIN = 'UPDATE_COIN';
 
@@ -11,6 +12,13 @@ export const UPDATE_COIN = 'UPDATE_COIN';
 export function get(coins) {
   return {
     type: GET_COINS,
+    coins
+  };
+}
+
+export function addAll(coins) {
+  return {
+    type: ADD_COINS,
     coins
   };
 }
@@ -41,6 +49,10 @@ export const getCoins = () => dispatch => getTop100().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   dispatch(get(cleanedCoins));
 });
+
+export const addCoins = coins => (dispatch) => {
+  dispatch(addAll(coins));
+};
 
 export const addCoin = coin => (dispatch) => {
   dispatch(add(coin));
