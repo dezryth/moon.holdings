@@ -31,6 +31,7 @@ export default (state = initialState, action) => {
         loading: false
       };
 
+    // Adds coins from localStorage
     case ADD_COINS:
       const { coins } = action;
       return {
