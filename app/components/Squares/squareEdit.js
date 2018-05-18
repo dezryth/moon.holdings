@@ -107,8 +107,6 @@ class SquareEdit extends React.Component {
     const { symbol, price_usd: price } = coin;
     const isDisabled = this.state.balance <= 0;
 
-    console.log('this.state.balance', this.state.balance);
-
     return (
       <div id="square-edit-container">
         <button className="close-modal-x" onClick={this.props.closeEdit} />

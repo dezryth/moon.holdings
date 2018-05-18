@@ -10,38 +10,23 @@ export const UPDATE_COIN = 'UPDATE_COIN';
 
 // action creators
 export function get(coins) {
-  return {
-    type: GET_COINS,
-    coins
-  };
+  return { type: GET_COINS, coins };
 }
 
 export function addAll(coins) {
-  return {
-    type: ADD_COINS,
-    coins
-  };
+  return { type: ADD_COINS, coins };
 }
 
 export function add(coin) {
-  return {
-    type: ADD_COIN,
-    coin
-  };
+  return { type: ADD_COIN, coin };
 }
 
 export function remove(coin) {
-  return {
-    type: REMOVE_COIN,
-    coin
-  };
+  return { type: REMOVE_COIN, coin };
 }
 
 export function update(coin) {
-  return {
-    type: UPDATE_COIN,
-    coin
-  };
+  return { type: UPDATE_COIN, coin };
 }
 
 // action dispatchers
