@@ -51,7 +51,8 @@ export default (state = initialState, action) => {
       };
 
     case REMOVE_COIN:
-      const lighterPortfolio = state.portfolio.filter(c => c !== action.coin);
+      const filteredPortfolio = state.portfolio.filter(c => c !== action.coin);
+      const lighterPortfolio = calculatePercentage(filteredPortfolio);
       localStorage.setItem('moonPortfolio', JSON.stringify(lighterPortfolio));
 
       return {
@@ -62,7 +63,7 @@ export default (state = initialState, action) => {
     case UPDATE_COIN:
       const found = state.portfolio.find(c => c.id === action.coin.id);
 
-      const updatedPortfolio = state.portfolio.map((c) => {
+      const mappedPortfolio = state.portfolio.map((c) => {
         if (c.id === found.id) {
           return Object.assign({}, found);
         }
@@ -70,11 +71,13 @@ export default (state = initialState, action) => {
         return c;
       });
 
+      const updatedPortfolio = calculatePercentage(mappedPortfolio);
+
       localStorage.setItem('moonPortfolio', JSON.stringify(updatedPortfolio));
 
       return {
         ...state,
-        portfolio: updatedPortfolio
+        portfolio: calculatePercentage(updatedPortfolio)
       };
 
     default:

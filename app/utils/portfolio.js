@@ -8,8 +8,8 @@ import * as R from 'ramda';
 import { round } from 'utils/math';
 
 // Add coin's percentage of portfolio
-export const calculatePercentage = (portfolio, coin) => {
-  portfolio.push(coin);
+export const calculatePercentage = (portfolio, coin = null) => {
+  if (coin) { portfolio.push(coin); }
 
   const addValue = c => c.value;
   const values = R.chain(addValue, portfolio);
