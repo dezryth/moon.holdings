@@ -20,18 +20,3 @@ export const calculateBalance = coin => numberWithCommas(floor(coin.balance * co
 
 export const portfolioBalance = coins =>
   numberWithCommas(floor(coins.reduce((val, coin) => (val + +(coin.value)), 0)));
-
-// export const formatPercentage = (percent) => {
-//   const num = percent || 0;
-//   const currency = num.toFixed(2);
-//   const split = currency.split('.');
-//   const interger = parseInt(split[0]);
-//   const decimals = parseInt(split[1]);
-//
-//   if (decimals === 0) {
-//     interger.toFixed(0);
-//     return interger;
-//   }
-//
-//   return currency;
-// };
