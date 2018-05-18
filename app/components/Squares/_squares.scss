@@ -16,12 +16,7 @@
 
 #square-edit-container {
   z-index: 5;
-
-  .close-modal-x {
-    position: relative;
-    top: 21px;
-    right: -650px;
-  }
+  .close-modal-x { position: relative; top: 21px; right: -650px; }
 }
 
 #square-edit {
@@ -77,8 +72,8 @@
   align-self: auto;
   margin-top: 20px;
   padding: 20px;
-  min-width: 120px;
-  min-height: 120px;
+  min-width: 140px;
+  min-height: 140px;
   color: #fff;
   background: $lightGray;
   border: 2px solid rgba(255, 0, 0, 0);
@@ -92,12 +87,16 @@
   p,
   em { font-family: Overpass; }
 
-  p { font-weight: 200; font-size: em(12); }
+  p { font-weight: 200; font-size: em(14); }
 
-  p.f18 { font-size: em(18); }
+  p.balance {
+    position: absolute;
+    bottom: 20px;
+    font-size: em(20);
+  }
 
   p,
   h1 { margin-bottom: 10px; }
 
-  h1 { font-size: em(24); }
+  h1 { height: 25px; font-size: em(24); }
 }

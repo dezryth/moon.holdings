@@ -1,11 +1,16 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable no-param-reassign */
+
+// Actions
 import {
   GET_COINS,
   ADD_COIN,
   REMOVE_COIN,
   UPDATE_COIN
 } from 'actions/coins';
+
+// Utils
+import { calculatePercentage } from 'utils/portfolio';
 
 const initialState = {
   all: [],
@@ -23,9 +28,12 @@ export default (state = initialState, action) => {
       };
 
     case ADD_COIN:
+      const { coin } = action;
+      const { portfolio } = state;
       return {
         ...state,
-        portfolio: [...state.portfolio, action.coin]
+        portfolio: calculatePercentage(portfolio, coin)
+        // portfolio: [...portfolio, coin]
       };
 
     case REMOVE_COIN:
