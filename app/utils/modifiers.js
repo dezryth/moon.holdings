@@ -26,3 +26,10 @@ export const setStyle = (id) => {
     default: return style[id];
   }
 };
+
+// Convert Array to Object
+export const arrayToObject = array =>
+  array.reduce((obj, item) => {
+    obj[item.id] = item;
+    return obj;
+  }, {});

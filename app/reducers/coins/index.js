@@ -12,6 +12,7 @@ import {
 
 // Utils
 import { calculatePercentage } from 'utils/portfolio';
+import { arrayToObject } from 'utils/modifiers';
 
 const { localStorage } = window;
 
@@ -40,9 +41,13 @@ export default (state = initialState, action) => {
     case ADD_COIN:
       const { coin } = action;
       const { portfolio } = state;
+      const newPortfolio = calculatePercentage(portfolio, coin);
+      const moonPortfolio = arrayToObject(newPortfolio);
+      localStorage.setItem('moonPortfolio', JSON.stringify(moonPortfolio));
+
       return {
         ...state,
-        portfolio: calculatePercentage(portfolio, coin)
+        portfolio: newPortfolio
       };
 
     case REMOVE_COIN:
