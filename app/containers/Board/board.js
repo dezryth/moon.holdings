@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+// Actions
+import { addCoins } from 'actions/coins';
+
 // Containers
 import Search from 'containers/SearchModal/searchModal';
 
@@ -11,15 +14,29 @@ import PlusButton from 'components/Partials/PlusButton/plusButton';
 import SquareEdit from 'components/Squares/squareEdit';
 import Portfolio from 'components/Portfolio/portfolio';
 
+const { localStorage } = window;
+
 class Board extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       coin: {},
       portfolio: [],
       edit: false,
       search: false
     };
+
+    const { portfolio } = this.state;
+
+    if (portfolio.length === 0) {
+      const moonPortfolio = JSON.parse(localStorage.getItem('moonPortfolio'));
+
+      if (moonPortfolio) {
+        const savedPortfolio = Object.values(moonPortfolio);
+        this.props.addCoins(savedPortfolio);
+      }
+    }
 
     this.handleSearchButton = this.handleSearchButton.bind(this);
     this.toggleSquareEdit = this.toggleSquareEdit.bind(this);
@@ -90,10 +107,14 @@ class Board extends React.Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  addCoins: (...args) => dispatch(addCoins(...args))
+});
+
 const mapStateToProps = ({ coins }) => ({
   coins
 });
 
 export const BoardJest = Board;
 
-export default connect(mapStateToProps, null)(Board);
+export default connect(mapStateToProps, mapDispatchToProps)(Board);

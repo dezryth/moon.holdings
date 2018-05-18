@@ -4,6 +4,7 @@
 // Actions
 import {
   GET_COINS,
+  ADD_COINS,
   ADD_COIN,
   REMOVE_COIN,
   UPDATE_COIN
@@ -11,6 +12,8 @@ import {
 
 // Utils
 import { calculatePercentage } from 'utils/portfolio';
+
+const { localStorage } = window;
 
 const initialState = {
   all: [],
@@ -27,13 +30,19 @@ export default (state = initialState, action) => {
         loading: false
       };
 
+    case ADD_COINS:
+      const { coins } = action;
+      return {
+        ...state,
+        portfolio: coins
+      };
+
     case ADD_COIN:
       const { coin } = action;
       const { portfolio } = state;
       return {
         ...state,
         portfolio: calculatePercentage(portfolio, coin)
-        // portfolio: [...portfolio, coin]
       };
 
     case REMOVE_COIN:
@@ -53,23 +62,12 @@ export default (state = initialState, action) => {
         return c;
       });
 
+      localStorage.setItem('moonPortfolio', JSON.stringify(updatedPortfolio));
+
       return {
         ...state,
         portfolio: updatedPortfolio
       };
-
-    // case UPDATE_COIN_BALANCE:
-    //   const values = state.map(coin => coin.value);
-    //   const total = values.reduce((x, y) => x + y);
-    //
-    //   return state.map((coin) => {
-    //     coin.percentage = (coin.value / (total * 100));
-    //     if (coin.id === action.coin.id) {
-    //       coin.value = action.coin.value;
-    //       return coin;
-    //     }
-    //     return coin;
-    //   });
 
     default:
       return state;
