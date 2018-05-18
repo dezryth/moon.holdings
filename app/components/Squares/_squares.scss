@@ -15,6 +15,7 @@
 }
 
 #square-edit-container {
+  position: relative;
   z-index: 5;
   .close-modal-x { position: relative; top: 21px; right: -650px; }
 }

@@ -8,12 +8,34 @@
 // @media all and (max-width: 1024px) {
 // }
 
-/* 768 (Mobile Break)
+/* 800 (Mobile Break)
 ========================================================= */
-// @media all and (max-width: 768px) {
-// }
+@media all and (max-width: 800px) {
+  #square-edit-container {
+    .close-modal-x {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+    }
+  }
 
-/* 640
+  #square-edit { width: 100%; }
+
+  .edit-short,
+  .edit-tall {
+    height: auto;
+    padding-bottom: 20px;
+  }
+}
+
+/* 700
 ========================================================= */
-// @media all and (max-width: 640px) {
-// }
+@media all and (max-width: 700px) {
+  // #square-edit-container { padding: 0 40px; }
+
+  #save-button {
+    margin: 0 0 20px !important;
+    width: 100%;
+    border: 1px solid #fff;
+  }
+}
