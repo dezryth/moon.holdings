@@ -1,17 +1,4 @@
-import {
-  zeroBalanceValue,
-  setStyle
-} from './modifiers';
-
-describe('zeroBalanceValue util', () => {
-  it('will return a coin object with 0 for balance, value & percentage', () => {
-    const testCoin = { balance: 500, value: 20, percentage: 25 };
-    const zeroedCoin = zeroBalanceValue(testCoin);
-    expect(zeroedCoin.balance).toEqual(0);
-    expect(zeroedCoin.value).toEqual(0);
-    expect(zeroedCoin.percentage).toEqual(0);
-  });
-});
+import { setStyle } from './modifiers';
 
 describe('setStyle util', () => {
   it('will return the Bitcoin square style', () => {
