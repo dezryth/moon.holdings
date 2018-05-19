@@ -4,10 +4,10 @@
   position: absolute;
   z-index: 4;
   left: 20px;
-  bottom: 160px;
+  bottom: 125px;
   padding: 20px;
   width: 250px;
-  height: 400px;
+  height: 300px;
   font-family: Overpass;
   font-size: em(20);
   font-weight: 200;
@@ -37,7 +37,7 @@
 
 .coins-list {
   overflow-y: scroll;
-  height: 350px;
+  height: 260px;
 
   .symbol { margin-left: 4px; }
 

@@ -4,14 +4,13 @@ import React from 'react';
 import Square from 'components/Squares/square';
 
 // Utils
-import { portfolioBalance, calculateBalance } from 'utils/math';
+import { portfolioBalance, getCoinValue } from 'utils/math';
 
-const byLargestBalance = (b, a) => calculateBalance(b) - calculateBalance(a);
+const byLargestBalance = (b, a) => getCoinValue(a) - getCoinValue(b);
 
 const Portfolio = ({ coins, edit }) => (
   <div>
     <section className="portfolio-balance">
-      {/* <h1>MOON.HOLDINGS</h1> */}
       ${portfolioBalance(coins)}
     </section>
     <ul className="portfolio-container">
