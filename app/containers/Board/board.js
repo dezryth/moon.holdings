@@ -94,6 +94,8 @@ class Board extends React.Component {
       coin, edit, search, portfolio
     } = this.state;
 
+    const isTrue = portfolio.length > 0;
+
     return (
       <div id="board">
         { this.renderPortfolio(portfolio) }
@@ -101,7 +103,7 @@ class Board extends React.Component {
         { search ? this.renderSearchModal() : null }
         { portfolio.length === 0 ? <Welcome /> : null }
         <PlusButton toggleSearch={this.handleSearchButton} />
-        <Astronaut />
+        <Astronaut logo={isTrue} />
       </div>
     );
   }

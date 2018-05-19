@@ -11,6 +11,7 @@ const byLargestBalance = (b, a) => calculateBalance(b) - calculateBalance(a);
 const Portfolio = ({ coins, edit }) => (
   <div>
     <section className="portfolio-balance">
+      {/* <h1>MOON.HOLDINGS</h1> */}
       ${portfolioBalance(coins)}
     </section>
     <ul className="portfolio-container">

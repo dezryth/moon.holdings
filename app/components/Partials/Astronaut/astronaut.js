@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default () => (
+export default ({ logo }) => (
   <section id="astronaut">
-    <h1>MOON.HOLDINGS</h1>
+    { logo === true ? <h1>MOON.HOLDINGS</h1> : null }
     <img src="static/astronaut.png" alt="astronaut" />
   </section>
 );

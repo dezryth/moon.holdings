@@ -14,4 +14,12 @@
   font-size: em(64);
   text-align: right;
   color: $apricot;
+
+  h1 {
+    float: left;
+    margin-bottom: 20px;
+    font-size: em(8);
+    text-align: left;
+    color: #fff;
+  }
 }
