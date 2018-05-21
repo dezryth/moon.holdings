@@ -1,5 +1,9 @@
+// Services
 import { getTop100 } from 'services/api';
 import { cleanCoins } from 'services/coinFactory';
+
+// Utils
+import { round } from 'utils/math';
 
 // action types
 export const GET_COINS = 'GET_COINS';
@@ -35,9 +39,20 @@ export const getCoins = () => dispatch => getTop100().then((res) => {
   dispatch(get(cleanedCoins));
 });
 
-export const addCoins = coins => (dispatch) => {
-  dispatch(addAll(coins));
-};
+export const addCoins = coins => dispatch => getTop100().then((res) => {
+  const cleanedCoins = cleanCoins(res.data);
+  const storedNames = coins.map(c => c.name);
+  const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);
+
+  const updatedCoins = inPortfolio.map((p, i) => {
+    const clonedCoin = Object.assign({}, p);
+    clonedCoin.balance = coins[i].balance;
+    clonedCoin.value = round(clonedCoin.balance * clonedCoin.price_usd);
+    return clonedCoin;
+  });
+
+  dispatch(addAll(updatedCoins));
+});
 
 export const addCoin = coin => (dispatch) => {
   dispatch(add(coin));
