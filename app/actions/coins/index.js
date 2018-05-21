@@ -47,6 +47,7 @@ export const addCoins = coins => dispatch => getTop100().then((res) => {
   const updatedCoins = inPortfolio.map((p, i) => {
     const clonedCoin = Object.assign({}, p);
     clonedCoin.balance = coins[i].balance;
+    clonedCoin.percentage = coins[i].percentage;
     clonedCoin.value = round(clonedCoin.balance * clonedCoin.price_usd);
     return clonedCoin;
   });
