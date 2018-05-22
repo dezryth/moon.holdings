@@ -502,3 +502,124 @@ export const zrx = {
   color: '#fff',
   backgroundColor: '#404040'
 };
+
+// Next 200 ////////////////////////////////////////////////////////////////////
+export const gifto = {
+  color: '#fff',
+  backgroundColor: '#791cdf'
+};
+
+export const wax = {
+  color: '#fff',
+  backgroundColor: '#f6821d'
+};
+
+export const zencash = {
+  color: '#5effb5',
+  backgroundColor: '#1c3871'
+};
+
+export const deepbrainChain = {
+  color: '#50bace',
+  backgroundColor: '#0f0f0f'
+};
+
+export const matrixAiNetwork = {
+  color: '#00fefa',
+  backgroundColor: '#000b30'
+};
+
+export const paypex = {
+  color: '#5b2d02',
+  backgroundColor: '#fff'
+};
+
+export const monaco = {
+  color: '#fff',
+  backgroundColor: '#111a32'
+};
+
+export const eosdac = {
+  color: '#262826',
+  backgroundColor: '#fff'
+};
+
+export const bnktothefuture = {
+  color: '#fff',
+  backgroundColor: '#151454'
+};
+
+export const thetaToken = {
+  color: '#20d7c2',
+  backgroundColor: '#1a1d25'
+};
+
+export const bixboxToken = {
+  color: '#fff',
+  backgroundColor: '#494949'
+};
+
+export const allSports = {
+  color: '#fff',
+  backgroundColor: '#129941'
+};
+
+export const quantstamp = {
+  color: '#072487',
+  backgroundColor: '#fbfbfb'
+};
+
+export const dropil = {
+  color: '#fff',
+  backgroundColor: '#111e30'
+};
+
+export const decentraland = {
+  color: '#f57028',
+  backgroundColor: '#d1c7be'
+};
+
+export const aragon = {
+  color: '#fff',
+  backgroundColor: '#26b9dd'
+};
+
+export const civic = {
+  color: '#fff',
+  backgroundColor: '#359f74'
+};
+
+export const smartcash = {
+  color: '#000',
+  backgroundColor: '#f2ac17'
+};
+
+export const enjinCoin = {
+  color: '#26d1cc',
+  backgroundColor: '#36245e'
+};
+
+export const gnosisGno = {
+  color: '#009cbc',
+  backgroundColor: '#fff'
+};
+
+export const ubiq = {
+  color: '#00e785',
+  backgroundColor: '#2d2d2d'
+};
+
+export const poet = {
+  color: '#fff',
+  backgroundColor: '#292929'
+};
+
+export const peercoin = {
+  color: '#fff',
+  backgroundColor: '#35a74a'
+};
+
+export const pillar = {
+  color: '#000',
+  backgroundColor: '#fff'
+};

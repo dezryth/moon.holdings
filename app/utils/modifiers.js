@@ -14,8 +14,15 @@ String.prototype.toCamel = function () {
 // Add style to coin square
 export const setStyle = (id) => {
   switch (id) {
+    case 'all-sports': return style.basicattentiontoken;
     case 'basic-attention-token': return style.basicattentiontoken;
     case 'bitcoin-cash': return style[id.toCamel()];
+    case 'bibox-token': return style[id.toCamel()];
+    case 'deepbrain-chain': return style[id.toCamel()];
+    case 'gnosis-gno': return style[id.toCamel()];
+    case 'enjin-coin': return style[id.toCamel()];
+    case 'matrix-ai-network': return style[id.toCamel()];
+    case 'theta-token': return style[id.toCamel()];
     case '0x': return style.zrx;
     default: return style[id];
   }
