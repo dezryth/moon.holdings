@@ -44,10 +44,11 @@ export const addCoins = coins => dispatch => getTop200().then((res) => {
   const storedNames = coins.map(c => c.name);
   const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);
 
-  const updatedCoins = inPortfolio.map((p, i) => {
+  const updatedCoins = inPortfolio.map((p) => {
     const clonedCoin = Object.assign({}, p);
-    clonedCoin.balance = coins[i].balance;
-    clonedCoin.percentage = coins[i].percentage;
+    const matched = coins.find(c => c.name === clonedCoin.name);
+    clonedCoin.balance = matched.balance;
+    clonedCoin.percentage = matched.percentage;
     clonedCoin.value = round(clonedCoin.balance * clonedCoin.price_usd);
     return clonedCoin;
   });
