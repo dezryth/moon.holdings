@@ -41,7 +41,7 @@ class SearchModal extends React.Component {
   }
 
   handleChange() {
-    const text = document.getElementById('coin-search').value;
+    const text = document.getElementById('coin-search').value.toLowerCase();
 
     const search = (txt) => {
       const coins = this.props.coins.all;
