@@ -159,8 +159,8 @@ export const eos = {
 };
 
 export const ethereum = {
-  color: '#c3dae8',
-  backgroundColor: '#4b7594'
+  color: '#fff',
+  backgroundColor: '#5c607f'
 };
 
 export const ethereumclassic = {
@@ -245,7 +245,7 @@ export const kybernetwork = {
 
 export const lisk = {
   color: '#fff',
-  backgroundColor: '#064170'
+  backgroundColor: '#0d468f'
 };
 
 export const litecoin = {
