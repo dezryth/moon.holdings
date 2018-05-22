@@ -34,7 +34,7 @@ export const bancor = {
 };
 
 export const basicattentiontoken = {
-  color: '#9C2462',
+  color: '#fff',
   backgroundColor: '#fc511f'
 };
 

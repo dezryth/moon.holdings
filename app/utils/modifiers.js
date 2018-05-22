@@ -14,6 +14,7 @@ String.prototype.toCamel = function () {
 // Add style to coin square
 export const setStyle = (id) => {
   switch (id) {
+    case 'basic-attention-token': return style.basicattentiontoken;
     case 'bitcoin-cash': return style[id.toCamel()];
     case '0x': return style.zrx;
     default: return style[id];
