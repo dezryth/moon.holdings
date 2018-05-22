@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 
-// const top1000 = 'https://api.coinmarketcap.com/v1/ticker/';
-const top100 = 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=100';
+// const top200 = 'https://api.coinmarketcap.com/v1/ticker/';
+const top200 = 'https://api.coinmarketcap.com/v1/ticker/?start=0&limit=200';
 const coinTicker = coinId => `https://api.coinmarketcap.com/v1/ticker/${coinId}/`;
 
 const log = (method, err) => {
@@ -14,7 +14,7 @@ const log = (method, err) => {
 //   .catch(err => log('api.getAllCoins', err))
 //   .then(res => res);
 
-export const getTop100 = () => axios.get(top100)
+export const getTop200 = () => axios.get(top200)
   .catch(err => log('api.getAllCoins', err))
   .then(res => res);
 

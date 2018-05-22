@@ -1,5 +1,5 @@
 // Services
-import { getTop100 } from 'services/api';
+import { getTop200 } from 'services/api';
 import { cleanCoins } from 'services/coinFactory';
 
 // Utils
@@ -34,12 +34,12 @@ export function update(coin) {
 }
 
 // action dispatchers
-export const getCoins = () => dispatch => getTop100().then((res) => {
+export const getCoins = () => dispatch => getTop200().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   dispatch(get(cleanedCoins));
 });
 
-export const addCoins = coins => dispatch => getTop100().then((res) => {
+export const addCoins = coins => dispatch => getTop200().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   const storedNames = coins.map(c => c.name);
   const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);
