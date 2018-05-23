@@ -9,9 +9,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  // margin: auto;
   width: 100%;
-  // height: 100%;
 }
 
 #square-edit-container {
@@ -101,4 +99,15 @@
   h1 { margin-bottom: 10px; }
 
   h1 { height: 25px; font-size: em(24); }
+}
+
+.coin-balance {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-bg {
+  .coin-balance {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }

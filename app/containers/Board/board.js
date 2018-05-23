@@ -44,7 +44,6 @@ class Board extends React.Component {
   }
 
   componentWillReceiveProps({ coins }) {
-    console.log('coins', coins);
     this.setState({ portfolio: coins.portfolio });
   }
 

@@ -19,6 +19,7 @@ export const setStyle = (id) => {
     case 'bitcoin-cash': return style[id.toCamel()];
     case 'bibox-token': return style[id.toCamel()];
     case 'deepbrain-chain': return style[id.toCamel()];
+    case 'golem-network-tokens': return style[id.toCamel()];
     case 'gnosis-gno': return style[id.toCamel()];
     case 'enjin-coin': return style[id.toCamel()];
     case 'matrix-ai-network': return style[id.toCamel()];
@@ -27,6 +28,9 @@ export const setStyle = (id) => {
     default: return style[id];
   }
 };
+
+// Check it coin has darkBg
+export const coinHasDarkBg = id => style[id.toCamel()].darkBg;
 
 // Convert Array to Object
 export const arrayToObject = array =>
