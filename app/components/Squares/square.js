@@ -6,12 +6,12 @@ import { coinHasDarkBg, setStyle } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
 
-const addStyleModifier = coinId =>
+const styleModifier = coinId =>
   (coinHasDarkBg(coinId) ? 'coin-square dark-bg' : 'coin-square');
 
 export default ({ coin, edit }) => (
   <li
-    className={addStyleModifier(coin.id)}
+    className={styleModifier(coin.id)}
     style={setStyle(coin.id)}
     onClick={() => clicked(coin, edit)}
   >

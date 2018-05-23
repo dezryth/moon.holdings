@@ -1,0 +1,73 @@
+#square-edit-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#square-edit-container {
+  position: relative;
+  z-index: 5;
+  .close-modal-x { position: relative; top: 21px; right: -650px; }
+}
+
+#square-edit {
+  z-index: 6;
+  flex: 0 1 auto;
+  width: 640px;
+  color: #fff;
+  background: $midGray;
+
+  .symbol { font-size: em(72); }
+
+  div,
+  button { margin: 0 40px 20px; }
+}
+
+.edit-short { height: 480px; }
+
+.edit-tall { height: 580px; }
+
+#coin-balance,
+#edit-coin-price,
+#edit-total-value,
+#save-button { font-size: em(42); }
+
+#coin-balance {
+  margin: 40px 40px 20px;
+  padding: 0 0 0 10px;
+  width: 540px;
+  height: 80px;
+}
+
+#save-button {
+  @include rounded(10px);
+  @include transition(background, .2s, ease-in-out);
+  width: 555px;
+  height: 80px;
+  color: #fff;
+  border: 4px solid #fff;
+  background: $lightBlue;
+
+  &:focus { background: darken($lightBlue, 5%); }
+  &:hover { background: darken($lightBlue, 10%); }
+
+  &:disabled {
+    color: $lightGray;
+    border: 4px solid $lightGray;
+    background: $midGray;
+  }
+}
+
+.light-bg {
+  #coin-balance {
+    color: #000;
+  }
+}

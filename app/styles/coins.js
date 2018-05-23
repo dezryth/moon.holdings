@@ -160,7 +160,8 @@ export const enigma = {
 
 export const eos = {
   color: '#3c374a',
-  backgroundColor: '#f0f5f8'
+  backgroundColor: '#f0f5f8',
+  lightBg: true
 };
 
 export const ethereum = {
@@ -221,7 +222,8 @@ export const iconomi = {
 
 export const iostoken = {
   color: '#0A0A08',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const iota = {
@@ -303,7 +305,8 @@ export const neblio = {
 
 export const nebulas = {
   color: '#000',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const nem = {
@@ -359,7 +362,8 @@ export const polymath = {
 
 export const populous = {
   color: '#2a3e5d',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const powerledger = {
@@ -425,7 +429,8 @@ export const status = {
 
 export const steem = {
   color: '1f5397',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const stellar = {
@@ -546,7 +551,8 @@ export const matrixAiNetwork = {
 
 export const paypex = {
   color: '#5b2d02',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const monaco = {
@@ -557,7 +563,8 @@ export const monaco = {
 
 export const eosdac = {
   color: '#262826',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const bnktothefuture = {
@@ -583,7 +590,8 @@ export const allSports = {
 
 export const quantstamp = {
   color: '#072487',
-  backgroundColor: '#fbfbfb'
+  backgroundColor: '#fbfbfb',
+  lightBg: true
 };
 
 export const dropil = {
@@ -619,7 +627,8 @@ export const enjinCoin = {
 
 export const gnosisGno = {
   color: '#009cbc',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const ubiq = {
@@ -641,5 +650,6 @@ export const peercoin = {
 
 export const pillar = {
   color: '#000',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };

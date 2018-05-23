@@ -8,7 +8,10 @@ import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
 // Utils
 import { numberWithCommas, round, rounder } from 'utils/math';
-import { setStyle } from 'utils/modifiers';
+import { coinHasLightBg, setStyle } from 'utils/modifiers';
+
+const styleModifier = coinId =>
+  (coinHasLightBg(coinId) ? 'light-bg' : '');
 
 class SquareEdit extends React.Component {
   constructor(props) {
@@ -108,7 +111,7 @@ class SquareEdit extends React.Component {
     const isDisabled = this.state.balance <= 0;
 
     return (
-      <div id="square-edit-container">
+      <div id="square-edit-container" className={styleModifier(coin.id)}>
         <button className="close-modal-x" onClick={this.props.closeEdit} />
         <section
           id="square-edit"

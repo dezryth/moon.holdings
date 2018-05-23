@@ -32,6 +32,9 @@ export const setStyle = (id) => {
 // Check it coin has darkBg
 export const coinHasDarkBg = id => style[id.toCamel()].darkBg;
 
+// Check it coin has lightBg
+export const coinHasLightBg = id => style[id.toCamel()].lightBg;
+
 // Convert Array to Object
 export const arrayToObject = array =>
   array.reduce((obj, item) => {
