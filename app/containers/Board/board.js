@@ -99,9 +99,9 @@ class Board extends React.Component {
     return (
       <div id="board">
         { this.renderPortfolio(portfolio) }
-        { edit ? this.renderSquareEdit(coin) : null }
-        { search ? this.renderSearchModal() : null }
-        { portfolio.length === 0 ? <Welcome /> : null }
+        { edit && this.renderSquareEdit(coin) }
+        { search && this.renderSearchModal() }
+        { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
         <Astronaut logo={isTrue} />
       </div>

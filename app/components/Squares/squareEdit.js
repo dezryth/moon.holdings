@@ -126,19 +126,13 @@ class SquareEdit extends React.Component {
             onFocus={this.handleFocus}
             onChange={this.handleChange}
           />
-          <div className="symbol">
-            {symbol}
-          </div>
-          <div id="edit-coin-price">
-            1 @ ${round(price)}
-          </div>
-          <div id="edit-total-value">
-            ${numberWithCommas(value)}
-          </div>
+          <div className="symbol"> {symbol} </div>
+          <div id="edit-coin-price"> 1 @ ${round(price)} </div>
+          <div id="edit-total-value"> ${numberWithCommas(value)} </div>
           <button id="save-button" onClick={this.handleSave} disabled={isDisabled}>
             Save
           </button>
-          { inPortfolio ? this.renderRemoveButton() : null }
+          { inPortfolio && this.renderRemoveButton() }
         </section>
       </div>
     );
