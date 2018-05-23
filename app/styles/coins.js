@@ -244,7 +244,7 @@ export const funfair = {
 
 export const gas = {
   color: '#fff',
-  backgroundColor: '#5bbd22'
+  backgroundColor: '#a4df06'
 };
 
 export const gifto = {
@@ -392,7 +392,7 @@ export const nem = {
 
 export const neo = {
   color: '#fff',
-  backgroundColor: '#5bbd22'
+  backgroundColor: '#4eb704'
 };
 
 export const nxt = {
