@@ -24,7 +24,7 @@ export const setStyle = (id) => {
     case 'enjin-coin': return style[id.toCamel()];
     case 'matrix-ai-network': return style[id.toCamel()];
     case 'theta-token': return style[id.toCamel()];
-    case '0x': return style.zrx;
+    // case '0x': return style.zrx;
     default: return style[id];
   }
 };

@@ -19,7 +19,7 @@ const keysToClean = [
   'total_supply'
 ];
 
-// Clean Coins Function
+// Clean Coins by removing unneeded keys
 export const cleanCoins = coins =>
   // Return our mapped coins array.
   coins.map(coin =>
@@ -33,3 +33,13 @@ export const cleanCoins = coins =>
         // so that its not in our new object anymore.
         : newObj
     ), {}));
+
+// Change coin keys
+export const changeCoins = coins =>
+  coins.map((coin) => {
+    if (coin.id === '0x') {
+      coin.id = 'zrx';
+      coin.name = 'zrx';
+    }
+    return coin;
+  });
