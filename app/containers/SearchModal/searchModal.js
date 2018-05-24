@@ -7,9 +7,6 @@ import { getCoins } from 'actions/coins';
 // Services
 import { findCoins } from 'services/coinFactory';
 
-// Styles
-// import { bitcoin } from 'styles/coins';
-
 class SearchModal extends React.Component {
   constructor(props) {
     super(props);
