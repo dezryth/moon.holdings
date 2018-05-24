@@ -1,6 +1,6 @@
 // Services
 import { getTop200 } from 'services/api';
-import { cleanCoins, changeCoins } from 'services/coinFactory';
+import { cleanCoins } from 'services/coinFactory';
 
 // Utils
 import { round } from 'utils/math';
@@ -36,16 +36,14 @@ export function update(coin) {
 // GET coins from the coinmarketcap API.
 export const getCoins = () => dispatch => getTop200().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
-  const finalCoins = changeCoins(cleanedCoins);
-  dispatch(get(finalCoins));
+  dispatch(get(cleanedCoins));
 });
 
 // Fetch the coins form localStorage.
 export const addCoins = coins => dispatch => getTop200().then((res) => {
   const cleanedCoins = cleanCoins(res.data);
-  const finalCoins = changeCoins(cleanedCoins);
   const storedNames = coins.map(c => c.name);
-  const inPortfolio = finalCoins.filter(d => storedNames.indexOf(d.name) > -1);
+  const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);
 
   const updatedCoins = inPortfolio.map((p) => {
     const clonedCoin = Object.assign({}, p);
