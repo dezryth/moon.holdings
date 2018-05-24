@@ -227,6 +227,12 @@ export const ethereumclassic = {
   backgroundColor: '#678F74'
 };
 
+export const ethlend = {
+  color: '#0da2c2',
+  backgroundColor: '#fff',
+  lightBg: true
+};
+
 export const ethos = {
   color: '#fff',
   backgroundColor: '#21CEAB'
@@ -244,7 +250,7 @@ export const funfair = {
 
 export const gas = {
   color: '#fff',
-  backgroundColor: '#a4df06'
+  backgroundColor: '#719361'
 };
 
 export const gifto = {
@@ -512,8 +518,9 @@ export const ripple = {
 };
 
 export const salt = {
-  color: '#717e87',
-  backgroundColor: '#38c5c7'
+  color: '#22272f',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const sia = {

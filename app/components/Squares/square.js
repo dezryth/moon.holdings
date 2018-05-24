@@ -18,7 +18,7 @@ export default ({ coin, edit }) => (
     <section>
       <h1>
         <div className="fl"> {coin.symbol} </div>
-        <div className="fr"> {coin.percentage}% </div>
+        <div className="fr mr-n5"> {coin.percentage}% </div>
       </h1>
       <p className="coin-price"><span className="o7">Price:</span>
         <span className="fr"> ${round(coin.price_usd)} </span>

@@ -2,6 +2,7 @@
 /* eslint-disable no-extend-native */
 /* eslint-disable func-names */
 /* eslint-disable no-useless-escape */
+import * as R from 'ramda';
 
 // Styles
 import * as style from 'styles/coins';
@@ -30,10 +31,12 @@ export const setStyle = (id) => {
 };
 
 // Check it coin has darkBg
-export const coinHasDarkBg = id => style[id.toCamel()].darkBg;
+export const coinHasDarkBg = id =>
+  (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].darkBg);
 
 // Check it coin has lightBg
-export const coinHasLightBg = id => style[id.toCamel()].lightBg;
+export const coinHasLightBg = id =>
+  (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].lightBg);
 
 // Convert Array to Object
 export const arrayToObject = array =>
