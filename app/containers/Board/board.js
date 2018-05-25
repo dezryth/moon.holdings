@@ -56,6 +56,7 @@ class Board extends React.Component {
   }
 
   toggleSquareEdit(edit = false, coin = {}) {
+    console.log('toggleSquareEdit', coin);
     this.setState({ coin, edit, search: false });
   }
 
@@ -72,7 +73,7 @@ class Board extends React.Component {
     return (
       <div>
         <Search
-          handleClose={() => this.toggleSquareEdit(false)}
+          handleClose={() => this.toggleSquareEdit(false, {})}
           openEdit={this.toggleSquareEdit}
         />
         <div id="overlay" onClick={this.handleSearchButton} />

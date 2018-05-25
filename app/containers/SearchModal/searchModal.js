@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -13,17 +15,21 @@ class SearchModal extends React.Component {
 
     this.state = {
       coins: [],
-      saved: []
+      saved: [],
+      focused: {}
       // loading: true
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.listenForEsc = this.listenForEsc.bind(this);
+    this.listenForEnter = this.listenForEnter.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.setFocus = this.setFocus.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.listenForEsc, false);
+    document.addEventListener('keydown', this.listenForEnter, false);
     this.props.getCoins();
   }
 
@@ -31,10 +37,13 @@ class SearchModal extends React.Component {
     this.setState({ coins: coins.all, saved: coins.all });
   }
 
-  listenForEsc(e) {
-    if (e.key === 'Escape') {
-      this.props.handleClose(e, true);
-    }
+  setFocus(coin) {
+    console.log('setFocus', coin.id);
+    this.setState({ focused: coin });
+  }
+
+  handleSelect(coin) {
+    this.props.openEdit(true, coin);
   }
 
   handleChange() {
@@ -55,8 +64,19 @@ class SearchModal extends React.Component {
     return handleUpdate(text.length);
   }
 
-  handleSelect(coin) {
-    this.props.openEdit(true, coin);
+  listenForEsc(e) {
+    if (e.key === 'Escape') {
+      this.setState({ focused: {} });
+      this.props.handleClose(e, true);
+    }
+  }
+
+  listenForEnter(e) {
+    if (e.key === 'Enter') {
+      const { focused } = this.state;
+      console.log('listenForEnter', focused);
+      this.handleSelect(focused);
+    }
   }
 
   render() {
@@ -75,14 +95,18 @@ class SearchModal extends React.Component {
         </header>
         <ul className="coins-list">
           { coins !== 'undefined'
-            ? coins.map(coin => (
-              <li key={coin.id} onClick={() => this.handleSelect(coin)}>
+            ? coins.map((coin, i) => (
+              <li
+                key={coin.id}
+                role="button"
+                tabIndex={i}
+                onFocus={() => this.setFocus(coin)}
+                onClick={() => this.handleSelect(coin)}
+              >
                 {coin.name}
-                <span className="symbol">
-                  ({coin.symbol})
-                </span>
+                <span className="symbol">({coin.symbol})</span>
               </li>))
-            : null
+            : <li>Loading...</li>
           }
         </ul>
       </section>

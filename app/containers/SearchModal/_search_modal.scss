@@ -29,7 +29,9 @@
     color: $apricot;
     cursor: pointer;
 
-    &:hover { color: #fff; }
+    &:hover,
+    &:active,
+    &:focus { color: #fff; }
   }
 }
 
