@@ -56,7 +56,7 @@ class Board extends React.Component {
   }
 
   toggleSquareEdit(edit = false, coin = {}) {
-    console.log('toggleSquareEdit', coin);
+    // console.log('toggleSquareEdit', coin);
     this.setState({ coin, edit, search: false });
   }
 
