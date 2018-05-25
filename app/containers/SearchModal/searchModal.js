@@ -25,6 +25,7 @@ class SearchModal extends React.Component {
     this.listenForEnter = this.listenForEnter.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.setFocus = this.setFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
   componentDidMount() {
@@ -37,12 +38,20 @@ class SearchModal extends React.Component {
     this.setState({ coins: coins.all, saved: coins.all });
   }
 
+  onBlur() {
+    // console.log('onBlur');
+    // console.log(' focused:', focused);
+    // const { focused } = this.state;
+    this.setState({ focused: {} });
+  }
+
   setFocus(coin) {
-    console.log('setFocus', coin.id);
+    // console.log('setFocus', coin.id);
     this.setState({ focused: coin });
   }
 
   handleSelect(coin) {
+    this.setState({ focused: coin });
     this.props.openEdit(true, coin);
   }
 
@@ -74,7 +83,8 @@ class SearchModal extends React.Component {
   listenForEnter(e) {
     if (e.key === 'Enter') {
       const { focused } = this.state;
-      console.log('listenForEnter', focused);
+      // console.log('listenForEnter');
+      // console.log(' focused:', focused);
       this.handleSelect(focused);
     }
   }
@@ -101,6 +111,7 @@ class SearchModal extends React.Component {
                 role="button"
                 tabIndex={i}
                 onFocus={() => this.setFocus(coin)}
+                onBlur={this.onBlur}
                 onClick={() => this.handleSelect(coin)}
               >
                 {coin.name}
