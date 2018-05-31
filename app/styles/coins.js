@@ -49,9 +49,9 @@ export const basicattentiontoken = {
   backgroundColor: '#fc511f'
 };
 
-export const binancecoin = {
-  color: '#3E3E3E',
-  backgroundColor: '#F2B940'
+export const binanceCoin = {
+  color: '#F2B940',
+  backgroundColor: '#3E3E3E'
 };
 
 export const bitcoin = {

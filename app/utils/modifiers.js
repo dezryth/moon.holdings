@@ -17,15 +17,15 @@ export const setStyle = (id) => {
   switch (id) {
     case 'all-sports': return style.basicattentiontoken;
     case 'basic-attention-token': return style.basicattentiontoken;
-    case 'bitcoin-cash': return style[id.toCamel()];
-    case 'bibox-token': return style[id.toCamel()];
-    case 'deepbrain-chain': return style[id.toCamel()];
-    case 'golem-network-tokens': return style[id.toCamel()];
-    case 'gnosis-gno': return style[id.toCamel()];
-    case 'enjin-coin': return style[id.toCamel()];
-    case 'matrix-ai-network': return style[id.toCamel()];
+    case 'binance-coin':
+    case 'bitcoin-cash':
+    case 'bibox-token':
+    case 'deepbrain-chain':
+    case 'golem-network-tokens':
+    case 'gnosis-gno':
+    case 'enjin-coin':
+    case 'matrix-ai-network':
     case 'theta-token': return style[id.toCamel()];
-    // case '0x': return style.zrx;
     default: return style[id];
   }
 };
