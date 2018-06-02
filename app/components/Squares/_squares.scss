@@ -2,13 +2,14 @@
   @include transition(all, .2s, ease-in-out);
   position: relative;
   align-self: auto;
-  margin-top: 20px;
+  margin: 1px 1px 0 0;
   padding: 20px;
   min-width: 140px;
   min-height: 140px;
   color: #fff;
   background: $lightGray;
   border: 2px solid rgba(255, 0, 0, 0);
+  box-shadow: 1px 1px 0 rgba(47, 38, 90, 0.8);
   cursor: pointer;
 
   &:hover {
