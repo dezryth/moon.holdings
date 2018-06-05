@@ -1,18 +1,21 @@
 // Services
-import { getTop200 } from 'services/api';
+import { getTop } from 'services/api';
 import { cleanCoins } from 'services/coinFactory';
 
 // Utils
 import { round } from 'utils/math';
 
-// action types
+// Action types
 export const GET_COINS = 'GET_COINS';
 export const ADD_COIN = 'ADD_COIN';
 export const ADD_COINS = 'ADD_COINS';
 export const REMOVE_COIN = 'REMOVE_COIN';
 export const UPDATE_COIN = 'UPDATE_COIN';
 
-// action creators
+// Number of coins to fetch.
+const count = 1000;
+
+// Action creators
 export function get(coins) {
   return { type: GET_COINS, coins };
 }
@@ -34,13 +37,13 @@ export function update(coin) {
 }
 
 // GET coins from the coinmarketcap API.
-export const getCoins = () => dispatch => getTop200().then((res) => {
+export const getCoins = () => dispatch => getTop(count).then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   dispatch(get(cleanedCoins));
 });
 
 // Fetch the coins form localStorage.
-export const addCoins = coins => dispatch => getTop200().then((res) => {
+export const addCoins = coins => dispatch => getTop(count).then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   const storedNames = coins.map(c => c.name);
   const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);

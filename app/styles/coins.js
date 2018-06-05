@@ -533,6 +533,11 @@ export const smartcash = {
   backgroundColor: '#f2ac17'
 };
 
+export const spankchain = {
+  color: '#fff',
+  backgroundColor: '#ff6195'
+};
+
 export const sonm = {
   color: '#fff',
   backgroundColor: '#131822',
