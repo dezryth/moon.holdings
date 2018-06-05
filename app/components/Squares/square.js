@@ -2,12 +2,9 @@ import React from 'react';
 
 // Utils
 import { calculateBalance, round } from 'utils/math';
-import { coinHasDarkBg, setStyle } from 'utils/modifiers';
+import { setStyle, styleModifier } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
-
-const styleModifier = coinId =>
-  (coinHasDarkBg(coinId) ? 'coin-square dark-bg' : 'coin-square');
 
 export default ({ coin, edit }) => (
   <li

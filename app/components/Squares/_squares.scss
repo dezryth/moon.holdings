@@ -40,6 +40,13 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.bg-eos {
+  background-position: 50% 5%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  // background-image: url('static/bg-eos.png');
+}
+
 .dark-bg {
   .coin-balance {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);

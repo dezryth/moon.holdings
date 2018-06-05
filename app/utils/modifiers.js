@@ -44,3 +44,16 @@ export const arrayToObject = array =>
     obj[item.id] = item;
     return obj;
   }, {});
+
+// Add special Coin style
+export const classModifier = (coinId) => {
+  switch (coinId) {
+    case 'eos': return 'coin-square bg-eos';
+    default:
+      // no defualt
+  }
+  return 'coin-square';
+};
+
+export const styleModifier = coinId =>
+  (coinHasDarkBg(coinId) ? `${classModifier(coinId)} dark-bg` : `${classModifier(coinId)} coin-square`);
