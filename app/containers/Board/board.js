@@ -104,6 +104,9 @@ class Board extends React.Component {
         { search && this.renderSearchModal() }
         { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
+        <div className="coinbase-link">
+          <a href="https://www.coinbase.com/join/51af71fbe2dfc50f3d000024">Buy Bitcoin with Coinbase</a>
+        </div>
         <Astronaut logo={isTrue} />
       </div>
     );
