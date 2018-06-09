@@ -1,5 +1,6 @@
 .coin-square {
   @include transition(all, .2s, ease-in-out);
+  box-sizing: content-box;
   position: relative;
   align-self: auto;
   // margin: 1px 1px 0 0;
