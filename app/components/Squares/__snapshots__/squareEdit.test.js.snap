@@ -2,6 +2,7 @@
 
 exports[`<SquareEditJest /> component when rendering should render a component matching the snapshot 1`] = `
 <div
+  className=""
   id="square-edit-container"
 >
   <button
@@ -22,18 +23,23 @@ exports[`<SquareEditJest /> component when rendering should render a component m
     <div
       className="symbol"
     >
+       
       bitcoin
+       
     </div>
     <div
       id="edit-coin-price"
     >
-      1 @ $
+       1 @ $
       1
+       
     </div>
     <div
       id="edit-total-value"
     >
-      $
+       $
+      0
+       
     </div>
     <button
       disabled={true}

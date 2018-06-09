@@ -56,4 +56,4 @@ export const classModifier = (coinId) => {
 };
 
 export const styleModifier = coinId =>
-  (coinHasDarkBg(coinId) ? `${classModifier(coinId)} dark-bg` : `${classModifier(coinId)} coin-square`);
+  (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);

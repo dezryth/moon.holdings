@@ -16,7 +16,7 @@ describe('<Portfolio /> component', () => {
 });
 
 describe('sort portfolio squares by largest value', () => {
-  const coin = shuffle([
+  const coinsArray = [
     {
       balance: '100',
       value: 27,
@@ -56,14 +56,17 @@ describe('sort portfolio squares by largest value', () => {
       percent_change_24h: '3.7',
       percent_change_7d: '-8.14'
     }
-  ]);
+  ];
+
+  const coinsShuffled = shuffle(coinsArray);
 
   test('squares are sorted in order', () => {
-    const wrapper = shallow(<Portfolio coins={coin} />);
+    const wrapper = shallow(<Portfolio coins={coinsShuffled} />);
     const squares = wrapper.find(Square);
     expect(squares).toHaveLength(3);
 
     const cs = squares.map(square => square.props());
-    expect(cs.map(calculateBalance)).toEqual(['100', '200', '300']);
+    const results = cs.map(calculateBalance);
+    expect(results).toEqual(coinsArray);
   });
 });

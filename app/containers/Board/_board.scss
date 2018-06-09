@@ -17,3 +17,12 @@
 }
 
 .plus { color: $apricot; }
+
+.coinbase-link {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+
+  a { color: #fff; }
+}

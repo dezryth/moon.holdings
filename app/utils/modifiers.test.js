@@ -14,11 +14,4 @@ describe('setStyle util', () => {
     expect(bchStyle.color).toEqual('#fff');
     expect(bchStyle.backgroundColor).toEqual('#61be42');
   });
-
-  it('will return the 0x/ZRX square style', () => {
-    const zrx = { id: '0x', symbol: 'ZRX' };
-    const zrxStyle = setStyle(zrx.id);
-    expect(zrxStyle.color).toEqual('#fff');
-    expect(zrxStyle.backgroundColor).toEqual('#404040');
-  });
 });

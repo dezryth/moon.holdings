@@ -610,9 +610,9 @@ export const ubiq = {
 };
 
 export const vechain = {
-  color: '#fff',
-  backgroundColor: '#000',
-  darkBg: true
+  color: '#aa77ce',
+  backgroundColor: '#b4e8ff',
+  lightBg: true
 };
 
 export const verge = {

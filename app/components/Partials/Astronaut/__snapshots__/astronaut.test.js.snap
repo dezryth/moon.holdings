@@ -4,9 +4,6 @@ exports[`<Astronaut /> component when rendering should render a component matchi
 <section
   id="astronaut"
 >
-  <h1>
-    MOON.HOLDINGS
-  </h1>
   <img
     alt="astronaut"
     src="static/astronaut.png"
