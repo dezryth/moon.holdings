@@ -32,6 +32,10 @@
 }
 
 @media (max-width: 400px) {
+  .portfolio-container {
+    padding: 20px 0 160px;
+  }
+
   .flex-grid {
     .col {
       width: 35%;
@@ -53,5 +57,9 @@
     .coin-balance {
       border-bottom: 1px solid rgba(0, 0, 0, 0);
     }
+  }
+
+  #big-plus-button {
+    border: 2px solid rgba(87, 56, 92, .2);
   }
 }
