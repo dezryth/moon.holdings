@@ -7,7 +7,7 @@ import { setStyle, styleModifier } from 'utils/modifiers';
 const clicked = (coin, edit) => edit(true, coin);
 
 export default ({ coin, edit }) => (
-  <li
+  <div
     className={styleModifier(coin.id)}
     style={setStyle(coin.id)}
     onClick={() => clicked(coin, edit)}
@@ -23,5 +23,5 @@ export default ({ coin, edit }) => (
       <p className="coin-balance"> {coin.balance} </p>
       <p className="balance"> ${calculateBalance(coin)} </p>
     </section>
-  </li>
+  </div>
 );

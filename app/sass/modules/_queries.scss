@@ -26,30 +26,20 @@
 
   .portfolio-container { margin: 10px; }
 
-  .coin-square {
-    min-width: 210px;
-    min-height: 210px;
-  }
+  // .coin-square {
+  //   min-width: 210px;
+  //   min-height: 210px;
+  // }
 
   .coin-price { float: left; }
 
   .coin-holdings { float: right; }
 }
 
-/* 800
-========================================================= */
-@media all and (max-width: 800px) {
-  .coin-square {
-    min-width: 45%;
-    min-height: 210px;
-  }
-}
-
-/* 510 (Mobile Break)
-========================================================= */
-@media all and (max-width: 510px) {
-  .coin-square {
-    min-width: 150px;
-    min-height: 150px;
+@media (max-width: 400px) {
+  .flex-grid {
+    .col {
+      width: 50%;
+    }
   }
 }

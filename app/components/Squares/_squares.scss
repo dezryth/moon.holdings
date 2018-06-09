@@ -1,10 +1,11 @@
 .coin-square {
   @include transition(all, .2s, ease-in-out);
+  flex-grow: 1;
   box-sizing: content-box;
   position: relative;
   align-self: auto;
-  // margin: 1px 1px 0 0;
   padding: 20px;
+  max-width: 160px;
   min-width: 140px;
   min-height: 140px;
   color: #fff;

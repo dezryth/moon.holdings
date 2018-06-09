@@ -1,5 +1,9 @@
-@import 'sass/vendors/normalize'; // Normalize stylesheet
-@import 'sass/vendors/reset';     // Reset stylesheet
+// Vendors
+@import 'sass/vendors/normalize';   // Normalize stylesheet
+@import 'sass/vendors/reset';       // Reset stylesheet
+// @import 'sass/vendors/flexboxgrid'; // Flexbox Grid
+
+// Setup
 @import 'sass/modules/base';      // Load base files
 @import 'sass/modules/defaults';  // Defaults elements
 @import 'sass/modules/svg';       // Load SVG

@@ -1,3 +1,10 @@
+.flex-grid {
+  display: flex;
+  // justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
 .portfolio-container {
   position: relative;
   z-index: 1;
@@ -6,7 +13,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-content: stretch;
-  margin: 20px 0 0 20px;
+  padding: 20px;
 }
 
 .portfolio-balance {
