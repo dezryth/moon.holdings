@@ -17,12 +17,12 @@ class SearchModal extends React.Component {
       coins: [],
       saved: [],
       focused: {}
-      // loading: true
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.listenForEsc = this.listenForEsc.bind(this);
     this.listenForEnter = this.listenForEnter.bind(this);
+    this.closeSquareEdit = this.closeSquareEdit.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.setFocus = this.setFocus.bind(this);
     this.onBlur = this.onBlur.bind(this);
@@ -39,14 +39,10 @@ class SearchModal extends React.Component {
   }
 
   onBlur() {
-    // console.log('onBlur');
-    // console.log(' focused:', focused);
-    // const { focused } = this.state;
     this.setState({ focused: {} });
   }
 
   setFocus(coin) {
-    // console.log('setFocus', coin.id);
     this.setState({ focused: coin });
   }
 
@@ -76,17 +72,19 @@ class SearchModal extends React.Component {
   listenForEsc(e) {
     if (e.key === 'Escape') {
       this.setState({ focused: {} });
-      this.props.handleClose(e, true);
+      this.props.handleClose(true);
     }
   }
 
   listenForEnter(e) {
     if (e.key === 'Enter') {
       const { focused } = this.state;
-      // console.log('listenForEnter');
-      // console.log(' focused:', focused);
       this.handleSelect(focused);
     }
+  }
+
+  closeSquareEdit() {
+    this.props.handleClose(true);
   }
 
   render() {
@@ -101,7 +99,7 @@ class SearchModal extends React.Component {
             placeholder="Search"
             onChange={() => this.handleChange()}
           />
-          <button className="close-modal-x" onClick={this.props.closeSquareEdit} />
+          <button className="close-modal-x" onClick={this.closeSquareEdit} />
         </header>
         <ul className="coins-list">
           { coins !== 'undefined'

@@ -1,4 +1,4 @@
-/* 900 (Mobile Break)
+/* 900
 ========================================================= */
 @media all and (max-width: 900px) {
   #square-edit-container {
@@ -31,6 +31,8 @@
   .coin-holdings { float: right; }
 }
 
+/* 400 (Mobile Break)
+========================================================= */
 @media (max-width: 400px) {
   .portfolio-container {
     padding: 20px 0 160px;

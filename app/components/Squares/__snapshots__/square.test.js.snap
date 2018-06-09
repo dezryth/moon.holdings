@@ -1,23 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Square /> component when rendering should render a component matching the snapshot 1`] = `
-<li
-  className="coin-square"
+<div
+  className="col coin-square coin-square"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f5922f",
+      "color": "#fff",
+    }
+  }
 >
   <section>
-    <h1 />
-    <p>
-      Price: $
-    </p>
-    <p>
-      Holdings: 
+    <h1>
+      <div
+        className="fl"
+      >
+         
+        BTC
+         
+      </div>
+      <div
+        className="fr mr-n5"
+      >
+         
+        % 
+      </div>
+    </h1>
+    <p
+      className="coin-price"
+    >
+      <span
+        className="mr5 o7"
+      >
+        Price:
+      </span>
+      <span
+        className="fr"
+      >
+         $
+        0
+         
+      </span>
     </p>
     <p
-      className="f18"
+      className="coin-balance"
+    >
+       
+      0
+       
+    </p>
+    <p
+      className="balance"
     >
        $
-      NaN
+      0
+       
     </p>
   </section>
-</li>
+</div>
 `;
