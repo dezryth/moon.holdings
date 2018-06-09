@@ -2,9 +2,9 @@
   @include rounded(5px);
   animation: fadein .4s;
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   left: 20px;
-  bottom: 125px;
+  bottom: 160px;
   padding: 20px;
   width: 250px;
   height: 300px;
@@ -29,7 +29,9 @@
     color: $apricot;
     cursor: pointer;
 
-    &:hover { color: #fff; }
+    &:hover,
+    &:active,
+    &:focus { color: #fff; }
   }
 }
 

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -7,26 +9,28 @@ import { getCoins } from 'actions/coins';
 // Services
 import { findCoins } from 'services/coinFactory';
 
-// Styles
-// import { bitcoin } from 'styles/coins';
-
 class SearchModal extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       coins: [],
-      saved: []
-      // loading: true
+      saved: [],
+      focused: {}
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.listenForEsc = this.listenForEsc.bind(this);
+    this.listenForEnter = this.listenForEnter.bind(this);
+    this.closeSquareEdit = this.closeSquareEdit.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.setFocus = this.setFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener('keydown', this.listenForEsc, false);
+    document.addEventListener('keydown', this.listenForEnter, false);
     this.props.getCoins();
   }
 
@@ -34,10 +38,17 @@ class SearchModal extends React.Component {
     this.setState({ coins: coins.all, saved: coins.all });
   }
 
-  listenForEsc(e) {
-    if (e.key === 'Escape') {
-      this.props.handleClose(e, true);
-    }
+  onBlur() {
+    this.setState({ focused: {} });
+  }
+
+  setFocus(coin) {
+    this.setState({ focused: coin });
+  }
+
+  handleSelect(coin) {
+    this.setState({ focused: coin });
+    this.props.openEdit(true, coin);
   }
 
   handleChange() {
@@ -58,8 +69,22 @@ class SearchModal extends React.Component {
     return handleUpdate(text.length);
   }
 
-  handleSelect(coin) {
-    this.props.openEdit(true, coin);
+  listenForEsc(e) {
+    if (e.key === 'Escape') {
+      this.setState({ focused: {} });
+      this.props.handleClose(true);
+    }
+  }
+
+  listenForEnter(e) {
+    if (e.key === 'Enter') {
+      const { focused } = this.state;
+      this.handleSelect(focused);
+    }
+  }
+
+  closeSquareEdit() {
+    this.props.handleClose(true);
   }
 
   render() {
@@ -74,18 +99,23 @@ class SearchModal extends React.Component {
             placeholder="Search"
             onChange={() => this.handleChange()}
           />
-          <button className="close-modal-x" onClick={this.props.closeSquareEdit} />
+          <button className="close-modal-x" onClick={this.closeSquareEdit} />
         </header>
         <ul className="coins-list">
           { coins !== 'undefined'
-            ? coins.map(coin => (
-              <li key={coin.id} onClick={() => this.handleSelect(coin)}>
+            ? coins.map((coin, i) => (
+              <li
+                key={coin.id}
+                role="button"
+                tabIndex={i}
+                onFocus={() => this.setFocus(coin)}
+                onBlur={this.onBlur}
+                onClick={() => this.handleSelect(coin)}
+              >
                 {coin.name}
-                <span className="symbol">
-                  ({coin.symbol})
-                </span>
+                <span className="symbol">({coin.symbol})</span>
               </li>))
-            : null
+            : <li>Loading...</li>
           }
         </ul>
       </section>

@@ -4,13 +4,24 @@ export const aelf = {
 };
 
 export const aeternity = {
-  color: '#F35C8E',
-  backgroundColor: '#000000'
+  color: '#f35c8E',
+  backgroundColor: '#000',
+  darkBg: true
+};
+
+export const allSports = {
+  color: '#fff',
+  backgroundColor: '#129941'
 };
 
 export const aion = {
   color: '#47BEEB',
   backgroundColor: '#131944'
+};
+
+export const aragon = {
+  color: '#fff',
+  backgroundColor: '#26b9dd'
 };
 
 export const ardor = {
@@ -38,9 +49,9 @@ export const basicattentiontoken = {
   backgroundColor: '#fc511f'
 };
 
-export const binancecoin = {
-  color: '#3E3E3E',
-  backgroundColor: '#F2B940'
+export const binanceCoin = {
+  color: '#F2B940',
+  backgroundColor: '#3E3E3E'
 };
 
 export const bitcoin = {
@@ -55,12 +66,23 @@ export const bitcoinCash = {
 
 export const bitcoingold = {
   color: '#fbbe2d',
-  backgroundColor: '#222423'
+  backgroundColor: '#222423',
+  darkBg: true
 };
 
 export const bitshares = {
   color: '#fff',
   backgroundColor: '#3ebbe9'
+};
+
+export const bixboxToken = {
+  color: '#fff',
+  backgroundColor: '#494949'
+};
+
+export const bnktothefuture = {
+  color: '#fff',
+  backgroundColor: '#151454'
 };
 
 export const byteballbytes = {
@@ -84,13 +106,19 @@ export const cardano = {
 };
 
 export const chainlink = {
-  color: '#444444',
+  color: '#444',
   backgroundColor: '#1DAAFB'
 };
 
 export const cindicato = {
   color: '#fff',
-  backgroundColor: '#110E1A'
+  backgroundColor: '#110e1a',
+  darkBg: true
+};
+
+export const civic = {
+  color: '#fff',
+  backgroundColor: '#359f74'
 };
 
 export const cryptonex = {
@@ -115,7 +143,19 @@ export const dent = {
 
 export const dentacoin = {
   color: '#fff',
-  backgroundColor: '#000000'
+  backgroundColor: '#000',
+  darkBg: true
+};
+
+export const decentraland = {
+  color: '#f57028',
+  backgroundColor: '#d1c7be'
+};
+
+export const deepbrainChain = {
+  color: '#50bace',
+  backgroundColor: '#0f0f0f',
+  darkBg: true
 };
 
 export const digibyte = {
@@ -125,7 +165,8 @@ export const digibyte = {
 
 export const digixdao = {
   color: '#F0C838',
-  backgroundColor: '#212429'
+  backgroundColor: '#212429',
+  darkBg: true
 };
 
 export const dogecoin = {
@@ -138,6 +179,12 @@ export const dragonchain = {
   backgroundColor: '#1C82C9'
 };
 
+export const dropil = {
+  color: '#fff',
+  backgroundColor: '#111e30',
+  darkBg: true
+};
+
 export const electroneum = {
   color: '#dfdfdf',
   backgroundColor: '#30bddf'
@@ -148,6 +195,11 @@ export const emercoin = {
   backgroundColor: '#826897'
 };
 
+export const enjinCoin = {
+  color: '#26d1cc',
+  backgroundColor: '#36245e'
+};
+
 export const enigma = {
   color: '#fff',
   backgroundColor: '#1637a9'
@@ -155,17 +207,30 @@ export const enigma = {
 
 export const eos = {
   color: '#3c374a',
-  backgroundColor: '#f0f5f8'
+  backgroundColor: '#f0f5f8',
+  lightBg: true
+};
+
+export const eosdac = {
+  color: '#262826',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const ethereum = {
-  color: '#c3dae8',
-  backgroundColor: '#4b7594'
+  color: '#fff',
+  backgroundColor: '#5c607f'
 };
 
 export const ethereumclassic = {
   color: '#fff',
   backgroundColor: '#678F74'
+};
+
+export const ethlend = {
+  color: '#0da2c2',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const ethos = {
@@ -185,12 +250,24 @@ export const funfair = {
 
 export const gas = {
   color: '#fff',
-  backgroundColor: '#5bbd22'
+  backgroundColor: '#719361'
 };
 
-export const golem = {
+export const gifto = {
   color: '#fff',
-  backgroundColor: '#083f6c'
+  backgroundColor: '#791cdf'
+};
+
+export const golemNetworkTokens = {
+  color: '#fff',
+  backgroundColor: '#083f6c',
+  darkBg: true
+};
+
+export const gnosisGno = {
+  color: '#009cbc',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const gxchain = {
@@ -215,12 +292,14 @@ export const iconomi = {
 
 export const iostoken = {
   color: '#0A0A08',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const iota = {
   color: '#fff',
-  backgroundColor: '#333'
+  backgroundColor: '#333',
+  darkBg: true
 };
 
 export const kin = {
@@ -245,7 +324,7 @@ export const kybernetwork = {
 
 export const lisk = {
   color: '#fff',
-  backgroundColor: '#064170'
+  backgroundColor: '#0d468f'
 };
 
 export const litecoin = {
@@ -268,9 +347,22 @@ export const maker = {
   backgroundColor: '#2abb9c'
 };
 
+export const matrixAiNetwork = {
+  color: '#00fefa',
+  backgroundColor: '#000b30',
+  darkBg: true
+};
+
 export const metal = {
   color: '#d1d1d1',
-  backgroundColor: '#1f1f1f'
+  backgroundColor: '#1f1f1f',
+  darkBg: true
+};
+
+export const monaco = {
+  color: '#fff',
+  backgroundColor: '#111a32',
+  darkBg: true
 };
 
 export const monacoin = {
@@ -295,7 +387,8 @@ export const neblio = {
 
 export const nebulas = {
   color: '#000',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const nem = {
@@ -305,7 +398,7 @@ export const nem = {
 
 export const neo = {
   color: '#fff',
-  backgroundColor: '#5bbd22'
+  backgroundColor: '#4eb704'
 };
 
 export const nxt = {
@@ -315,7 +408,8 @@ export const nxt = {
 
 export const nucleusvision = {
   color: '#fff',
-  backgroundColor: '#05212b'
+  backgroundColor: '#05212b',
+  darkBg: true
 };
 
 export const nuls = {
@@ -338,9 +432,32 @@ export const particl = {
   backgroundColor: '#27e7b1'
 };
 
+export const paypex = {
+  color: '#5b2d02',
+  backgroundColor: '#fff',
+  lightBg: true
+};
+
+export const peercoin = {
+  color: '#fff',
+  backgroundColor: '#35a74a'
+};
+
+export const pillar = {
+  color: '#000',
+  backgroundColor: '#fff',
+  lightBg: true
+};
+
 export const pivx = {
   color: '#fff',
   backgroundColor: '#7c68a4'
+};
+
+export const poet = {
+  color: '#fff',
+  backgroundColor: '#292929',
+  darkBg: true
 };
 
 export const polymath = {
@@ -350,7 +467,8 @@ export const polymath = {
 
 export const populous = {
   color: '#2a3e5d',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const powerledger = {
@@ -366,6 +484,12 @@ export const qash = {
 export const qtum = {
   color: '#232428',
   backgroundColor: '#359bce'
+};
+
+export const quantstamp = {
+  color: '#072487',
+  backgroundColor: '#fbfbfb',
+  lightBg: true
 };
 
 export const rchain = {
@@ -394,8 +518,9 @@ export const ripple = {
 };
 
 export const salt = {
-  color: '#717e87',
-  backgroundColor: '#38c5c7'
+  color: '#22272f',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const sia = {
@@ -403,9 +528,20 @@ export const sia = {
   backgroundColor: '#7F8C8D'
 };
 
+export const smartcash = {
+  color: '#000',
+  backgroundColor: '#f2ac17'
+};
+
+export const spankchain = {
+  color: '#fff',
+  backgroundColor: '#ff6195'
+};
+
 export const sonm = {
   color: '#fff',
-  backgroundColor: '#131822'
+  backgroundColor: '#131822',
+  darkBg: true
 };
 
 export const status = {
@@ -415,7 +551,8 @@ export const status = {
 
 export const steem = {
   color: '1f5397',
-  backgroundColor: '#fff'
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const stellar = {
@@ -445,7 +582,8 @@ export const syscoin = {
 
 export const tenx = {
   color: '#fff',
-  backgroundColor: '#353437'
+  backgroundColor: '#353437',
+  darkBg: true
 };
 
 export const tether = {
@@ -453,14 +591,28 @@ export const tether = {
   backgroundColor: '#2ea07c'
 };
 
+export const thetaToken = {
+  color: '#20d7c2',
+  backgroundColor: '#1a1d25',
+  darkBg: true
+};
+
 export const tron = {
   color: '#fff',
-  backgroundColor: '#222423'
+  backgroundColor: '#222423',
+  darkBg: true
+};
+
+export const ubiq = {
+  color: '#00e785',
+  backgroundColor: '#2d2d2d',
+  darkBg: true
 };
 
 export const vechain = {
-  color: '#fff',
-  backgroundColor: '#000'
+  color: '#aa77ce',
+  backgroundColor: '#b4e8ff',
+  lightBg: true
 };
 
 export const verge = {
@@ -483,6 +635,11 @@ export const waltonchain = {
   backgroundColor: '#59EFDC'
 };
 
+export const wax = {
+  color: '#fff',
+  backgroundColor: '#f6821d'
+};
+
 export const zcash = {
   color: '#000',
   backgroundColor: '#ebb451'
@@ -491,6 +648,11 @@ export const zcash = {
 export const zcoin = {
   color: '#fff',
   backgroundColor: '#30B659'
+};
+
+export const zencash = {
+  color: '#5effb5',
+  backgroundColor: '#1c3871'
 };
 
 export const zilliqa = {

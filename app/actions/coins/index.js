@@ -1,18 +1,21 @@
 // Services
-import { getTop200 } from 'services/api';
+import { getTop } from 'services/api';
 import { cleanCoins } from 'services/coinFactory';
 
 // Utils
 import { round } from 'utils/math';
 
-// action types
+// Action types
 export const GET_COINS = 'GET_COINS';
 export const ADD_COIN = 'ADD_COIN';
 export const ADD_COINS = 'ADD_COINS';
 export const REMOVE_COIN = 'REMOVE_COIN';
 export const UPDATE_COIN = 'UPDATE_COIN';
 
-// action creators
+// Number of coins to fetch.
+const count = 1000;
+
+// Action creators
 export function get(coins) {
   return { type: GET_COINS, coins };
 }
@@ -33,13 +36,14 @@ export function update(coin) {
   return { type: UPDATE_COIN, coin };
 }
 
-// action dispatchers
-export const getCoins = () => dispatch => getTop200().then((res) => {
+// GET coins from the coinmarketcap API.
+export const getCoins = () => dispatch => getTop(count).then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   dispatch(get(cleanedCoins));
 });
 
-export const addCoins = coins => dispatch => getTop200().then((res) => {
+// Fetch the coins form localStorage.
+export const addCoins = coins => dispatch => getTop(count).then((res) => {
   const cleanedCoins = cleanCoins(res.data);
   const storedNames = coins.map(c => c.name);
   const inPortfolio = cleanedCoins.filter(d => storedNames.indexOf(d.name) > -1);
@@ -56,14 +60,17 @@ export const addCoins = coins => dispatch => getTop200().then((res) => {
   dispatch(addAll(updatedCoins));
 });
 
+// Add a coin to your portfolio.
 export const addCoin = coin => (dispatch) => {
   dispatch(add(coin));
 };
 
+// Remove coin from your portfolio.
 export const removeCoin = coin => (dispatch) => {
   dispatch(remove(coin));
 };
 
+// Update a coin in your portfolio.
 export const updateCoin = coin => (dispatch) => {
   dispatch(update(coin));
 };

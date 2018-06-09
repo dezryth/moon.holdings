@@ -8,7 +8,10 @@ import { addCoin, updateCoin, removeCoin } from 'actions/coins';
 
 // Utils
 import { numberWithCommas, round, rounder } from 'utils/math';
-import { setStyle } from 'utils/modifiers';
+import { coinHasLightBg, setStyle } from 'utils/modifiers';
+
+const styleModifier = coinId =>
+  (coinHasLightBg(coinId) ? 'light-bg' : '');
 
 class SquareEdit extends React.Component {
   constructor(props) {
@@ -108,7 +111,7 @@ class SquareEdit extends React.Component {
     const isDisabled = this.state.balance <= 0;
 
     return (
-      <div id="square-edit-container">
+      <div id="square-edit-container" className={styleModifier(coin.id)}>
         <button className="close-modal-x" onClick={this.props.closeEdit} />
         <section
           id="square-edit"
@@ -123,19 +126,13 @@ class SquareEdit extends React.Component {
             onFocus={this.handleFocus}
             onChange={this.handleChange}
           />
-          <div className="symbol">
-            {symbol}
-          </div>
-          <div id="edit-coin-price">
-            1 @ ${round(price)}
-          </div>
-          <div id="edit-total-value">
-            ${numberWithCommas(value)}
-          </div>
+          <div className="symbol"> {symbol} </div>
+          <div id="edit-coin-price"> 1 @ ${round(price)} </div>
+          <div id="edit-total-value"> ${numberWithCommas(value)} </div>
           <button id="save-button" onClick={this.handleSave} disabled={isDisabled}>
             Save
           </button>
-          { inPortfolio ? this.renderRemoveButton() : null }
+          { inPortfolio && this.renderRemoveButton() }
         </section>
       </div>
     );

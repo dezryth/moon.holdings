@@ -1,10 +1,10 @@
-/* 770 (Mobile Break)
+/* 900
 ========================================================= */
-@media all and (max-width: 770px) {
+@media all and (max-width: 900px) {
   #square-edit-container {
     .close-modal-x {
       position: absolute;
-      top: 20ox;
+      top: 20px;
       right: 30px;
     }
   }
@@ -24,15 +24,42 @@
     border: 1px solid #fff;
   }
 
-  .portfolio-container { margin-top: 20px; }
-
-  .coin-square {
-    margin-top: 1px;
-    min-width: 83%;
-    min-height: 80px;
-  }
+  .portfolio-container { margin: 10px; }
 
   .coin-price { float: left; }
 
   .coin-holdings { float: right; }
+}
+
+/* 400 (Mobile Break)
+========================================================= */
+@media (max-width: 400px) {
+  .portfolio-container {
+    padding: 20px 0 160px;
+  }
+
+  .flex-grid {
+    .col { width: 35%; }
+  }
+
+  .coin-square {
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .coin-balance {
+    position: relative;
+    top: -10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  }
+
+  .dark-bg {
+    .coin-balance {
+      border-bottom: 1px solid rgba(0, 0, 0, 0);
+    }
+  }
+
+  #big-plus-button {
+    border: 2px solid rgba(87, 56, 92, .2);
+  }
 }

@@ -56,6 +56,7 @@ class Board extends React.Component {
   }
 
   toggleSquareEdit(edit = false, coin = {}) {
+    // console.log('toggleSquareEdit', coin);
     this.setState({ coin, edit, search: false });
   }
 
@@ -72,7 +73,7 @@ class Board extends React.Component {
     return (
       <div>
         <Search
-          handleClose={() => this.toggleSquareEdit(false)}
+          handleClose={() => this.toggleSquareEdit(false, {})}
           openEdit={this.toggleSquareEdit}
         />
         <div id="overlay" onClick={this.handleSearchButton} />
@@ -99,10 +100,13 @@ class Board extends React.Component {
     return (
       <div id="board">
         { this.renderPortfolio(portfolio) }
-        { edit ? this.renderSquareEdit(coin) : null }
-        { search ? this.renderSearchModal() : null }
-        { portfolio.length === 0 ? <Welcome /> : null }
+        { edit && this.renderSquareEdit(coin) }
+        { search && this.renderSearchModal() }
+        { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
+        <div className="coinbase-link">
+          <a href="https://www.coinbase.com/join/51af71fbe2dfc50f3d000024">Buy Bitcoin with Coinbase</a>
+        </div>
         <Astronaut logo={isTrue} />
       </div>
     );

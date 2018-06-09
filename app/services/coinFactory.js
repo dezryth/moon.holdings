@@ -3,11 +3,18 @@ import * as R from 'ramda';
 
 const textMatch = (part, str) => str.search(part) !== -1;
 
-// Return coins that match text.
-export const findCoins = (text, coins) => {
-  const findMatches = coin => (textMatch(text, coin.name.toLowerCase()) ? coin : null);
-  const matches = R.map(findMatches, coins);
-  return R.reject(R.isNil, matches);
+// Return coins that match text | search by name & symbol.
+export const findCoins = (txt, coins) => {
+  const checkText = (k, c) => (textMatch(txt, c[k].toLowerCase()) ? c : null);
+
+  const curriedCheckText = R.curry(checkText);
+  const byName = R.map(curriedCheckText('name'), coins);
+  const bySymbol = R.map(curriedCheckText('symbol'), coins);
+  const matchNames = R.reject(R.isNil, byName);
+  const matchSymbols = R.reject(R.isNil, bySymbol);
+  const combinedSearch = (matchNames.concat(matchSymbols));
+
+  return R.uniq(combinedSearch);
 };
 
 const keysToClean = [
@@ -19,7 +26,7 @@ const keysToClean = [
   'total_supply'
 ];
 
-// Clean Coins Function
+// Clean Coins by removing unneeded keys
 export const cleanCoins = coins =>
   // Return our mapped coins array.
   coins.map(coin =>

@@ -2,6 +2,7 @@
 /* eslint-disable no-extend-native */
 /* eslint-disable func-names */
 /* eslint-disable no-useless-escape */
+import * as R from 'ramda';
 
 // Styles
 import * as style from 'styles/coins';
@@ -14,12 +15,28 @@ String.prototype.toCamel = function () {
 // Add style to coin square
 export const setStyle = (id) => {
   switch (id) {
+    case 'all-sports': return style.basicattentiontoken;
     case 'basic-attention-token': return style.basicattentiontoken;
-    case 'bitcoin-cash': return style[id.toCamel()];
-    case '0x': return style.zrx;
+    case 'binance-coin':
+    case 'bitcoin-cash':
+    case 'bibox-token':
+    case 'deepbrain-chain':
+    case 'golem-network-tokens':
+    case 'gnosis-gno':
+    case 'enjin-coin':
+    case 'matrix-ai-network':
+    case 'theta-token': return style[id.toCamel()];
     default: return style[id];
   }
 };
+
+// Check it coin has darkBg
+export const coinHasDarkBg = id =>
+  (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].darkBg);
+
+// Check it coin has lightBg
+export const coinHasLightBg = id =>
+  (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].lightBg);
 
 // Convert Array to Object
 export const arrayToObject = array =>
@@ -27,3 +44,16 @@ export const arrayToObject = array =>
     obj[item.id] = item;
     return obj;
   }, {});
+
+// Add special Coin style
+export const classModifier = (coinId) => {
+  switch (coinId) {
+    case 'eos': return 'coin-square bg-eos';
+    default:
+      // no defualt
+  }
+  return 'coin-square';
+};
+
+export const styleModifier = coinId =>
+  (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);

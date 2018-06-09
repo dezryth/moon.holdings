@@ -8,8 +8,8 @@ exports[`<Portfolio /> component when rendering should render a component matchi
     $
     0
   </section>
-  <ul
-    className="portfolio-container"
+  <div
+    className="flex-grid portfolio-container"
   />
 </div>
 `;

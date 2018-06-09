@@ -1,84 +1,19 @@
-#square-edit-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 auto;
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // margin: auto;
-  width: 100%;
-  // height: 100%;
-}
-
-#square-edit-container {
-  position: relative;
-  z-index: 5;
-  .close-modal-x { position: relative; top: 21px; right: -650px; }
-}
-
-#square-edit {
-  z-index: 6;
-  flex: 0 1 auto;
-  width: 640px;
-  color: #fff;
-  background: $midGray;
-
-  .symbol { font-size: em(72); }
-
-  div,
-  button { margin: 0 40px 20px; }
-}
-
-.edit-short { height: 480px; }
-
-.edit-tall { height: 580px; }
-
-#coin-balance,
-#edit-coin-price,
-#edit-total-value,
-#save-button { font-size: em(42); }
-
-#coin-balance {
-  margin: 40px 40px 20px;
-  padding: 0 0 0 10px;
-  width: 540px;
-  height: 80px;
-}
-
-#save-button {
-  @include rounded(10px);
-  @include transition(background, .2s, ease-in-out);
-  width: 555px;
-  height: 80px;
-  color: #fff;
-  border: 4px solid #fff;
-  background: $lightBlue;
-
-  &:focus { background: darken($lightBlue, 5%); }
-  &:hover { background: darken($lightBlue, 10%); }
-
-  &:disabled {
-    color: $lightGray;
-    border: 4px solid $lightGray;
-    background: $midGray;
-  }
-}
-
 .coin-square {
   @include transition(all, .2s, ease-in-out);
+  flex-grow: 1;
+  box-sizing: content-box;
   position: relative;
   align-self: auto;
-  margin-top: 20px;
   padding: 20px;
-  min-width: 140px;
-  min-height: 140px;
+  max-width: 150px;
+  min-width: 130px;
+  max-height: 140px;
+  min-height: 130px;
   color: #fff;
   background: $lightGray;
-  border: 2px solid rgba(255, 0, 0, 0);
+  border: 2px solid rgba(87, 56, 92, .2);
+  box-shadow: 1px 1px 0 rgba(47, 38, 90, 0.2),
+              2px 2px 2px rgba(47, 38, 90, 0.1);
   cursor: pointer;
 
   &:hover {
@@ -101,4 +36,24 @@
   h1 { margin-bottom: 10px; }
 
   h1 { height: 25px; font-size: em(24); }
+}
+
+.coin-balance {
+  padding: 10px 0;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bg-eos {
+  background-position: 50% 5%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  // background-image: url('static/bg-eos.png');
+}
+
+.dark-bg {
+  .coin-balance {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
