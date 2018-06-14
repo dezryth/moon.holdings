@@ -661,6 +661,7 @@ export const zilliqa = {
 };
 
 export const zrx = {
-  color: '#fff',
-  backgroundColor: '#404040'
+  color: '#262626',
+  backgroundColor: '#fff',
+  lightBg: true
 };
