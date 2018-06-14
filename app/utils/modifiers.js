@@ -7,12 +7,12 @@ import * as R from 'ramda';
 // Styles
 import * as style from 'styles/coins';
 
-// Converts snake-case to camelCase
+// Converts snake-case to camelCase.
 String.prototype.toCamel = function () {
   return this.replace(/(\-[a-z])/g, $1 => $1.toUpperCase().replace('-', ''));
 };
 
-// Add style to coin square
+// Add style to coin square.
 export const setStyle = (id) => {
   switch (id) {
     case 'all-sports': return style.basicattentiontoken;
@@ -26,34 +26,43 @@ export const setStyle = (id) => {
     case 'enjin-coin':
     case 'matrix-ai-network':
     case 'theta-token': return style[id.toCamel()];
+    case '0x': return style.zrx;
     default: return style[id];
   }
 };
 
-// Check it coin has darkBg
+// Check it coin has darkBg.
 export const coinHasDarkBg = id =>
   (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].darkBg);
 
-// Check it coin has lightBg
-export const coinHasLightBg = id =>
-  (R.isNil(style[id.toCamel()]) ? false : style[id.toCamel()].lightBg);
+// To handle special cases.
+const coinIdChecker = (id) => {
+  switch (id) {
+    case '0x': return 'zrx';
+    default: return id;
+  }
+};
 
-// Convert Array to Object
+// Check it coin has lightBg.
+export const coinHasLightBg = (id) => {
+  const coinId = coinIdChecker(id);
+  return (R.isNil(style[coinId.toCamel()]) ? false : style[coinId.toCamel()].lightBg);
+};
+
+// Convert Array to Object.
 export const arrayToObject = array =>
   array.reduce((obj, item) => {
     obj[item.id] = item;
     return obj;
   }, {});
 
-// Add special Coin style
+// Add special Coin style.
 export const classModifier = (coinId) => {
   switch (coinId) {
     case 'eos': return 'coin-square bg-eos';
-    default:
-      // no defualt
+    default: // no defualt
   }
   return 'coin-square';
 };
 
-export const styleModifier = coinId =>
-  (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);
+export const styleModifier = coinId => (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);
