@@ -376,8 +376,9 @@ export const monero = {
 };
 
 export const nano = {
-  color: '#fff',
-  backgroundColor: '#4e92df'
+  color: '#4e92df',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const neblio = {
