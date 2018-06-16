@@ -13,8 +13,11 @@ import Astronaut from 'components/Partials/Astronaut/astronaut';
 import PlusButton from 'components/Partials/PlusButton/plusButton';
 import SquareEdit from 'components/Squares/squareEdit';
 import Portfolio from 'components/Portfolio/portfolio';
+import Loading from 'components/Partials/Loading/loading';
 
 const { localStorage } = window;
+
+let moonPortfolio;
 
 class Board extends React.Component {
   constructor(props) {
@@ -24,13 +27,14 @@ class Board extends React.Component {
       coin: {},
       portfolio: [],
       edit: false,
-      search: false
+      search: false,
+      loading: true
     };
 
     const { portfolio } = this.state;
 
     if (portfolio.length === 0) {
-      const moonPortfolio = JSON.parse(localStorage.getItem('moonPortfolio'));
+      moonPortfolio = JSON.parse(localStorage.getItem('moonPortfolio'));
 
       if (moonPortfolio) {
         const savedPortfolio = Object.values(moonPortfolio);
@@ -44,7 +48,10 @@ class Board extends React.Component {
   }
 
   componentWillReceiveProps({ coins }) {
-    this.setState({ portfolio: coins.portfolio });
+    this.setState({
+      portfolio: coins.portfolio,
+      loading: false
+    });
   }
 
   handleSearchButton(e, bool = null) {
@@ -56,7 +63,6 @@ class Board extends React.Component {
   }
 
   toggleSquareEdit(edit = false, coin = {}) {
-    // console.log('toggleSquareEdit', coin);
     this.setState({ coin, edit, search: false });
   }
 
@@ -92,7 +98,7 @@ class Board extends React.Component {
 
   render() {
     const {
-      coin, edit, search, portfolio
+      coin, edit, loading, search, portfolio
     } = this.state;
 
     const isTrue = portfolio.length > 0;
@@ -102,6 +108,7 @@ class Board extends React.Component {
         { this.renderPortfolio(portfolio) }
         { edit && this.renderSquareEdit(coin) }
         { search && this.renderSearchModal() }
+        { loading && moonPortfolio && <Loading /> }
         { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
         <div className="coinbase-link">
