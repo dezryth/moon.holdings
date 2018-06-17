@@ -60,6 +60,7 @@ export default (state = initialState, action) => {
         localStorage.setItem('moonPortfolio', JSON.stringify(lighterPortfolio));
       } else {
         lighterPortfolio = [];
+        localStorage.clear();
       }
 
       return {
