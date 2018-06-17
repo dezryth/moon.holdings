@@ -24,6 +24,7 @@ export const setStyle = (id) => {
     case 'golem-network-tokens':
     case 'gnosis-gno':
     case 'enjin-coin':
+    case 'kucoin-shares': return style.kucoinshares;
     case 'matrix-ai-network':
     case 'theta-token': return style[id.toCamel()];
     case '0x': return style.zrx;
