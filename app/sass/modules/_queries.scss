@@ -2,11 +2,7 @@
 ========================================================= */
 @media all and (max-width: 900px) {
   #square-edit-container {
-    .close-modal-x {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-    }
+    .close-modal-x { position: absolute; top: 20px; right: 30px; }
   }
 
   #square-edit { width: 100%; margin: 0 auto; }
@@ -34,22 +30,25 @@
 /* 400 (Mobile Break)
 ========================================================= */
 @media (max-width: 400px) {
-  body {
-    background: $darkPurple !important;
+  body { background: $darkPurple !important; }
+
+  #square-edit-container {
+    .close-modal-x { position: fixed; top: 120px; right: 30px; }
   }
 
-  .portfolio-container {
-    padding: 20px 0 160px;
-  }
+  #square-edit { position: fixed; top: 100px; left: 0; }
+
+  #astronaut { display: none; }
+
+  #big-plus-button { border: 2px solid rgba(87, 56, 92, .2); }
+
+  .portfolio-container { padding: 20px 0 160px; }
 
   .flex-grid {
     .col { width: 35%; }
   }
 
-  .coin-square {
-    min-width: auto;
-    min-height: auto;
-  }
+  .coin-square { min-width: auto; min-height: auto; }
 
   .coin-balance {
     position: relative;
@@ -58,16 +57,6 @@
   }
 
   .dark-bg {
-    .coin-balance {
-      border-bottom: 1px solid rgba(0, 0, 0, 0);
-    }
-  }
-
-  #astronaut {
-    display: none;
-  }
-
-  #big-plus-button {
-    border: 2px solid rgba(87, 56, 92, .2);
+    .coin-balance { border-bottom: 1px solid rgba(0, 0, 0, 0); }
   }
 }
