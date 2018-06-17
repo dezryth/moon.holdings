@@ -34,6 +34,10 @@
 /* 400 (Mobile Break)
 ========================================================= */
 @media (max-width: 400px) {
+  body {
+    background: $darkPurple !important;
+  }
+
   .portfolio-container {
     padding: 20px 0 160px;
   }
