@@ -364,12 +364,12 @@ export const komodo = {
   backgroundColor: '#3c6363'
 };
 
-export const kucoinshares = {
+export const kucoinShares = {
   color: '#fff',
   backgroundColor: '#1b78eb'
 };
 
-export const kybernetwork = {
+export const kyberNetwork = {
   color: '#000',
   backgroundColor: '#5dae85'
 };

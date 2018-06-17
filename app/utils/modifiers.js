@@ -17,7 +17,6 @@ export const setStyle = (id) => {
   switch (id) {
     case 'all-sports': return style.basicattentiontoken;
     case 'basic-attention-token': return style.basicattentiontoken;
-    case 'kucoin-shares': return style.kucoinshares;
     case 'binance-coin':
     case 'bitcoin-cash':
     case 'bibox-token':
@@ -25,6 +24,8 @@ export const setStyle = (id) => {
     case 'golem-network-tokens':
     case 'gnosis-gno':
     case 'enjin-coin':
+    case 'kucoin-shares':
+    case 'kyber-network':
     case 'matrix-ai-network':
     case 'theta-token': return style[id.toCamel()];
     case '0x': return style.zrx;
