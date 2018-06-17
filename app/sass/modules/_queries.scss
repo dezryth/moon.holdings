@@ -33,10 +33,18 @@
   body { background: $darkPurple !important; }
 
   #square-edit-container {
-    .close-modal-x { position: fixed; top: 120px; right: 30px; }
+    .close-modal-x {
+      position: fixed;
+      top: 35px;
+      right: 30px;
+    }
   }
 
-  #square-edit { position: fixed; top: 100px; left: 0; }
+  #square-edit {
+    position: fixed;
+    top: 15px;
+    left: 0;
+  }
 
   #astronaut { display: none; }
 
