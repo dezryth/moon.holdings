@@ -13,7 +13,7 @@ export const REMOVE_COIN = 'REMOVE_COIN';
 export const UPDATE_COIN = 'UPDATE_COIN';
 
 // Number of coins to fetch.
-const count = 1000;
+const count = 300;
 
 // Action creators
 export function get(coins) {
