@@ -6,7 +6,7 @@ import { coinbase, binance, changelly } from 'constants/affiliates';
 const links = [
   { name: 'coinbase', link: coinbase, h4: 'Buy Bitcoin' },
   { name: 'binance', link: binance, h4: 'Buy Altcoins' },
-  { name: 'changelly', link: changelly, h4: 'Sawp coins' }
+  { name: 'changelly', link: changelly, h4: 'Swap coins' }
 ];
 
 export default () => (
