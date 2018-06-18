@@ -14,9 +14,7 @@ import PlusButton from 'components/Partials/PlusButton/plusButton';
 import SquareEdit from 'components/Squares/squareEdit';
 import Portfolio from 'components/Portfolio/portfolio';
 import Loading from 'components/Partials/Loading/loading';
-
-// Constants
-import { coinbase, binance, changelly } from 'constants/affiliates';
+import Affiliates from 'components/Partials/Affiliates/affiliates';
 
 const { localStorage } = window;
 
@@ -114,27 +112,7 @@ class Board extends React.Component {
         { loading && moonPortfolio && <Loading /> }
         { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
-        <div className="affiliates">
-          <ul>
-            <a href={coinbase} target="_blank" rel="noopener noreferrer">
-              <li className="coinbase">
-                <h4>Buy Bitcoin</h4>
-              </li>
-            </a>
-
-            <a href={binance} target="_blank" rel="noopener noreferrer">
-              <li className="binance">
-                <h4>Buy Altcoins</h4>
-              </li>
-            </a>
-
-            <a href={changelly} target="_blank" rel="noopener noreferrer">
-              <li className="changelly">
-                <h4>Swap coins</h4>
-              </li>
-            </a>
-          </ul>
-        </div>
+        <Affiliates />
         <Astronaut logo={isTrue} />
       </div>
     );
