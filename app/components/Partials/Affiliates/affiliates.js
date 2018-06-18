@@ -13,7 +13,7 @@ export default () => (
   <div className="affiliates">
     <ul>
       {links.map(l => (
-        <a href={l.link} target="_blank" rel="noopener noreferrer">
+        <a href={l.link} key={l.name} target="_blank" rel="noopener noreferrer">
           <li className={l.name}>
             <h4>{l.h4}</h4>
           </li>
