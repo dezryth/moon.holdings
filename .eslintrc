@@ -3,15 +3,12 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "moduleDirectory": [
-          "app",
-          "node_modules"
-        ]
+        "moduleDirectory": ["app", "node_modules"]
       }
     }
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2017,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
@@ -19,10 +16,7 @@
     }
   },
   "rules": {
-    "import/no-unresolved": [
-      2,
-      { caseSensitive: false }
-     ],
+    "import/no-unresolved": [2, { "caseSensitive": false }],
     "comma-dangle": ["error", "never"],
     "semi": ["error", "always"],
     "react/jsx-filename-extension": 0,

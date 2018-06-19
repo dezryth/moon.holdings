@@ -14,10 +14,14 @@ const log = (method, err) => {
 //   .catch(err => log('api.getAllCoins', err))
 //   .then(res => res);
 
-export const getTop = count => axios.get(top(count))
-  .catch(err => log('api.getAllCoins', err))
-  .then(res => res);
+export const getTop = count =>
+  axios
+    .get(top(count))
+    .catch(err => log('api.getAllCoins', err))
+    .then(res => res);
 
-export const getCoin = coinId => axios.get(coinTicker(coinId))
-  .catch(err => log('api.getCoin', err))
-  .then(res => res);
+export const getCoin = coinId =>
+  axios
+    .get(coinTicker(coinId))
+    .catch(err => log('api.getCoin', err))
+    .then(res => res);
