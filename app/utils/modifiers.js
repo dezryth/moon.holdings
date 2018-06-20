@@ -20,6 +20,7 @@ export const setStyle = (id) => {
     case 'binance-coin':
     case 'bitcoin-cash':
     case 'bibox-token':
+    case 'ethereum-classic':
     case 'deepbrain-chain':
     case 'golem-network-tokens':
     case 'gnosis-gno':

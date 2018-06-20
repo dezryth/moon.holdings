@@ -268,7 +268,7 @@ export const ethereum = {
   backgroundColor: '#5c607f'
 };
 
-export const ethereumclassic = {
+export const ethereumClassic = {
   color: '#fff',
   backgroundColor: '#678F74'
 };
