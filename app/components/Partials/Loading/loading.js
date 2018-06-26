@@ -1,3 +1,5 @@
 import React from 'react';
 
-export default () => (<div className="loading-container"><div className="coinloading" /></div>);
+const Loading = () => (<div className="loading-container"><div className="coinloading" /></div>);
+
+export default Loading;

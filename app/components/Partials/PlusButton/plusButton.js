@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ toggleSearch }) => (
+const PlusButton = ({ toggleSearch }) => (
   <button
     id="big-plus-button"
     tabIndex={0}
@@ -10,3 +10,5 @@ export default ({ toggleSearch }) => (
     <h1>Add Asset</h1>
   </button>
 );
+
+export default PlusButton;

@@ -6,7 +6,7 @@ import { setStyle, styleModifier } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
 
-export default ({ coin, edit }) => (
+const Square = ({ coin, edit }) => (
   <div
     className={styleModifier(coin.id)}
     style={setStyle(coin.id)}
@@ -25,3 +25,5 @@ export default ({ coin, edit }) => (
     </section>
   </div>
 );
+
+export default Square;
