@@ -5,7 +5,7 @@
   position: relative;
   align-self: auto;
   padding: 20px;
-  margin-bottom: 30px;
+  margin: 0 1px 30px 0;
   max-width: 140px;
   min-width: 140px;
   max-height: 140px;
@@ -53,7 +53,7 @@
   position: absolute;
   top: -20px;
   left: 0;
-  font-size: em(12);
+  font-size: em(14);
   color: #ccc;
 }
 
@@ -70,10 +70,18 @@
   background-repeat: no-repeat;
 }
 
-.bg-btc::after {
+.bg-btc::after,
+.bg-dcr::after {
   background-position: 50% 5%;
   background-size: 100%;
+}
+
+.bg-btc::after {
   background-image: url('static/bg-btc.png');
+}
+
+.bg-dcr::after {
+  background-image: url('static/bg-dcr.gif');
 }
 
 .bg-eth::after {
@@ -88,10 +96,48 @@
   background-image: url('static/bg-eos.png');
 }
 
-.bg-lsk::after {
+.bg-lsk::after,
+.bg-neo::after {
   background-position: 50% 100%;
   background-size: 70%;
+}
+
+.bg-lsk::after {
   background-image: url('static/bg-lsk.png');
+}
+
+.bg-neo::after {
+  background-image: url('static/bg-neo.png');
+}
+
+.bg-gnt::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-gnt.png');
+}
+
+.bg-nano::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-nano.png');
+}
+
+.bg-sonm::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-sonm.png');
+}
+
+.bg-zen::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-zen.png');
+}
+
+.bg-zrx::after {
+  background-position: 50% 50%;
+  background-size: 65%;
+  background-image: url('static/bg-zrx.png');
 }
 
 .dark-bg {

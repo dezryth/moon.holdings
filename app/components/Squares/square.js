@@ -12,17 +12,19 @@ export default ({ coin, edit, index }) => (
     style={setStyle(coin.id)}
     onClick={() => clicked(coin, edit)}
   >
-    <div className="coin-index">{index + 1}</div>
+    <div className="coin-index">
+      <span>{index + 1}</span>
+    </div>
     <section>
       <h1>
-        <div className="fl"> {coin.symbol} </div>
-        <div className="fr mr-n5"> {coin.percentage}% </div>
+        <div className="fl">{coin.symbol}</div>
+        <div className="fr mr-n5 o7"> {coin.percentage}% </div>
       </h1>
       <p className="coin-price"><span className="mr5 o7">Price:</span>
-        <span className="fr"> ${round(coin.price_usd)} </span>
+        <span className="fr">${round(coin.price_usd)}</span>
       </p>
-      <p className="coin-balance"> {coin.balance} </p>
-      <p className="balance"> ${calculateBalance(coin)} </p>
+      <p className="coin-balance">{coin.balance}</p>
+      <p className="balance">${calculateBalance(coin)}</p>
     </section>
   </div>
 );
