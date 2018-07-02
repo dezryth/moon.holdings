@@ -6,12 +6,13 @@ import { setStyle, styleModifier } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
 
-export default ({ coin, edit }) => (
+export default ({ coin, edit, index }) => (
   <div
     className={styleModifier(coin.id)}
     style={setStyle(coin.id)}
     onClick={() => clicked(coin, edit)}
   >
+    <div className="coin-index">{index + 1}</div>
     <section>
       <h1>
         <div className="fl"> {coin.symbol} </div>
