@@ -15,8 +15,8 @@ const Portfolio = ({ coins, edit }) => (
     </section>
 
     <div className="flex-grid portfolio-container">
-      {coins.sort(byLargestBalance).map(coin =>
-        (<Square key={coin.id} coin={coin} edit={edit} />))}
+      {coins.sort(byLargestBalance).map((coin, i) =>
+        (<Square key={coin.id} coin={coin} edit={edit} index={i} />))}
     </div>
   </div>
 );
