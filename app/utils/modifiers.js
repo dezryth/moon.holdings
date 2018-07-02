@@ -62,7 +62,8 @@ export const arrayToObject = array =>
 // Add special Coin style.
 export const classModifier = (coinId) => {
   switch (coinId) {
-    case 'eos': return 'coin-square bg-eos';
+    case 'eos': return 'coin-square bg bg-eos';
+    case 'bitcoin': return 'coin-square bg bg-btc';
     default: // no defualt
   }
   return 'coin-square';
