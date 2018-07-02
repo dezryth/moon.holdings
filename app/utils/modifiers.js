@@ -69,6 +69,7 @@ export const classModifier = (coinId) => {
     case 'eos': return `${coinBg()} bg-eos`;
     case 'lisk': return `${coinBg()} bg-lsk`;
     case 'neo': return `${coinBg()} bg-neo`;
+    case 'zencash': return `${coinBg()} bg-zen`;
     default: // no defualt
   }
   return 'coin-square';

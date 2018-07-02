@@ -100,6 +100,12 @@
   background-image: url('static/bg-neo.png');
 }
 
+.bg-zen::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-zen.png');
+}
+
 .dark-bg {
   .coin-balance {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
