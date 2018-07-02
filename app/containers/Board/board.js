@@ -14,7 +14,13 @@ import PlusButton from 'components/Partials/PlusButton/plusButton';
 import SquareEdit from 'components/Squares/squareEdit';
 import Portfolio from 'components/Portfolio/portfolio';
 import Loading from 'components/Partials/Loading/loading';
+<<<<<<< HEAD
 import Affiliates from 'components/Partials/Affiliates/affiliates';
+=======
+
+// Constants
+import { coinbase, binance, changelly } from 'constants/affiliates';
+>>>>>>> master
 
 const { localStorage } = window;
 
