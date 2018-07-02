@@ -253,9 +253,8 @@ export const einsteinium = {
 };
 
 export const eos = {
-  color: '#3c374a',
-  backgroundColor: '#f0f5f8',
-  lightBg: true
+  color: '#f0f5f8',
+  backgroundColor: '#443f53'
 };
 
 export const eosdac = {
@@ -269,7 +268,7 @@ export const ethereum = {
   backgroundColor: '#5c607f'
 };
 
-export const ethereumclassic = {
+export const ethereumClassic = {
   color: '#fff',
   backgroundColor: '#678F74'
 };

@@ -11,7 +11,7 @@
   min-height: 140px;
   color: #fff;
   background: $lightGray;
-  border: 2px solid rgba(87, 56, 92, .2);
+  border: 2px solid rgba(87, 56, 92, 0);
   box-shadow: 1px 1px 0 rgba(47, 38, 90, 0.2),
               2px 2px 2px rgba(47, 38, 90, 0.1);
   cursor: pointer;
@@ -35,7 +35,10 @@
   p,
   h1 { margin-bottom: 10px; }
 
-  h1 { height: 25px; font-size: em(24); }
+  h1 {
+    height: 25px;
+    font-size: em(24);
+  }
 }
 
 .coin-balance {
@@ -45,11 +48,41 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.bg-eos {
+.bg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: no-repeat;
+}
+
+.bg-btc::after {
+  background-position: 50% 5%;
+  background-size: 100%;
+  background-image: url('static/bg-btc.png');
+}
+
+.bg-eth::after {
+  background-position: 50% 50%;
+  background-size: 50%;
+  background-image: url('static/bg-eth.png');
+}
+
+.bg-eos::after {
   background-position: 50% 5%;
   background-size: 150%;
-  background-repeat: no-repeat;
-  // background-image: url('static/bg-eos.png');
+  background-image: url('static/bg-eos.png');
+}
+
+.bg-lsk::after {
+  background-position: 50% 100%;
+  background-size: 70%;
+  background-image: url('static/bg-lsk.png');
 }
 
 .dark-bg {

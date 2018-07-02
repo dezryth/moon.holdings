@@ -1,10 +1,10 @@
 #search-modal {
   @include rounded(5px);
   animation: fadein .4s;
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 20px;
-  bottom: 160px;
+  bottom: 170px;
   padding: 20px;
   width: 250px;
   height: 300px;

@@ -20,6 +20,7 @@ export const setStyle = (id) => {
     case 'binance-coin':
     case 'bitcoin-cash':
     case 'bibox-token':
+    case 'ethereum-classic':
     case 'deepbrain-chain':
     case 'golem-network-tokens':
     case 'gnosis-gno':
@@ -58,10 +59,15 @@ export const arrayToObject = array =>
     return obj;
   }, {});
 
+const coinBg = () => 'coin-square bg';
+
 // Add special Coin style.
 export const classModifier = (coinId) => {
   switch (coinId) {
-    case 'eos': return 'coin-square bg-eos';
+    case 'bitcoin': return `${coinBg()} bg-btc`;
+    case 'ethereum': return `${coinBg()} bg-eth`;
+    case 'eos': return `${coinBg()} bg-eos`;
+    case 'lisk': return `${coinBg()} bg-lsk`;
     default: // no defualt
   }
   return 'coin-square';
