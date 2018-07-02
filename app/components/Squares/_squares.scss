@@ -61,26 +61,29 @@
   background-repeat: no-repeat;
 }
 
-.bg-eos::after {
-  opacity: 0.5;
-  background-position: 50% 5%;
-  background-size: 150%;
-  background-image: url('static/bg-eos.png');
-}
-
 .bg-btc::after {
   background-position: 50% 5%;
   background-size: 100%;
   background-image: url('static/bg-btc.png');
 }
 
-// .bg-eos {
-//   opacity: 0.2;
-//   background-position: 50% 5%;
-//   background-size: 150%;
-//   background-repeat: no-repeat;
-//   background-image: url('static/bg-eos.png');
-// }
+.bg-eth::after {
+  background-position: 50% 50%;
+  background-size: 50%;
+  background-image: url('static/bg-eth.png');
+}
+
+.bg-eos::after {
+  background-position: 50% 5%;
+  background-size: 150%;
+  background-image: url('static/bg-eos.png');
+}
+
+.bg-lsk::after {
+  background-position: 50% 100%;
+  background-size: 70%;
+  background-image: url('static/bg-lsk.png');
+}
 
 .dark-bg {
   .coin-balance {
