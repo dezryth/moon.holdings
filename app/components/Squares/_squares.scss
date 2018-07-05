@@ -76,8 +76,18 @@
   background-size: 100%;
 }
 
+.bg-bnb::after,
+.bg-dnt::after {
+  background-position: 50% 50%;
+  background-size: 80%;
+}
+
 .bg-btc::after {
   background-image: url('static/bg-btc.png');
+}
+
+.bg-bnb::after {
+  background-image: url('static/bg-bnb.png');
 }
 
 .bg-dcr::after {
@@ -85,8 +95,6 @@
 }
 
 .bg-dnt::after {
-  background-position: 50% 50%;
-  background-size: 80%;
   background-image: url('static/bg-dnt.png');
 }
 
@@ -108,6 +116,14 @@
   background-size: 70%;
 }
 
+.bg-gnt::after,
+.bg-spank::after,
+.bg-sonm::after,
+.bg-zen::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+}
+
 .bg-lsk::after {
   background-image: url('static/bg-lsk.png');
 }
@@ -117,32 +133,22 @@
 }
 
 .bg-gnt::after {
-  background-position: 50% 50%;
-  background-size: 70%;
   background-image: url('static/bg-gnt.png');
 }
 
 .bg-nano::after {
-  background-position: 50% 50%;
-  background-size: 70%;
   background-image: url('static/bg-nano.png');
 }
 
 .bg-spank::after {
-  background-position: 50% 50%;
-  background-size: 70%;
   background-image: url('static/bg-spank.png');
 }
 
 .bg-sonm::after {
-  background-position: 50% 50%;
-  background-size: 70%;
   background-image: url('static/bg-sonm.png');
 }
 
 .bg-zen::after {
-  background-position: 50% 50%;
-  background-size: 70%;
   background-image: url('static/bg-zen.png');
 }
 

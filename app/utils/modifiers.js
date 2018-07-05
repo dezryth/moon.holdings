@@ -66,6 +66,7 @@ export const classModifier = (coinId) => {
   console.log('coinId', coinId);
   switch (coinId) {
     case 'bitcoin': return `${coinBg()} bg-btc`;
+    case 'binance-coin': return `${coinBg()} bg-bnb`;
     case 'decred': return `${coinBg()} bg-dcr`;
     case 'district0x': return `${coinBg()} bg-dnt`;
     case 'ethereum': return `${coinBg()} bg-eth`;
