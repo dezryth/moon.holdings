@@ -137,6 +137,8 @@
 }
 
 .bg-nano::after {
+  background-position: 50% 50%;
+  background-size: 120%;
   background-image: url('static/bg-nano.png');
 }
 
