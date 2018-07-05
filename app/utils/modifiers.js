@@ -63,7 +63,6 @@ const coinBg = () => 'coin-square bg';
 
 // Add special Coin style.
 export const classModifier = (coinId) => {
-  console.log('coinId', coinId);
   switch (coinId) {
     case 'bitcoin': return `${coinBg()} bg-btc`;
     case 'binance-coin': return `${coinBg()} bg-bnb`;
