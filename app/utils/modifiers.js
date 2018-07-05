@@ -15,7 +15,6 @@ String.prototype.toCamel = function () {
 // Add style to coin square.
 export const setStyle = (id) => {
   switch (id) {
-    case 'all-sports': return style.basicattentiontoken;
     case 'basic-attention-token': return style.basicattentiontoken;
     case 'binance-coin':
     case 'bitcoin-cash':
@@ -29,6 +28,7 @@ export const setStyle = (id) => {
     case 'kyber-network':
     case 'matrix-ai-network':
     case 'theta-token': return style[id.toCamel()];
+    case 'power-ledger': return style.powerledger;
     case '0x': return style.zrx;
     default: return style[id];
   }
@@ -63,16 +63,19 @@ const coinBg = () => 'coin-square bg';
 
 // Add special Coin style.
 export const classModifier = (coinId) => {
-  console.log('coinId', coinId);
   switch (coinId) {
     case 'bitcoin': return `${coinBg()} bg-btc`;
+    case 'binance-coin': return `${coinBg()} bg-bnb`;
     case 'decred': return `${coinBg()} bg-dcr`;
+    case 'district0x': return `${coinBg()} bg-dnt`;
     case 'ethereum': return `${coinBg()} bg-eth`;
     case 'eos': return `${coinBg()} bg-eos`;
     case 'golem-network-tokens': return `${coinBg()} bg-gnt`;
     case 'lisk': return `${coinBg()} bg-lsk`;
     case 'nano': return `${coinBg()} bg-nano`;
-    case 'neo': return `${coinBg()} bg-neo`;
+    case 'neo':
+    case 'gas': return `${coinBg()} bg-neo`;
+    case 'spankchain': return `${coinBg()} bg-spank`;
     case 'sonm': return `${coinBg()} bg-sonm`;
     case 'zencash': return `${coinBg()} bg-zen`;
     case '0x': return `${coinBg()} bg-zrx`;

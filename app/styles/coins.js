@@ -168,8 +168,8 @@ export const dash = {
 };
 
 export const decred = {
-  color: '#2f76fb',
-  backgroundColor: '#3ad6a3'
+  color: '#3ad6a3',
+  backgroundColor: '#2f76fb'
 };
 
 export const dent = {
