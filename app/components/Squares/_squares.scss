@@ -84,6 +84,12 @@
   background-image: url('static/bg-dcr.gif');
 }
 
+.bg-dnt::after {
+  background-position: 50% 50%;
+  background-size: 80%;
+  background-image: url('static/bg-dnt.png');
+}
+
 .bg-eth::after {
   background-position: 50% 50%;
   background-size: 50%;
@@ -120,6 +126,12 @@
   background-position: 50% 50%;
   background-size: 70%;
   background-image: url('static/bg-nano.png');
+}
+
+.bg-spank::after {
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-image: url('static/bg-spank.png');
 }
 
 .bg-sonm::after {
