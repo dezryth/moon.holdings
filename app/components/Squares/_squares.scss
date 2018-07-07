@@ -5,11 +5,11 @@
   position: relative;
   align-self: auto;
   padding: 20px;
-  margin: 0 1px 30px 0;
-  max-width: 140px;
-  min-width: 140px;
-  max-height: 140px;
-  min-height: 140px;
+  margin: 0 1px 20px 0;
+  max-width: 160px;
+  min-width: 160px;
+  max-height: 160px;
+  min-height: 160px;
   color: #fff;
   background: $lightGray;
   border: 2px solid rgba(87, 56, 92, 0);
@@ -25,11 +25,16 @@
   p,
   em { font-family: Overpass; }
 
-  p { font-weight: 200; font-size: em(14); }
+  p {
+    font-weight: 200;
+    font-size: em(14);
+  }
 
   p.balance {
     position: absolute;
     bottom: 10px;
+    float: left;
+    width: 100%;
     font-size: em(20);
   }
 
@@ -42,19 +47,33 @@
   }
 }
 
+.coin-stats {
+  float: left;
+  width: 100%;
+  color: #ccc;
+
+  span {
+    float: left;
+    font-size: em(14);
+  }
+}
+
+.coin-index,
+.coin-percentage,
+.change24 {
+  float: left;
+  margin-right: 12px;
+}
+
+.stat {
+  color: $apricot;
+}
+
 .coin-balance {
   padding: 10px 0;
   float: left;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.coin-index {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  font-size: em(14);
-  color: #ccc;
 }
 
 .bg::after {
@@ -82,21 +101,10 @@
   background-size: 80%;
 }
 
-.bg-btc::after {
-  background-image: url('static/bg-btc.png');
-}
-
-.bg-bnb::after {
-  background-image: url('static/bg-bnb.png');
-}
-
-.bg-dcr::after {
-  background-image: url('static/bg-dcr.gif');
-}
-
-.bg-dnt::after {
-  background-image: url('static/bg-dnt.png');
-}
+.bg-btc::after { background-image: url('static/bg-btc.png'); }
+.bg-bnb::after { background-image: url('static/bg-bnb.png'); }
+.bg-dcr::after { background-image: url('static/bg-dcr.gif'); }
+.bg-dnt::after { background-image: url('static/bg-dnt.png'); }
 
 .bg-eth::after {
   background-position: 50% 50%;
@@ -124,17 +132,9 @@
   background-size: 70%;
 }
 
-.bg-lsk::after {
-  background-image: url('static/bg-lsk.png');
-}
-
-.bg-neo::after {
-  background-image: url('static/bg-neo.png');
-}
-
-.bg-gnt::after {
-  background-image: url('static/bg-gnt.png');
-}
+.bg-gnt::after { background-image: url('static/bg-gnt.png'); }
+.bg-lsk::after { background-image: url('static/bg-lsk.png'); }
+.bg-neo::after { background-image: url('static/bg-neo.png'); }
 
 .bg-nano::after {
   background-position: 50% 50%;
@@ -142,17 +142,9 @@
   background-image: url('static/bg-nano.png');
 }
 
-.bg-spank::after {
-  background-image: url('static/bg-spank.png');
-}
-
-.bg-sonm::after {
-  background-image: url('static/bg-sonm.png');
-}
-
-.bg-zen::after {
-  background-image: url('static/bg-zen.png');
-}
+.bg-spank::after { background-image: url('static/bg-spank.png'); }
+.bg-sonm::after { background-image: url('static/bg-sonm.png'); }
+.bg-zen::after { background-image: url('static/bg-zen.png'); }
 
 .bg-zrx::after {
   background-position: 50% 50%;
@@ -161,7 +153,5 @@
 }
 
 .dark-bg {
-  .coin-balance {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+  .coin-balance { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 }
