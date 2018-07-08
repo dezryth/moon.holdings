@@ -641,8 +641,9 @@ export const steem = {
 };
 
 export const stellar = {
-  color: '#fff',
-  backgroundColor: '#21b6e3'
+  color: '#07a2cc',
+  backgroundColor: '#ceebf6',
+  lightBg: true
 };
 
 export const stratis = {

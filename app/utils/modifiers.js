@@ -63,7 +63,6 @@ const coinBg = () => 'coin-square bg';
 
 // Add special Coin style.
 export const classModifier = (coinId) => {
-  console.log('coinId', coinId);
   switch (coinId) {
     case 'bitcoin': return `${coinBg()} bg-btc`;
     case 'binance-coin': return `${coinBg()} bg-bnb`;
@@ -74,12 +73,12 @@ export const classModifier = (coinId) => {
     case 'eos': return `${coinBg()} bg-eos`;
     case 'golem-network-tokens': return `${coinBg()} bg-gnt`;
     case 'lisk': return `${coinBg()} bg-lsk`;
-    case 'nano': return `${coinBg()} bg-nano`;
+    case 'nano': return `${coinBg()} bg-nano bg-lite`;
     case 'neo':
     case 'gas': return `${coinBg()} bg-neo`;
     case 'spankchain': return `${coinBg()} bg-spank`;
     case 'sonm': return `${coinBg()} bg-sonm`;
-    case 'stellar': return `${coinBg()} bg-xlm`;
+    case 'stellar': return `${coinBg()} bg-xlm bg-lite`;
     case 'zencash': return `${coinBg()} bg-zen`;
     case '0x': return `${coinBg()} bg-zrx`;
     default: // no defualt
