@@ -50,7 +50,7 @@
 .coin-stats {
   float: left;
   width: 100%;
-  color: #ccc;
+  color: #fff;
 
   span {
     float: left;
@@ -58,21 +58,32 @@
   }
 }
 
-.coin-index,
-.coin-percentage,
-.change24 {
+.coin-index {
   float: left;
   margin-right: 12px;
 }
 
+.coin-percentage {
+  float: right;
+  margin-top: 10px;
+}
+
+.hr24 {
+  margin-right: 10px;
+}
+
+.change24 {
+  float: right;
+}
+
 .stat {
-  color: $apricot;
+  color: $midGray;
 }
 
 .coin-balance {
   padding: 10px 0;
   float: left;
-  width: 100%;
+  // width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -148,7 +159,7 @@
 
 .bg-zrx::after {
   background-position: 50% 50%;
-  background-size: 65%;
+  background-size: 100%;
   background-image: url('static/bg-zrx.png');
 }
 
