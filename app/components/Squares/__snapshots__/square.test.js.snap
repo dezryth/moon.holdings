@@ -12,54 +12,6 @@ exports[`<Square /> component when rendering should render a component matching 
   }
 >
   <section>
-    <h1>
-      <div
-        className="fl"
-      >
-        BTC
-      </div>
-    </h1>
-    <p
-      className="coin-price"
-    >
-      <span
-        className="mr3 o7"
-      >
-        Price:
-      </span>
-      <span
-        className="fr"
-      >
-        $
-        0
-      </span>
-    </p>
-    <p
-      className="mb0 o7"
-    >
-      Position:
-    </p>
-    <p
-      className="coin-balance"
-    >
-      0
-    </p>
-    <div
-      className="coin-percentage"
-    >
-      <span />
-      <span
-        className="stat"
-      >
-        %
-      </span>
-    </div>
-    <p
-      className="balance"
-    >
-      $
-      0
-    </p>
     <div
       className="coin-stats"
     >
@@ -83,6 +35,56 @@ exports[`<Square /> component when rendering should render a component matching 
         >
           24hr
         </span>
+        <span
+          className="red"
+        >
+          -10%
+        </span>
+        <span
+          className="stat"
+        >
+          %
+        </span>
+      </div>
+    </div>
+    <h1>
+      <div
+        className="fl"
+      >
+        BTC
+      </div>
+    </h1>
+    <p
+      className="coin-price"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Price:
+      </span>
+      <span
+        className="fr"
+      >
+        $
+        0
+      </span>
+    </p>
+    <p
+      className="coin-position"
+    >
+      Position:
+    </p>
+    <div
+      className="position-bg"
+    >
+      <p
+        className="coin-balance"
+      >
+        0
+      </p>
+      <div
+        className="coin-percentage"
+      >
         <span />
         <span
           className="stat"
@@ -91,6 +93,12 @@ exports[`<Square /> component when rendering should render a component matching 
         </span>
       </div>
     </div>
+    <p
+      className="balance"
+    >
+      $
+      0
+    </p>
   </section>
 </div>
 `;
