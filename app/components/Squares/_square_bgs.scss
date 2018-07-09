@@ -88,11 +88,35 @@
   .coin-balance { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
 }
 
-.bg-spank {
+.bg-ada,
+.bg-btc,
+.bg-bch,
+.bg-mkr,
+.bg-neo,
+.bg-spank,
+.bg-xlm {
   .green,
   .red {
     margin: -2px 4px 0 0;
     padding: 2px;
-    background-color: rgba(255, 255, 255, .85);
   }
+}
+
+.bg-ada,
+.bg-btc,
+.bg-bch,
+.bg-mkr,
+.bg-neo {
+  .green { background-color: rgba(0, 0, 0, .5); }
+  .red { background-color: rgba(255, 255, 255, .45); }
+}
+
+.bg-spank {
+  .green,
+  .red { background-color: rgba(255, 255, 255, .85); }
+}
+
+.bg-xlm {
+  .green,
+  .red { background-color: rgba(0, 0, 0, .5); }
 }
