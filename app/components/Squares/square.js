@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Utils
-import { calculateBalance, round } from 'utils/math';
+import { numberWithCommas, round } from 'utils/math';
 import { percentStyler, setStyle, styleModifier } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
@@ -38,7 +38,7 @@ export default ({ coin, edit, index }) => (
           <span className="stat">%</span>
         </div>
       </div>
-      <p className="balance">${calculateBalance(coin)}</p>
+      <p className="balance">${numberWithCommas(coin.value)}</p>
     </section>
   </div>
 );
