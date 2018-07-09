@@ -11,11 +11,11 @@ const byLargestBalance = (a, b) => calculateBalance(b) - calculateBalance(a);
 const Portfolio = ({ coins, edit }) => (
   <div>
     <section className="portfolio-balance">
-      ${portfolioBalance(coins)}
+        ${portfolioBalance(coins)}
     </section>
     <div className="flex-grid portfolio-container">
       {coins.sort(byLargestBalance).map((coin, i) =>
-        (<Square key={coin.id} coin={coin} edit={edit} index={i} />))}
+          (<Square key={coin.id} coin={coin} edit={edit} index={i} />))}
     </div>
   </div>
 );
