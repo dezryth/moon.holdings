@@ -65,8 +65,8 @@ describe('sort portfolio squares by largest value', () => {
     const squares = wrapper.find(Square);
     expect(squares).toHaveLength(3);
 
-    const cs = squares.map(square => square.props());
-    const results = cs.map(calculateBalance);
-    expect(results).toEqual(coinsArray);
+    const cs = squares.map(square => square.props()).map(c => c.coin);
+    const results = cs.map(calculateBalance).map(Number);
+    expect(results).toEqual([300, 200, 100]);
   });
 });

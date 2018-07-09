@@ -4,9 +4,9 @@ import React from 'react';
 import Square from 'components/Squares/square';
 
 // Utils
-import { portfolioBalance, getCoinValue } from 'utils/math';
+import { portfolioBalance, calculateBalance } from 'utils/math';
 
-const byLargestBalance = (b, a) => getCoinValue(a) - getCoinValue(b);
+const byLargestBalance = (a, b) => calculateBalance(b) - calculateBalance(a);
 
 const Portfolio = ({ coins, edit }) => (
   <div>
