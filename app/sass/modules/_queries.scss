@@ -56,20 +56,22 @@
     .col { width: 35%; }
   }
 
-  .coin-square { min-width: auto; min-height: auto; }
-
-  .coin-balance {
-    position: relative;
-    top: -10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  .coin-square {
+    min-width: auto;
+    min-height: 120px;
+    p { margin-bottom: 0; }
   }
+
+  .coin-index,
+  .coin-percentage,
+  .change24 { margin-right: 6px; }
+
+  .coin-balance { border-bottom: 1px solid rgba(0, 0, 0, 0); }
 
   .dark-bg {
     .coin-balance { border-bottom: 1px solid rgba(0, 0, 0, 0); }
   }
 
   .coinbase,
-  .binance {
-    display: none;
-  }
+  .binance { display: none; }
 }

@@ -641,8 +641,9 @@ export const steem = {
 };
 
 export const stellar = {
-  color: '#fff',
-  backgroundColor: '#21b6e3'
+  color: '#07a2cc',
+  backgroundColor: '#ceebf6',
+  lightBg: true
 };
 
 export const stratis = {
@@ -761,7 +762,7 @@ export const zilliqa = {
 };
 
 export const zrx = {
-  color: '#262626',
-  backgroundColor: '#fff',
-  lightBg: true
+  color: '#fff',
+  backgroundColor: '#383838',
+  darkBg: true
 };
