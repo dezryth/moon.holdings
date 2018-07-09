@@ -21,7 +21,7 @@ export default ({ coin, edit, index }) => (
         <div className="change24">
           <span className="stat mr3 hr24">24hr</span>
           <span className={percentStyler(coin)}>{coin.percent_change_24h}</span>
-          <span className="stat">%</span>
+          <span className="stat apricot">%</span>
         </div>
       </div>
       <h1>
