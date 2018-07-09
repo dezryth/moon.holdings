@@ -8,8 +8,9 @@
   margin: 0 1px 20px 0;
   max-width: 160px;
   min-width: 160px;
-  max-height: 160px;
-  min-height: 160px;
+  max-height: 150px;
+  min-height: 150px;
+  font-size: em(14);
   color: #fff;
   background: $lightGray;
   border: 2px solid rgba(87, 56, 92, 0);
@@ -25,24 +26,19 @@
   p,
   em { font-family: Overpass; }
 
-  p {
-    font-weight: 200;
-    font-size: em(14);
-  }
+  p { font-weight: 200; }
 
   p.balance {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     float: left;
     width: 100%;
     font-size: em(20);
   }
 
-  p,
-  h1 { margin-bottom: 10px; }
-
   h1 {
     float: left;
+    margin-bottom: 10px;
     width: 100%;
     height: 25px;
     font-size: em(24);
@@ -52,10 +48,8 @@
 .coin-stats {
   float: left;
   margin-bottom: 10px;
-  padding: 2px 0;
   width: 100%;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.05);
 
   span {
     float: left;
@@ -63,10 +57,16 @@
   }
 }
 
+.position-bg {
+  float: left;
+  padding: 2px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .bg-lite {
-  .coin-stats {
-    color: #666;
-  }
+  .coin-stats { color: #666; }
 }
 
 .coin-index {
@@ -82,11 +82,16 @@
   width: 100%;
 }
 
-.coin-price { margin-bottom: 10px; }
+.coin-price {
+  margin-bottom: 10px;
+  padding: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
 
 .coin-position {
   opacity: 0.7;
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  font-size: em(12);
 }
 
 .hr24 { margin-right: 10px; }
@@ -95,10 +100,7 @@
 
 .stat { color: $midGray; }
 
-.coin-balance {
-  float: left;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
+.coin-balance { float: left; }
 
 .bg::after {
   content: '';

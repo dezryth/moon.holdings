@@ -86,4 +86,11 @@ export const classModifier = (coinId) => {
   return 'coin-square';
 };
 
+// Applies specific coin style.
 export const styleModifier = coinId => (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);
+
+// Adds either green or red class to 24 percent change.
+export const percentStyler = ({ percent_change_24h: change24 }) => {
+  const firstChar = change24.charAt(0);
+  return firstChar === '-' ? 'red' : 'green';
+};

@@ -2,7 +2,7 @@ import React from 'react';
 
 // Utils
 import { calculateBalance, round } from 'utils/math';
-import { setStyle, styleModifier } from 'utils/modifiers';
+import { percentStyler, setStyle, styleModifier } from 'utils/modifiers';
 
 const clicked = (coin, edit) => edit(true, coin);
 
@@ -20,7 +20,7 @@ export default ({ coin, edit, index }) => (
         </div>
         <div className="change24">
           <span className="stat mr3 hr24">24hr</span>
-          <span>{coin.percent_change_24h}</span>
+          <span className={percentStyler(coin)}>{coin.percent_change_24h}</span>
           <span className="stat">%</span>
         </div>
       </div>
@@ -31,10 +31,12 @@ export default ({ coin, edit, index }) => (
         <span className="fr">${round(coin.price_usd)}</span>
       </p>
       <p className="coin-position">Position:</p>
-      <p className="coin-balance">{coin.balance}</p>
-      <div className="coin-percentage">
-        <span>{coin.percentage}</span>
-        <span className="stat">%</span>
+      <div className="position-bg">
+        <p className="coin-balance">{coin.balance}</p>
+        <div className="coin-percentage">
+          <span>{coin.percentage}</span>
+          <span className="stat">%</span>
+        </div>
       </div>
       <p className="balance">${calculateBalance(coin)}</p>
     </section>
