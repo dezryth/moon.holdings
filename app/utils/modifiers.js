@@ -79,7 +79,7 @@ export const classModifier = (coinId) => {
     case 'neo':
     case 'gas': return `${coinBg()} bg-neo`;
     case 'spankchain': return `${coinBg()} bg-spank`;
-    case 'sonm': return `${coinBg()} bg-sonm`;
+    case 'sonm': return `${coinBg()} bg-snm`;
     case 'stellar': return `${coinBg()} bg-xlm bg-lite`;
     case 'zencash': return `${coinBg()} bg-zen`;
     case '0x': return `${coinBg()} bg-zrx`;
