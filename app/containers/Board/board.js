@@ -6,6 +6,7 @@ import { addCoins } from 'actions/coins';
 
 // Containers
 import Search from 'containers/SearchModal/searchModal';
+import Chart from 'containers/Chart/chart';
 
 // Components
 import Welcome from 'components/Partials/Welcome/welcome';
@@ -106,6 +107,7 @@ class Board extends React.Component {
 
     return (
       <div id="board">
+        <Chart />
         { this.renderPortfolio(portfolio) }
         { edit && this.renderSquareEdit(coin) }
         { search && this.renderSearchModal() }
