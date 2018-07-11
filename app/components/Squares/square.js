@@ -12,7 +12,7 @@ export default ({ coin, edit, index }) => (
     style={setStyle(coin.id)}
     onClick={() => clicked(coin, edit)}
   >
-    <section>
+    <section className="square-shade">
       <div className="coin-stats">
         <div className="coin-index">
           <span className="stat">#</span>
