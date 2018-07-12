@@ -101,7 +101,8 @@ class SearchModal extends React.Component {
           />
           <button className="close-modal-x" onClick={this.closeSquareEdit} />
         </header>
-        <ul className="coins-list">
+
+        <ul id="coins-list">
           { coins !== 'undefined'
             ? coins.map((coin, i) => (
               <li
