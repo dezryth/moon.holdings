@@ -39,6 +39,7 @@ export default ({ coin, edit, index }) => (
           <span className="stat">%</span>
         </div>
       </div>
+      <p className="coin-value">Value:</p>
       <p className="balance">${numberWithCommas(coin.value)}</p>
     </section>
   </div>

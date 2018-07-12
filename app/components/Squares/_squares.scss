@@ -90,27 +90,27 @@
 .coin-percentage { float: right; }
 
 .coin-price,
-.coin-position {
-  float: left;
-}
+.coin-position,
+.coin-value { float: left; }
 
 .coin-price {
   margin-bottom: 10px;
-  padding: 2px;
+  padding: 2px 2px 2px 0;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.coin-allocation {
-  float: right;
-}
+.coin-allocation { float: right; }
 
 .coin-position,
-.coin-allocation {
+.coin-allocation,
+.coin-value {
   opacity: 0.7;
   margin-bottom: 5px;
   font-size: em(12);
 }
+
+.coin-value { margin: 15px 0 0; }
 
 .hr24 { margin-right: 10px; }
 
