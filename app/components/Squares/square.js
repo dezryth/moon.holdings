@@ -31,6 +31,7 @@ export default ({ coin, edit, index }) => (
         <span className="fr">${round(coin.price_usd)}</span>
       </p>
       <p className="coin-position">Position:</p>
+      <p className="coin-allocation">Allocation:</p>
       <div className="position-bg">
         <p className="coin-balance">{coin.balance}</p>
         <div className="coin-percentage">

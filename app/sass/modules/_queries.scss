@@ -2,7 +2,16 @@
 ========================================================= */
 @media all and (max-width: 900px) {
   #square-edit-container {
-    .close-modal-x { position: absolute; top: 20px; right: 30px; }
+    .close-modal-x {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+    }
+
+    h2 {
+      top: -60px;
+      width: 473px;
+    }
   }
 
   #square-edit { width: 100%; margin: 0 auto; }
