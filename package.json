@@ -1,6 +1,6 @@
 {
   "name": "moon.holdings",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Cryptocurrency asset portfolio",
   "main": "index.js",
   "repository": "https://github.com/Futuratum/moon.holdings.git",
@@ -28,7 +28,7 @@
   "now": {
     "name": "moonholdings",
     "engines": {
-      "node": "9.7.1"
+      "node": "8.11.3"
     },
     "alias": "moon.holdings"
   },
