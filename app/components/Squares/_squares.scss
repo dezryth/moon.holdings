@@ -89,33 +89,16 @@
 
 .coin-percentage { float: right; }
 
-.coin-price,
-.coin-position,
-.coin-value { float: left; }
-
-.coin-price {
+.coin-stat {
+  float: left;
   margin-bottom: 10px;
   padding: 2px 2px 2px 0;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.coin-allocation { float: right; }
-
-.coin-position,
-.coin-allocation,
-.coin-value {
-  opacity: 0.7;
-  margin-bottom: 5px;
-  font-size: em(12);
-}
-
-.coin-value { margin: 15px 0 0; }
-
 .hr24 { margin-right: 10px; }
 
 .change24 { float: right; }
 
 .stat { color: $midGray; }
-
-.coin-balance { float: left; }

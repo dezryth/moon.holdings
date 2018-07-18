@@ -27,20 +27,23 @@ export default ({ coin, edit, index }) => (
       <h1>
         <div className="fl">{coin.symbol}</div>
       </h1>
-      <p className="coin-price"><span className="mr3 o7">Price:</span>
+      <p className="coin-stat"><span className="mr3 o7">Price:</span>
         <span className="fr">${round(coin.price_usd)}</span>
       </p>
-      <p className="coin-position">Position:</p>
-      <p className="coin-allocation">Allocation:</p>
-      <div className="position-bg">
-        <p className="coin-balance">{coin.balance}</p>
-        <div className="coin-percentage">
-          <span>{coin.percentage}</span>
-          <span className="stat">%</span>
-        </div>
-      </div>
-      <p className="coin-value">Value:</p>
-      <p className="balance">${numberWithCommas(coin.value)}</p>
+      <p className="coin-stat"><span className="mr3 o7">Position:</span>
+        <span className="fr">{coin.balance}</span>
+      </p>
+      <p className="coin-stat"><span className="mr3 o7">Allocation:</span>
+        <span className="fr">
+          <span className="coin-percentage">
+            <span>{coin.percentage}</span>
+            <span className="stat">%</span>
+          </span>
+        </span>
+      </p>
+      <p className="coin-stat"><span className="mr3 o7">Value:</span>
+        <span className="fr f20">${numberWithCommas(coin.value)}</span>
+      </p>
     </section>
   </div>
 );
