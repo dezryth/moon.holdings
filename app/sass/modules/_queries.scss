@@ -2,7 +2,16 @@
 ========================================================= */
 @media all and (max-width: 900px) {
   #square-edit-container {
-    .close-modal-x { position: absolute; top: 20px; right: 30px; }
+    .close-modal-x {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+    }
+
+    h2 {
+      top: -60px;
+      width: 473px;
+    }
   }
 
   #square-edit { width: 100%; margin: 0 auto; }
@@ -57,16 +66,32 @@
   }
 
   .coin-square {
+    margin: 0 1px 15px 0;
     min-width: auto;
     min-height: 120px;
-    p { margin-bottom: 0; }
+    p { margin-bottom: 4px; }
+  }
+
+  .square-shade {
+    width: 119%;
+    height: 118%;
   }
 
   .coin-index,
   .coin-percentage,
   .change24 { margin-right: 6px; }
 
-  .coin-balance { border-bottom: 1px solid rgba(0, 0, 0, 0); }
+  .coin-percentage {
+    span {
+      position: relative;
+      top: 4px;
+    }
+  }
+
+  .coin-balance {
+    margin-top: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+  }
 
   .dark-bg {
     .coin-balance { border-bottom: 1px solid rgba(0, 0, 0, 0); }

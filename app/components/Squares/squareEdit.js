@@ -13,6 +13,8 @@ import { coinHasLightBg, setStyle } from 'utils/modifiers';
 const styleModifier = coinId =>
   (coinHasLightBg(coinId) ? 'light-bg' : '');
 
+const renderInstructions = inPortfolio => (inPortfolio ? 'Edit' : 'Enter');
+
 class SquareEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -113,6 +115,8 @@ class SquareEdit extends React.Component {
     return (
       <div id="square-edit-container" className={styleModifier(coin.id)}>
         <button className="close-modal-x" onClick={this.props.closeEdit} />
+        <div className="x-bg" />
+        <h2 style={setStyle(coin.id)}>{renderInstructions(inPortfolio)} your balance below</h2>
         <section
           id="square-edit"
           className={this.squareHeight()}

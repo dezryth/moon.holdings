@@ -10,6 +10,17 @@
   bottom: 0;
   left: 0;
   width: 100%;
+
+  h2 {
+    opacity: 0.8;
+    position: absolute;
+    top: -45px;
+    font-size: 26px;
+    padding: 20px 0;
+    width: 640px;
+    text-indent: 20px;
+    font-size: 26px;
+  }
 }
 
 #square-edit-container {
@@ -19,9 +30,21 @@
   .close-modal-x {
     position: relative;
     z-index: 10;
-    top: 21px;
-    right: -650px;
+    top: 30px;
+    right: -610px;
   }
+}
+
+.x-bg {
+  z-index: 1;
+  float: right;
+  position: relative;
+  top: 28px;
+  right: 8px;
+  opacity: 0.15;
+  width: 24px;
+  height: 24px;
+  background: #000;
 }
 
 #square-edit {

@@ -23,11 +23,6 @@
   background-size: 80%;
 }
 
-.bg-btc::after { background-image: url('static/bg-btc.png'); }
-.bg-bnb::after { background-image: url('static/bg-bnb.png'); }
-.bg-dcr::after { background-image: url('static/bg-dcr.gif'); }
-.bg-dnt::after { background-image: url('static/bg-dnt.png'); }
-
 .bg-eth::after {
   background-position: 50% 50%;
   background-size: 50%;
@@ -48,15 +43,11 @@
 
 .bg-gnt::after,
 .bg-spank::after,
-.bg-sonm::after,
+.bg-snm::after,
 .bg-zen::after {
   background-position: 50% 50%;
   background-size: 70%;
 }
-
-.bg-gnt::after { background-image: url('static/bg-gnt.png'); }
-.bg-lsk::after { background-image: url('static/bg-lsk.png'); }
-.bg-neo::after { background-image: url('static/bg-neo.png'); }
 
 .bg-nano::after {
   background-position: 50% 50%;
@@ -64,25 +55,30 @@
   background-image: url('static/bg-nano.png');
 }
 
-.bg-spank::after { background-image: url('static/bg-spank.png'); }
-.bg-sonm::after { background-image: url('static/bg-sonm.png'); }
-.bg-zen::after { background-image: url('static/bg-zen.png'); }
-
 .bg-ada::after,
 .bg-zrx::after {
   background-position: 50% 50%;
   background-size: 100%;
 }
 
-.bg-ada::after { background-image: url('static/bg-ada.png'); }
-
-.bg-zrx::after { background-image: url('static/bg-zrx.png'); }
-
 .bg-xlm::after {
   background-position: 50% 50%;
   background-size: 70%;
   background-image: url('static/bg-xlm.png');
 }
+
+.bg-ada::after { background-image: url('static/bg-ada.png'); }
+.bg-btc::after { background-image: url('static/bg-btc.png'); }
+.bg-bnb::after { background-image: url('static/bg-bnb.png'); }
+.bg-dcr::after { background-image: url('static/bg-dcr.gif'); }
+.bg-dnt::after { background-image: url('static/bg-dnt.png'); }
+.bg-gnt::after { background-image: url('static/bg-gnt.png'); }
+.bg-lsk::after { background-image: url('static/bg-lsk.png'); }
+.bg-neo::after { background-image: url('static/bg-neo.png'); }
+.bg-spank::after { background-image: url('static/bg-spank.png'); }
+.bg-snm::after { background-image: url('static/bg-sonm.png'); }
+.bg-zen::after { background-image: url('static/bg-zen.png'); }
+.bg-zrx::after { background-image: url('static/bg-zrx.png'); }
 
 .dark-bg {
   .coin-balance { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
@@ -102,10 +98,10 @@
   }
 }
 
-.bg-ada,
 .bg-btc,
 .bg-bch,
 .bg-mkr,
+.bg-nano,
 .bg-neo {
   .green { background-color: rgba(0, 0, 0, .5); }
   .red { background-color: rgba(255, 255, 255, .45); }
