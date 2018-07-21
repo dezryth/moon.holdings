@@ -18,7 +18,8 @@
 }
 
 .bg-bnb::after,
-.bg-dnt::after {
+.bg-dnt::after,
+.bg-ven::after {
   background-position: 50% 50%;
   background-size: 80%;
 }
@@ -77,6 +78,7 @@
 .bg-neo::after { background-image: url('static/bg-neo.png'); }
 .bg-spank::after { background-image: url('static/bg-spank.png'); }
 .bg-snm::after { background-image: url('static/bg-sonm.png'); }
+.bg-ven::after { background-image: url('static/bg-ven.png'); }
 .bg-zen::after { background-image: url('static/bg-zen.png'); }
 .bg-zrx::after { background-image: url('static/bg-zrx.png'); }
 
@@ -111,6 +113,7 @@
   .red { background-color: rgba(255, 255, 255, .85); }
 }
 
+.bg-ven,
 .bg-xlm {
   .green { background-color: rgba(0, 0, 0, .5); }
 }
