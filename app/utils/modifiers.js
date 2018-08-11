@@ -63,17 +63,20 @@ const coinBg = () => 'coin-square bg';
 
 // Add special Coin style.
 export const classModifier = (coinId) => {
+  console.log('coinId', coinId);
   switch (coinId) {
     case 'bitcoin': return `${coinBg()} bg-btc`;
     case 'bitcoin-cash': return `${coinBg()} bg-bch`;
     case 'binance-coin': return `${coinBg()} bg-bnb`;
     case 'cardano': return `${coinBg()} bg-ada`;
     case 'decred': return `${coinBg()} bg-dcr`;
+    case 'dash': return `${coinBg()} bg-dash`;
     case 'district0x': return `${coinBg()} bg-dnt`;
     case 'ethereum': return `${coinBg()} bg-eth`;
     case 'eos': return `${coinBg()} bg-eos`;
     case 'golem-network-tokens': return `${coinBg()} bg-gnt`;
     case 'lisk': return `${coinBg()} bg-lsk`;
+    case 'qtum': return `${coinBg()} bg-qtum bg-lite`;
     case 'maker': return `${coinBg()} bg-mkr`;
     case 'nano': return `${coinBg()} bg-nano bg-lite`;
     case 'neo':
@@ -90,7 +93,10 @@ export const classModifier = (coinId) => {
 };
 
 // Applies specific coin style.
-export const styleModifier = coinId => (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);
+export const styleModifier = coinId =>
+  (coinHasDarkBg(coinId)
+    ? `col ${classModifier(coinId)} dark-bg`
+    : `col ${classModifier(coinId)} coin-square`);
 
 // Adds either green or red class to 24 percent change.
 export const percentStyler = ({ percent_change_24h: change24 }) => {

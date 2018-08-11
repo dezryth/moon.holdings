@@ -555,8 +555,9 @@ export const qash = {
 };
 
 export const qtum = {
-  color: '#232428',
-  backgroundColor: '#359bce'
+  color: '#359bce',
+  backgroundColor: '#fff',
+  lightBg: true
 };
 
 export const quantstamp = {
