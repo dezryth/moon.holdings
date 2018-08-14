@@ -8,13 +8,15 @@ import { addCoins } from 'actions/coins';
 import Search from 'containers/SearchModal/searchModal';
 
 // Components
+import SquareEdit from 'components/Squares/squareEdit';
+// Partials
 import Welcome from 'components/Partials/Welcome/welcome';
 import Astronaut from 'components/Partials/Astronaut/astronaut';
 import PlusButton from 'components/Partials/PlusButton/plusButton';
-import SquareEdit from 'components/Squares/squareEdit';
 import Portfolio from 'components/Portfolio/portfolio';
 import Loading from 'components/Partials/Loading/loading';
 import Affiliates from 'components/Partials/Affiliates/affiliates';
+import CoinMarketCap from 'components/Partials/CoinMarketCap/link';
 
 const { localStorage } = window;
 
@@ -113,6 +115,7 @@ class Board extends React.Component {
         { portfolio.length === 0 && <Welcome /> }
         <PlusButton toggleSearch={this.handleSearchButton} />
         <Affiliates />
+        <CoinMarketCap />
         <Astronaut logo={isTrue} />
       </div>
     );

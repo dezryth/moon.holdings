@@ -69,11 +69,13 @@ export const classModifier = (coinId) => {
     case 'binance-coin': return `${coinBg()} bg-bnb`;
     case 'cardano': return `${coinBg()} bg-ada`;
     case 'decred': return `${coinBg()} bg-dcr`;
+    case 'dash': return `${coinBg()} bg-dash`;
     case 'district0x': return `${coinBg()} bg-dnt`;
     case 'ethereum': return `${coinBg()} bg-eth`;
     case 'eos': return `${coinBg()} bg-eos`;
     case 'golem-network-tokens': return `${coinBg()} bg-gnt`;
     case 'lisk': return `${coinBg()} bg-lsk`;
+    case 'qtum': return `${coinBg()} bg-qtum bg-lite`;
     case 'maker': return `${coinBg()} bg-mkr`;
     case 'nano': return `${coinBg()} bg-nano bg-lite`;
     case 'neo':
@@ -81,6 +83,7 @@ export const classModifier = (coinId) => {
     case 'spankchain': return `${coinBg()} bg-spank`;
     case 'sonm': return `${coinBg()} bg-snm`;
     case 'stellar': return `${coinBg()} bg-xlm bg-lite`;
+    case 'vechain': return `${coinBg()} bg-ven`;
     case 'zencash': return `${coinBg()} bg-zen`;
     case '0x': return `${coinBg()} bg-zrx`;
     default: // no defualt
@@ -89,7 +92,10 @@ export const classModifier = (coinId) => {
 };
 
 // Applies specific coin style.
-export const styleModifier = coinId => (coinHasDarkBg(coinId) ? `col ${classModifier(coinId)} dark-bg` : `col ${classModifier(coinId)} coin-square`);
+export const styleModifier = coinId =>
+  (coinHasDarkBg(coinId)
+    ? `col ${classModifier(coinId)} dark-bg`
+    : `col ${classModifier(coinId)} coin-square`);
 
 // Adds either green or red class to 24 percent change.
 export const percentStyler = ({ percent_change_24h: change24 }) => {

@@ -68,3 +68,21 @@
     top: -20px;
   }
 }
+
+.coinmarketcap {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  right: 300px;
+  width: 100%;
+  text-align: right;
+
+  a {
+    color: $apricot;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($apricot, 10%);
+    }
+  }
+}

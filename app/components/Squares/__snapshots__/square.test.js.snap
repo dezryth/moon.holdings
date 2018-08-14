@@ -11,7 +11,9 @@ exports[`<Square /> component when rendering should render a component matching 
     }
   }
 >
-  <section>
+  <section
+    className="square-shade"
+  >
     <div
       className="coin-stats"
     >
@@ -24,7 +26,7 @@ exports[`<Square /> component when rendering should render a component matching 
           #
         </span>
         <span>
-          NaN
+          2
         </span>
       </div>
       <div
@@ -55,7 +57,7 @@ exports[`<Square /> component when rendering should render a component matching 
       </div>
     </h1>
     <p
-      className="coin-price"
+      className="coin-stat"
     >
       <span
         className="mr3 o7"
@@ -70,34 +72,56 @@ exports[`<Square /> component when rendering should render a component matching 
       </span>
     </p>
     <p
-      className="coin-position"
+      className="coin-stat"
     >
-      Position:
-    </p>
-    <div
-      className="position-bg"
-    >
-      <p
-        className="coin-balance"
+      <span
+        className="mr3 o7"
+      >
+        Position:
+      </span>
+      <span
+        className="fr"
       >
         0
-      </p>
-      <div
-        className="coin-percentage"
-      >
-        <span />
-        <span
-          className="stat"
-        >
-          %
-        </span>
-      </div>
-    </div>
+      </span>
+    </p>
     <p
-      className="balance"
+      className="coin-stat"
     >
-      $
-      0
+      <span
+        className="mr3 o7"
+      >
+        Allocation:
+      </span>
+      <span
+        className="fr"
+      >
+        <span
+          className="coin-percentage"
+        >
+          <span />
+          <span
+            className="stat"
+          >
+            %
+          </span>
+        </span>
+      </span>
+    </p>
+    <p
+      className="coin-stat"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Value:
+      </span>
+      <span
+        className="fr f20"
+      >
+        $
+        1
+      </span>
     </p>
   </section>
 </div>

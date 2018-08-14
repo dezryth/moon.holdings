@@ -8,6 +8,13 @@ exports[`<SquareEditJest /> component when rendering should render a component m
   <button
     className="close-modal-x"
   />
+  <div
+    className="x-bg"
+  />
+  <h2>
+    Enter
+     your balance below
+  </h2>
   <section
     className="edit-short"
     id="square-edit"
