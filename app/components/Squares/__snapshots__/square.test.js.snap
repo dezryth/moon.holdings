@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Square /> component when rendering should render a component matching the snapshot 1`] = `
+<div
+  className="col coin-square bg bg-btc coin-square"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f5922f",
+      "color": "#fff",
+    }
+  }
+>
+  <section
+    className="square-shade"
+  >
+    <div
+      className="coin-stats"
+    >
+      <div
+        className="coin-index"
+      >
+        <span
+          className="stat"
+        >
+          #
+        </span>
+        <span>
+          2
+        </span>
+      </div>
+      <div
+        className="change24"
+      >
+        <span
+          className="stat mr3 hr24"
+        >
+          24hr
+        </span>
+        <span
+          className="red"
+        >
+          -10%
+        </span>
+        <span
+          className="stat"
+        >
+          %
+        </span>
+      </div>
+    </div>
+    <h1>
+      <div
+        className="fl"
+      >
+        BTC
+      </div>
+    </h1>
+    <p
+      className="coin-stat"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Price:
+      </span>
+      <span
+        className="fr"
+      >
+        $
+        0
+      </span>
+    </p>
+    <p
+      className="coin-stat"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Position:
+      </span>
+      <span
+        className="fr"
+      >
+        0
+      </span>
+    </p>
+    <p
+      className="coin-stat"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Allocation:
+      </span>
+      <span
+        className="fr"
+      >
+        <span
+          className="coin-percentage"
+        >
+          <span />
+          <span
+            className="stat"
+          >
+            %
+          </span>
+        </span>
+      </span>
+    </p>
+    <p
+      className="coin-stat"
+    >
+      <span
+        className="mr3 o7"
+      >
+        Value:
+      </span>
+      <span
+        className="fr f20"
+      >
+        $
+        1
+      </span>
+    </p>
+  </section>
+</div>
+`;
