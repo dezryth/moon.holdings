@@ -65,8 +65,9 @@ class Board extends React.Component {
     }
   }
 
-  toggleSquareEdit(edit = false, coin = {}) {
+  toggleSquareEdit(edit = false, coin = {}, f): f is Function {
     this.setState({ coin, edit, search: false });
+    return f instanceof Function;
   }
 
   renderSquareEdit(coin) {

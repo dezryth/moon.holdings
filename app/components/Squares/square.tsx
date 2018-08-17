@@ -1,5 +1,7 @@
 import React from 'react';
 
+export interface Square { coin: object; edit: function, index: number; }
+
 // Utils
 import { numberWithCommas, round } from 'utils/math';
 import { percentStyler, setStyle, styleModifier } from 'utils/modifiers';

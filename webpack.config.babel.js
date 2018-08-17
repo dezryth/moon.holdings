@@ -45,17 +45,21 @@ const productionPlugin = new webpack.DefinePlugin({
 });
 
 const base = {
-  entry: ['babel-polyfill', PATHS.app],
+  // entry: ['babel-polyfill', PATHS.app],
+  entry: './app/index.tsx',
   output: {
     path: PATHS.build,
     publicPath: '/',
     filename: 'index_bundle.js'
   },
   resolve: {
-    modules: [app, nodeModules]
+    modules: [app, nodeModules],
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -72,7 +76,9 @@ const base = {
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)/,
         loader: 'file-loader?name=[path][name].[ext]'
-      }
+      },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
     ]
   }
 };

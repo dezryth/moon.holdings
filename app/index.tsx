@@ -9,4 +9,4 @@ import App from './app';
 
 const element = document.getElementById('app');
 
-ReactDOM.render(<App />, element);
+ReactDOM.render(<App compiler="TypeScript" framework="React" />, element);

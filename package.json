@@ -45,6 +45,8 @@
     "setupTestFrameworkScriptFile": "./app/utils/testConfigure.js"
   },
   "dependencies": {
+    "@types/react": "^16.4.11",
+    "@types/react-dom": "^16.0.7",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -75,7 +77,6 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "flexboxgrid": "^6.3.1",
     "git-hooks": "^1.1.10",
@@ -105,8 +106,14 @@
     "svg-inline-loader": "^0.8.0",
     "svg-loader": "^0.0.2",
     "url-loader": "^1.0.1",
-    "webpack": "^3.3.0",
+    "webpack": "^4.0.0",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "2.11.1"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.0.1"
   }
 }
