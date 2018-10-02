@@ -12,7 +12,7 @@ https://moon.holdings
 `yarn` is preferable over `npm` https://yarnpkg.com/en/docs/install
 `brew install yarn`
 
-'yarn install' to install dependencies
+`yarn install` to install dependencies
 
 `yarn start`
 
